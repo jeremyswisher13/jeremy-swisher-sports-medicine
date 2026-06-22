@@ -3,6 +3,15 @@
    classes in styles.css. Imported after styles.css.
    =========================================================================== */
 
+/* --- route loading fallback ----------------------------------------------- */
+.route-loading {
+  display: grid;
+  place-items: center;
+  min-height: 40vh;
+  color: var(--subtle);
+  font-size: 0.95rem;
+}
+
 /* --- generic page scaffolding --------------------------------------------- */
 .page {
   display: grid;

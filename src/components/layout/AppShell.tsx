@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react'
+import { Suspense, useCallback, useEffect, useState } from 'react'
 import { Outlet, useLocation } from 'react-router-dom'
 import { Sidebar } from './Sidebar'
 import { TopBar } from './TopBar'
@@ -30,7 +30,9 @@ export function AppShell() {
       <Sidebar />
       <main className="workspace" aria-label="Jeremy Swisher MD Sports Medicine">
         <TopBar onOpenSearch={openSearch} />
-        <Outlet />
+        <Suspense fallback={<div className="route-loading">Loading…</div>}>
+          <Outlet />
+        </Suspense>
       </main>
       {searchOpen && <SearchModal onClose={closeSearch} />}
     </div>
