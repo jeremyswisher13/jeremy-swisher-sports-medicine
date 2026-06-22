@@ -64,11 +64,12 @@ const moduleData: ConditionModule = {
     tissue:
       'A cervical nerve root — one of the spinal nerves exiting the neck — irritated or compressed by foraminal narrowing or disc pathology.',
     video: {
-      videoId: 'gZUNcfcdHW4',
-      title: 'Pinched Nerve (Cervical Radiculopathy) Stretches & Exercises - Ask Doctor Jo',
-      channel: 'AskDoctorJo',
-      approved: true,
-      note: 'Physician-curated demonstration video.',
+      videoId: 'rZDj-Fiko4g',
+      title: 'Cervical Radiculopathy | "Pinched" Nerve in Neck Rehab (Education | Exercises | Surgery | Myths)',
+      channel: 'E3 Rehab',
+      channelUrl: 'https://www.youtube.com/c/E3Rehab',
+      approved: false,
+      note: 'Re-curated to an evidence-based source (E3 Rehab / Rehab Science); pending physician review.',
     },
     anatomyDiagram: {
       key: 'anatomy-cervical',

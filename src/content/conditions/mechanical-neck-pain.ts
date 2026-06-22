@@ -76,11 +76,12 @@ const moduleData: ConditionModule = {
     tissue:
       'The cervical joints, muscles, and soft tissues of the neck (not a nerve root or serious structural disease).',
     video: {
-      videoId: 'u3Ocw5UIpYs',
-      title: 'Real Time Neck Pain Stretches - Ask Doctor Jo',
-      channel: 'AskDoctorJo',
-      approved: true,
-      note: 'Physician-curated demonstration video.',
+      videoId: 'awJP4gENHLM',
+      title: 'Neck and Shoulder Pain Relief (4 Strength Exercises | 10 minutes)',
+      channel: 'E3 Rehab',
+      channelUrl: 'https://www.youtube.com/c/E3Rehab',
+      approved: false,
+      note: 'Re-curated to an evidence-based source (E3 Rehab / Rehab Science); pending physician review.',
     },
     anatomyDiagram: {
       key: 'anatomy-cervical',

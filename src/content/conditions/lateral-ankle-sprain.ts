@@ -72,11 +72,12 @@ const moduleData: ConditionModule = {
     tissue:
       'The lateral ankle ligaments — primarily the anterior talofibular ligament (ATFL), and sometimes the calcaneofibular ligament.',
     video: {
-      videoId: '3JJayVC0-20',
-      title: 'Lateral Sprained Ankle Stretches & Exercises - Ask Doctor Jo',
-      channel: 'AskDoctorJo',
-      approved: true,
-      note: 'Physician-curated demonstration video.',
+      videoId: 'ga_OAPf6IOI',
+      title: 'How to Rehab a Sprained Ankle (Start to Finish)',
+      channel: 'E3 Rehab',
+      channelUrl: 'https://www.youtube.com/@E3Rehab',
+      approved: false,
+      note: 'Re-curated to an evidence-based source (E3 Rehab / Rehab Science); pending physician review.',
     },
     anatomyDiagram: {
       key: 'anatomy-ankle',

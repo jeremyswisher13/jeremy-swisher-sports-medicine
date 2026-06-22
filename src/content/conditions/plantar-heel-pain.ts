@@ -72,11 +72,12 @@ const moduleData: ConditionModule = {
     tissue:
       'The plantar fascia, the thick band of tissue on the sole of the foot, where it attaches near the heel bone (medial calcaneal tubercle).',
     video: {
-      videoId: '0PeVmTMdWhk',
-      title: 'Plantar Fasciitis Stretches & Exercises - Ask Doctor Jo',
-      channel: 'AskDoctorJo',
-      approved: true,
-      note: 'Physician-curated demonstration video.',
+      videoId: '5D86b45yJzU',
+      title: 'Plantar Fasciitis (Education | Myths | Stretching & Strengthening Exercises)',
+      channel: 'E3 Rehab',
+      channelUrl: 'https://www.youtube.com/@E3Rehab',
+      approved: false,
+      note: 'Re-curated to an evidence-based source (E3 Rehab / Rehab Science); pending physician review.',
     },
     anatomyDiagram: {
       key: 'anatomy-plantar',

@@ -72,11 +72,12 @@ const moduleData: ConditionModule = {
     tissue:
       'No single tissue can be identified reliably — the painful structures may include the muscles, joints, discs, and ligaments of the lower back.',
     video: {
-      videoId: '2VuLBYrgG94',
-      title: 'Back Pain Relief Exercises & Stretches - Ask Doctor Jo',
-      channel: 'AskDoctorJo',
-      approved: true,
-      note: 'Physician-curated demonstration video.',
+      videoId: 'x71Y5ijW4DU',
+      title: 'Lower Back Pain Rehab (Exercises | Education | Myths | Prevention)',
+      channel: 'E3 Rehab',
+      channelUrl: 'https://www.youtube.com/@E3Rehab',
+      approved: false,
+      note: 'Re-curated to an evidence-based source (E3 Rehab / Rehab Science); pending physician review.',
     },
     anatomyDiagram: {
       key: 'anatomy-lumbar',

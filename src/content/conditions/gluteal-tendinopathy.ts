@@ -75,11 +75,12 @@ const moduleData: ConditionModule = {
     tissue:
       'The gluteus medius and/or gluteus minimus tendons where they attach near the greater trochanter, with or without bursal irritation.',
     video: {
-      videoId: 'E3bQU7AEVII',
-      title: 'Hip Pain Relief Exercises (Hip Bursitis & Gluteal Tendinopathy)',
-      channel: 'Rehab Science',
-      approved: true,
-      note: 'Physician-curated demonstration video.',
+      videoId: 'e_Kk-XqPWZo',
+      title: 'Gluteal Tendinopathy / Greater Trochanteric Hip Bursitis (Education | Myths | Exercises)',
+      channel: 'E3 Rehab',
+      channelUrl: 'https://www.youtube.com/@E3Rehab',
+      approved: false,
+      note: 'Re-curated to an evidence-based source (E3 Rehab / Rehab Science); pending physician review.',
     },
     anatomyDiagram: {
       key: 'anatomy-hip',

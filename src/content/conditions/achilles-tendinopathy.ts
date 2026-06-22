@@ -59,12 +59,12 @@ const moduleData: ConditionModule = {
     tissue:
       'The Achilles tendon and the calf (gastrocnemius–soleus) complex that loads it.',
     video: {
-      videoId: '_uCUCmVpU88',
-      title: 'Achilles Tendinopathy Stretches & Exercises - Ask Doctor Jo',
-      channel: 'AskDoctorJo',
-      channelUrl: 'https://www.youtube.com/@AskDoctorJo',
-      approved: true,
-      note: 'Physician-curated demonstration video.',
+      videoId: 'DnxahqgsAEw',
+      title: 'Achilles Tendinopathy / Tendinitis / Tendinosis | Heel Pain Rehab (Education, Myths, Exercises)',
+      channel: 'E3 Rehab',
+      channelUrl: 'https://www.youtube.com/@E3Rehab',
+      approved: false,
+      note: 'Re-curated to an evidence-based source (E3 Rehab / Rehab Science); pending physician review.',
     },
     anatomyDiagram: {
       key: 'anatomy-achilles',

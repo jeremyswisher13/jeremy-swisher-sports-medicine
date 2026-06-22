@@ -73,11 +73,12 @@ const moduleData: ConditionModule = {
     tissue:
       'The iliotibial band and the tissue it compresses near the lateral femoral epicondyle (outer side of the knee).',
     video: {
-      videoId: 'x8wbFjIMFL4',
-      title: 'IT Band Syndrome Stretches & Exercises - Ask Doctor Jo',
-      channel: 'AskDoctorJo',
-      approved: true,
-      note: 'Physician-curated demonstration video.',
+      videoId: 'qJ1mrNXXjSo',
+      title: 'IT Band Pain / Iliotibial Band Friction Syndrome (Myth Busting | Exercises | Rehab)',
+      channel: 'E3 Rehab',
+      channelUrl: 'https://www.youtube.com/@E3Rehab',
+      approved: false,
+      note: 'Re-curated to an evidence-based source (E3 Rehab / Rehab Science); pending physician review.',
     },
     anatomyDiagram: {
       key: 'anatomy-knee',

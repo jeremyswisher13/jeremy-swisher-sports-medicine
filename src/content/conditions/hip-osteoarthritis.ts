@@ -73,11 +73,12 @@ const moduleData: ConditionModule = {
     tissue:
       'The hip joint cartilage, bone, and synovium (joint lining).',
     video: {
-      videoId: 'tQNk6mpFsww',
-      title: 'Hip Arthritis Stretches & Exercises - Ask Doctor Jo',
-      channel: 'AskDoctorJo',
-      approved: true,
-      note: 'Physician-curated demonstration video.',
+      videoId: 'x-O-m_WCtWw',
+      title: 'Doctor of Physical Therapy Answers Your 10 Most Common Questions About Hip Osteoarthritis',
+      channel: 'E3 Rehab',
+      channelUrl: 'https://www.youtube.com/c/E3Rehab',
+      approved: false,
+      note: 'Re-curated to an evidence-based source (E3 Rehab / Rehab Science); pending physician review.',
     },
     anatomyDiagram: {
       key: 'anatomy-hip',

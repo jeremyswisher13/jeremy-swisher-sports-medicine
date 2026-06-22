@@ -79,11 +79,12 @@ const moduleData: ConditionModule = {
     tissue:
       'A lumbar nerve root — the part of a spinal nerve where it exits the low back — most often irritated or compressed by a herniated disc.',
     video: {
-      videoId: 'pX-QI4wRpiE',
-      title: 'Sciatica Stretches & Exercises - Ask Doctor Jo',
-      channel: 'AskDoctorJo',
-      approved: true,
-      note: 'Physician-curated demonstration video.',
+      videoId: 'XyuLHDovMmQ',
+      title: 'Low Back Pain, Sciatica, & Disc Herniations - What You Need To Know About Exercise, Surgery, & Rehab',
+      channel: 'E3 Rehab',
+      channelUrl: 'https://www.youtube.com/@E3Rehab',
+      approved: false,
+      note: 'Re-curated to an evidence-based source (E3 Rehab / Rehab Science); pending physician review.',
     },
     anatomyDiagram: {
       key: 'anatomy-lumbar',

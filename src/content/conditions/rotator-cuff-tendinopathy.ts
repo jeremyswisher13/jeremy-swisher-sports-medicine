@@ -79,12 +79,12 @@ const moduleData: ConditionModule = {
     tissue:
       'The rotator cuff tendons and the tissues within the subacromial space beneath the acromion.',
     video: {
-      videoId: 'y5CZHeQEDrU',
-      title: 'Rotator Cuff Tendinopathy Stretches & Exercises - Ask Doctor Jo',
-      channel: 'AskDoctorJo',
-      channelUrl: 'https://www.youtube.com/@AskDoctorJo',
-      approved: true,
-      note: 'Physician-curated demonstration video.',
+      videoId: '1Wy8jh4QQH8',
+      title: 'Rotator Cuff Tear Rehab & Exercises (Shoulder Pain, Tendinitis, Impingement)',
+      channel: 'E3 Rehab',
+      channelUrl: 'https://www.youtube.com/c/E3Rehab',
+      approved: false,
+      note: 'Re-curated to an evidence-based source (E3 Rehab / Rehab Science); pending physician review.',
     },
     anatomyDiagram: {
       key: 'anatomy-shoulder',

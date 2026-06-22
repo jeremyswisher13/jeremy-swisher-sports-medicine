@@ -73,11 +73,12 @@ const moduleData: ConditionModule = {
     tissue:
       'The knee joint — its cartilage, the underlying bone, and the synovium (joint lining).',
     video: {
-      videoId: 'Rl3OkKlftsI',
-      title: 'Knee Osteoarthritis (OA) Stretches & Exercises -  Ask Doctor Jo',
-      channel: 'AskDoctorJo',
-      approved: true,
-      note: 'Physician-curated demonstration video.',
+      videoId: 'sLCahUJl8jk',
+      title: 'Knee Osteoarthritis (OA) Rehab (Education | Myths | Stretching & Strengthening Exercises)',
+      channel: 'E3 Rehab',
+      channelUrl: 'https://www.youtube.com/@E3Rehab',
+      approved: false,
+      note: 'Re-curated to an evidence-based source (E3 Rehab / Rehab Science); pending physician review.',
     },
     anatomyDiagram: {
       key: 'anatomy-knee',

@@ -73,11 +73,12 @@ const moduleData: ConditionModule = {
     tissue:
       'The common extensor tendon on the outside of the elbow, especially near the extensor carpi radialis brevis (ECRB) origin.',
     video: {
-      videoId: 'uFNhlBR-Ae0',
-      title: 'Tennis Elbow Stretches & Exercises - Ask Doctor Jo',
-      channel: 'AskDoctorJo',
-      approved: true,
-      note: 'Physician-curated demonstration video.',
+      videoId: 'aOueY1l_X0U',
+      title: 'Tennis Elbow Rehab (Education | Myths | Stretching & Strengthening Exercises)',
+      channel: 'E3 Rehab',
+      channelUrl: 'https://www.youtube.com/@E3Rehab',
+      approved: false,
+      note: 'Re-curated to an evidence-based source (E3 Rehab / Rehab Science); pending physician review.',
     },
     anatomyDiagram: {
       key: 'anatomy-elbow',

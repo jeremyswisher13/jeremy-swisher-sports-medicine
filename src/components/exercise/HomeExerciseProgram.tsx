@@ -1,7 +1,9 @@
+import { useState } from 'react'
 import { HEP_DISCLAIMER } from '../../content'
 import type { Condition, RehabPhase } from '../../content'
 import { useProgram } from '../../hooks/useProgram'
 import { ExerciseCard } from './ExerciseCard'
+import { FollowAlongSession } from './FollowAlongSession'
 import { Disclaimer } from '../common/Disclaimer'
 import { Icon } from '../common/Icon'
 
@@ -9,13 +11,16 @@ export function HomeExerciseProgram({ condition }: { condition: Condition }) {
   const program = useProgram()
   const phases = condition.hep.phases
   const progress = program.getProgress(condition.id)
+  const [sessionOpen, setSessionOpen] = useState(false)
 
   const activePhase: RehabPhase =
     phases.find((p) => p.id === progress.activePhaseId) ?? phases[0]
 
+  const total = activePhase.exercises.length
   const doneInPhase = activePhase.exercises.filter((ex) =>
     progress.completedExerciseIds.has(ex.id),
   ).length
+  const pct = total ? Math.round((doneInPhase / total) * 100) : 0
 
   return (
     <section className="panel exercise-panel" aria-labelledby="exercise-title">
@@ -54,7 +59,7 @@ export function HomeExerciseProgram({ condition }: { condition: Condition }) {
                 onClick={() => program.setActivePhase(condition.id, phase.id)}
                 aria-pressed={isSelected}
               >
-                <span>{phase.order}</span>
+                <span>{phaseDone ? <Icon name="check" size={14} /> : phase.order}</span>
                 <strong>Phase {phase.order}</strong>
                 <em>{phase.title}</em>
                 <small>{phaseDone ? 'complete' : `${phase.exercises.length} exercises`}</small>
@@ -71,12 +76,30 @@ export function HomeExerciseProgram({ condition }: { condition: Condition }) {
               </h3>
               <p>{activePhase.summary}</p>
             </div>
-            <span className="completion-count">
-              <strong>
-                {doneInPhase} of {activePhase.exercises.length}
-              </strong>
-              completed
-            </span>
+          </div>
+
+          {/* Progress + follow-along CTA */}
+          <div className="hep-actionbar">
+            <div className="hep-progress">
+              <div className="hep-progress-top">
+                <span>
+                  <strong>{doneInPhase}</strong> of {total} done
+                </span>
+                <span>{pct}%</span>
+              </div>
+              <div className="hep-progress-track" aria-hidden="true">
+                <div className="hep-progress-fill" style={{ width: `${pct}%` }} />
+              </div>
+            </div>
+            <button
+              type="button"
+              className="primary-action hep-start"
+              onClick={() => setSessionOpen(true)}
+              disabled={total === 0}
+            >
+              <Icon name="play" size={20} />
+              {doneInPhase > 0 && doneInPhase < total ? 'Resume session' : 'Start follow-along'}
+            </button>
           </div>
 
           <div className="phase-meta">
@@ -122,15 +145,17 @@ export function HomeExerciseProgram({ condition }: { condition: Condition }) {
         </div>
       </div>
 
-      <div className="panel-footer compact">
-        <span>
-          <Icon name="program" size={19} />
-          Progression goal: {activePhase.goal}
-        </span>
-      </div>
       <div className="hep-disclaimer">
         <Disclaimer text={HEP_DISCLAIMER} compact />
       </div>
+
+      {sessionOpen && (
+        <FollowAlongSession
+          condition={condition}
+          phase={activePhase}
+          onClose={() => setSessionOpen(false)}
+        />
+      )}
     </section>
   )
 }

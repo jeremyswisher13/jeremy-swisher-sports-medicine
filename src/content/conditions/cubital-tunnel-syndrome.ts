@@ -72,11 +72,12 @@ const moduleData: ConditionModule = {
     tissue:
       'The ulnar nerve as it passes through the cubital tunnel at the elbow, behind the medial epicondyle.',
     video: {
-      videoId: 'beKmfvOYtz4',
-      title: 'Cubital Tunnel Syndrome, aka Ulnar Nerve Entrapment - Ask Doctor Jo',
-      channel: 'AskDoctorJo',
-      approved: true,
-      note: 'Physician-curated demonstration video.',
+      videoId: 'rvrtapqpuPw',
+      title: '3 Exercises for Cubital Tunnel Syndrome (Ulnar Nerve Rehab)',
+      channel: 'Rehab Science',
+      channelUrl: 'https://www.youtube.com/@RehabScience',
+      approved: false,
+      note: 'Re-curated to an evidence-based source (E3 Rehab / Rehab Science); pending physician review.',
     },
     anatomyDiagram: {
       key: 'anatomy-elbow',

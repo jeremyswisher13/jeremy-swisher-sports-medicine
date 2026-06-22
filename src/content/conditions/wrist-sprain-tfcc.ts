@@ -73,11 +73,12 @@ const moduleData: ConditionModule = {
     tissue:
       'The wrist ligaments and, on the little-finger side, the triangular fibrocartilage complex (TFCC) — the cartilage-and-ligament structure that stabilizes the ulnar wrist and distal radioulnar joint.',
     video: {
-      videoId: 'H4ds4CJbKdc',
-      title: 'TFCC Tear / Repair Stretches & Exercises (Triangular Fibrocartilage Complex) - Ask Doctor Jo',
-      channel: 'AskDoctorJo',
-      approved: true,
-      note: 'Physician-curated demonstration video.',
+      videoId: 'QKAiNAhlXac',
+      title: 'Wrist Pain | Strain | Sprain | TFCC Rehab (Hand | Forearm Strength & Mobility Exercises)',
+      channel: 'E3 Rehab',
+      channelUrl: 'https://www.youtube.com/@E3Rehab',
+      approved: false,
+      note: 'Re-curated to an evidence-based source (E3 Rehab / Rehab Science); pending physician review.',
     },
     anatomyDiagram: {
       key: 'anatomy-wrist-thumb',

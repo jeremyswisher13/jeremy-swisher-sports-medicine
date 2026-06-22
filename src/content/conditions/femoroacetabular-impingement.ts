@@ -74,11 +74,12 @@ const moduleData: ConditionModule = {
     tissue:
       'The hip joint, specifically the femoral head-neck junction and the acetabular rim, with the labrum and cartilage that can become irritated.',
     video: {
-      videoId: 'ATQcSDuumL8',
-      title: 'Hip Impingement (FAI) Pain Stretches & Exercises - Ask Doctor Jo',
-      channel: 'AskDoctorJo',
-      approved: true,
-      note: 'Physician-curated demonstration video.',
+      videoId: 'ulHaddxEoyE',
+      title: 'Femoroacetabular Impingement (FAI) | Hip & Groin Pain (Rehab | Education | Exercises)',
+      channel: 'E3 Rehab',
+      channelUrl: 'https://www.youtube.com/@E3Rehab',
+      approved: false,
+      note: 'Re-curated to an evidence-based source (E3 Rehab / Rehab Science); pending physician review.',
     },
     anatomyDiagram: {
       key: 'anatomy-hip',

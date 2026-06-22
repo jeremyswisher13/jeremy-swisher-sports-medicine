@@ -73,12 +73,12 @@ const moduleData: ConditionModule = {
     tissue:
       'The long head of the biceps tendon (LHBT) at the front of the shoulder, often together with the rotator cuff and scapular muscles that share the load.',
     video: {
-      videoId: 'M9-yNm0NpVc',
-      title: 'Biceps Tendonitis Stretches & Exercises - Ask Doctor Jo',
-      channel: 'AskDoctorJo',
-      channelUrl: 'https://www.youtube.com/@AskDoctorJo',
-      approved: true,
-      note: 'Physician-curated demonstration video.',
+      videoId: 'g3oFfYFRtcQ',
+      title: 'Biceps Tendinopathy Rehab Exercises',
+      channel: 'E3 Rehab',
+      channelUrl: 'https://www.youtube.com/@E3Rehab',
+      approved: false,
+      note: 'Re-curated to an evidence-based source (E3 Rehab / Rehab Science); pending physician review.',
     },
     anatomyDiagram: {
       key: 'anatomy-shoulder',

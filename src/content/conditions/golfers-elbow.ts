@@ -73,11 +73,12 @@ const moduleData: ConditionModule = {
     tissue:
       'The common flexor-pronator tendon at the medial epicondyle (the wrist-flexor and forearm-pronator muscles where they attach to the inner elbow).',
     video: {
-      videoId: 'CzT3oE7DgWM',
-      title: "Golfer's Elbow Stretches & Exercises - Ask Doctor Jo",
-      channel: 'AskDoctorJo',
-      approved: true,
-      note: 'Physician-curated demonstration video.',
+      videoId: '3CJMz0HoGXk',
+      title: 'Golfer\'s Elbow Rehab (Education | Myths | Stretching & Strengthening Exercises)',
+      channel: 'E3 Rehab',
+      channelUrl: 'https://www.youtube.com/@E3Rehab',
+      approved: false,
+      note: 'Re-curated to an evidence-based source (E3 Rehab / Rehab Science); pending physician review.',
     },
     anatomyDiagram: {
       key: 'anatomy-elbow',

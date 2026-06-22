@@ -74,11 +74,12 @@ const moduleData: ConditionModule = {
     tissue:
       'The distal posteromedial border of the tibia (shin bone) and the soft tissues — including the surrounding muscles and fascia — that load it.',
     video: {
-      videoId: 'Z2G5WCJBpps',
-      title: 'Shin Splints Stretches & Exercises - Ask Doctor Jo',
-      channel: 'AskDoctorJo',
-      approved: true,
-      note: 'Physician-curated demonstration video.',
+      videoId: '_OyNx5VMzzc',
+      title: 'Shin Splints | Medial Tibial Stress Syndrome (Exercises, Rehab, Strengthening)',
+      channel: 'E3 Rehab',
+      channelUrl: 'https://www.youtube.com/@E3Rehab',
+      approved: false,
+      note: 'Re-curated to an evidence-based source (E3 Rehab / Rehab Science); pending physician review.',
     },
     anatomyDiagram: {
       key: 'anatomy-tibia',

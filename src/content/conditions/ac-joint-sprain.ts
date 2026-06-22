@@ -73,12 +73,12 @@ const moduleData: ConditionModule = {
     tissue:
       'The acromioclavicular (AC) joint ligaments at the top of the shoulder and, in more severe cases, the coracoclavicular ligaments below.',
     video: {
-      videoId: 'hc4QDSqpw-k',
-      title: 'AC Joint Sprain Stretches & Exercises - Ask Doctor Jo',
-      channel: 'AskDoctorJo',
-      channelUrl: 'https://www.youtube.com/@AskDoctorJo',
-      approved: true,
-      note: 'Physician-curated demonstration video.',
+      videoId: 'eoSOXbDV4NE',
+      title: 'Acromioclavicular (AC) Joint Sprain | Separated Shoulder Rehab (Education & Exercises)',
+      channel: 'E3 Rehab',
+      channelUrl: 'https://www.youtube.com/@E3Rehab',
+      approved: false,
+      note: 'Re-curated to an evidence-based source (E3 Rehab / Rehab Science); pending physician review.',
     },
     anatomyDiagram: {
       key: 'anatomy-shoulder',

@@ -72,11 +72,12 @@ const moduleData: ConditionModule = {
     tissue:
       'The medial collateral ligament (MCL) on the inside of the knee.',
     video: {
-      videoId: '1ppC8e1nEHo',
-      title: 'Top 7 MCL Sprain Treatments - Ask Doctor Jo',
-      channel: 'AskDoctorJo',
-      approved: true,
-      note: 'Physician-curated demonstration video.',
+      videoId: 'wGhUmdYqy9Y',
+      title: 'MCL Injury Rehab & Exercises (Medial Collateral Ligament Sprain)',
+      channel: 'E3 Rehab',
+      channelUrl: 'https://www.youtube.com/c/E3Rehab',
+      approved: false,
+      note: 'Re-curated to an evidence-based source (E3 Rehab / Rehab Science); pending physician review.',
     },
     anatomyDiagram: {
       key: 'anatomy-knee',
