@@ -5,6 +5,7 @@
  */
 import type { Citation, Condition, ConditionModule } from '../types'
 import { sharedCitations } from '../citations'
+import { executiveSummaries } from '../executiveSummaries'
 
 // --- condition modules (one import per file) ---------------------------------
 import achillesTendinopathy from './achilles-tendinopathy'
@@ -69,6 +70,13 @@ const modules: ConditionModule[] = [
 // -----------------------------------------------------------------------------
 
 export const conditions: Condition[] = modules.map((m) => m.condition)
+
+// Merge in patient-facing executive summaries (kept in one file for easy review).
+for (const c of conditions) {
+  if (!c.executiveSummary && executiveSummaries[c.id]) {
+    c.executiveSummary = executiveSummaries[c.id]
+  }
+}
 
 export const conditionById = new Map<string, Condition>(
   conditions.map((c) => [c.id, c]),
