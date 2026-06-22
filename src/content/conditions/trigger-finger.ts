@@ -255,7 +255,7 @@ const moduleData: ConditionModule = {
               target: 'Flexor tendons of the affected finger',
               purpose:
                 'Keeps the flexor tendons gliding smoothly through the sheath to reduce catching and stiffness.',
-              dose: { sets: 2, reps: '5–10', notes: '1–2 x 5–10 reps' },
+              dose: { sets: 2, reps: '5–10' },
               frequency: '2–3 times/day; progress frequency only if non-irritating',
               progression:
                 'Increase the frequency of sessions only if glides stay non-irritating.',
@@ -460,7 +460,7 @@ const moduleData: ConditionModule = {
         citationIds: ['trigger-huisstede-2014-consensus'],
       },
     ],
-    relatedConditionIds: [],
+    relatedConditionIds: ['de-quervain-tenosynovitis', 'wrist-sprain-tfcc'],
     review: {
       status: 'physician-review-pending',
       contentVersion: '1.0.0',

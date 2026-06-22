@@ -77,7 +77,7 @@ const moduleData: ConditionModule = {
       channel: 'E3 Rehab',
       channelUrl: 'https://www.youtube.com/@E3Rehab',
       approved: false,
-      note: 'Re-curated to an evidence-based source (E3 Rehab / Rehab Science); pending physician review.',
+      note: 'Re-curated to an evidence-based rehab source; pending physician review.',
     },
     anatomyDiagram: {
       key: 'anatomy-plantar',
@@ -274,7 +274,7 @@ const moduleData: ConditionModule = {
                 'Keep a stable "foot tripod" through the big toe, little toe, and heel',
               ],
               painRule:
-                'Pain rule: default — mild discomfort up to ~3/10 during the exercise is acceptable if it settles by the next morning.',
+                'Mild discomfort up to ~3/10 during the exercise is acceptable if it settles by the next morning.',
               equipment: ['A rolled towel', 'A step (optional)', 'Backpack for added load (optional)'],
               diagram: {
                 key: 'calf-raise',
@@ -366,7 +366,7 @@ const moduleData: ConditionModule = {
                 'No trunk lean',
               ],
               painRule:
-                'Pain rule: default — discomfort up to ~3/10 that settles by next morning.',
+                'Discomfort up to ~3/10 that settles by next morning.',
               equipment: ['A step', 'Backpack or dumbbell for added load'],
               diagram: {
                 key: 'single-leg-calf-raise',
@@ -389,7 +389,7 @@ const moduleData: ConditionModule = {
                 'Track how the heel feels the morning after',
               ],
               painRule:
-                'Pain rule: default — keep symptoms within ~3/10 during and settling by next morning.',
+                'Keep symptoms within ~3/10 during and settling by next morning.',
               diagram: {
                 key: 'ankle-balance',
                 altText: 'Person walking and jogging to rebuild loading tolerance.',
@@ -492,7 +492,7 @@ const moduleData: ConditionModule = {
         citationIds: ['plantar-jospt-2023-cpg'],
       },
     ],
-    relatedConditionIds: [],
+    relatedConditionIds: ['achilles-tendinopathy', 'medial-tibial-stress-syndrome'],
     review: {
       status: 'physician-review-pending',
       contentVersion: '1.0.0',

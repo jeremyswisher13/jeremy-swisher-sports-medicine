@@ -84,7 +84,7 @@ const moduleData: ConditionModule = {
       channel: 'E3 Rehab',
       channelUrl: 'https://www.youtube.com/@E3Rehab',
       approved: false,
-      note: 'Re-curated to an evidence-based source (E3 Rehab / Rehab Science); pending physician review.',
+      note: 'Re-curated to an evidence-based rehab source; pending physician review.',
     },
     anatomyDiagram: {
       key: 'anatomy-lumbar',
@@ -186,7 +186,7 @@ const moduleData: ConditionModule = {
               target: 'Lumbar spine (directional preference / extension)',
               purpose:
                 'A directional-preference exercise used when it centralizes symptoms — drawing leg pain up toward the spine.',
-              dose: { sets: 2, reps: '10', notes: '2 x 10, 3–5 times/day if it centralizes' },
+              dose: { sets: 2, reps: '10' },
               frequency: '3–5 times per day if it centralizes',
               progression:
                 'Progress end-range only if helpful — press a little higher as leg pain keeps moving upward.',
@@ -538,7 +538,7 @@ const moduleData: ConditionModule = {
         a: 'Seek emergency care for cauda equina symptoms — loss of bladder or bowel control, numbness in the saddle/groin area, or rapidly worsening weakness in both legs. Get urgent care for a progressive (worsening) motor deficit or severe, uncontrolled pain.',
       },
     ],
-    relatedConditionIds: [],
+    relatedConditionIds: ['low-back-pain', 'spondylolysis'],
     review: {
       status: 'physician-review-pending',
       contentVersion: '1.0.0',

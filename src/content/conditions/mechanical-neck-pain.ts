@@ -81,7 +81,7 @@ const moduleData: ConditionModule = {
       channel: 'E3 Rehab',
       channelUrl: 'https://www.youtube.com/c/E3Rehab',
       approved: false,
-      note: 'Re-curated to an evidence-based source (E3 Rehab / Rehab Science); pending physician review.',
+      note: 'Re-curated to an evidence-based rehab source; pending physician review.',
     },
     anatomyDiagram: {
       key: 'anatomy-cervical',
@@ -209,7 +209,7 @@ const moduleData: ConditionModule = {
               target: 'Deep neck flexors',
               purpose:
                 'Activates and builds endurance in the deep neck flexors, which support and stabilize the cervical spine.',
-              dose: { sets: 3, reps: '8–10', holdSeconds: 5, notes: '3 x 8–10 with 5-sec hold' },
+              dose: { sets: 3, reps: '8–10', holdSeconds: 5 },
               frequency: 'Daily',
               progression: 'Progress to longer holds.',
               regression: 'Regress to a smaller motion.',
@@ -220,7 +220,7 @@ const moduleData: ConditionModule = {
                 '“No lift”',
               ],
               painRule:
-                'Pain rule: default — mild discomfort up to about 3/10 during exercise that settles by the next morning.',
+                'Mild discomfort up to about 3/10 during exercise that settles by the next morning.',
               diagram: {
                 key: 'chin-tuck',
                 altText:
@@ -244,7 +244,7 @@ const moduleData: ConditionModule = {
                 'Stay tall through the spine',
               ],
               painRule:
-                'Pain rule: default — mild discomfort up to about 3/10 that settles by the next morning.',
+                'Mild discomfort up to about 3/10 that settles by the next morning.',
               diagram: {
                 key: 'anatomy-cervical',
                 altText:
@@ -292,7 +292,7 @@ const moduleData: ConditionModule = {
                 'Move slowly and smoothly',
               ],
               painRule:
-                'Pain rule: default — mild discomfort up to about 3/10 that settles overnight.',
+                'Mild discomfort up to about 3/10 that settles overnight.',
               equipment: ['Optional foam roller or chair back'],
               diagram: {
                 key: 'cat-camel',
@@ -317,7 +317,7 @@ const moduleData: ConditionModule = {
                 'Hold briefly, then release under control',
               ],
               painRule:
-                'Pain rule: default — mild discomfort up to about 3/10 that settles overnight.',
+                'Mild discomfort up to about 3/10 that settles overnight.',
               equipment: ['Optional light resistance band'],
               diagram: {
                 key: 'scapular-retraction',
@@ -366,7 +366,7 @@ const moduleData: ConditionModule = {
                 'No jaw clench, no lifting the head',
               ],
               painRule:
-                'Pain rule: default — mild discomfort up to about 3/10 that settles by the next morning.',
+                'Mild discomfort up to about 3/10 that settles by the next morning.',
               diagram: {
                 key: 'chin-tuck',
                 altText:
@@ -392,7 +392,7 @@ const moduleData: ConditionModule = {
                 'Track how the neck feels the morning after harder days',
               ],
               painRule:
-                'Pain rule: default — mild discomfort up to about 3/10 that settles overnight.',
+                'Mild discomfort up to about 3/10 that settles overnight.',
               diagram: {
                 key: 'anatomy-cervical',
                 altText:

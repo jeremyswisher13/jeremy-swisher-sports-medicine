@@ -77,7 +77,7 @@ const moduleData: ConditionModule = {
       channel: 'E3 Rehab',
       channelUrl: 'https://www.youtube.com/@E3Rehab',
       approved: false,
-      note: 'Re-curated to an evidence-based source (E3 Rehab / Rehab Science); pending physician review.',
+      note: 'Re-curated to an evidence-based rehab source; pending physician review.',
     },
     anatomyDiagram: {
       key: 'anatomy-lumbar',
@@ -619,7 +619,7 @@ const moduleData: ConditionModule = {
         citationIds: ['lbp-hayden-2021-cochrane'],
       },
     ],
-    relatedConditionIds: [],
+    relatedConditionIds: ['lumbar-radiculopathy', 'spondylolysis'],
     review: {
       status: 'physician-review-pending',
       contentVersion: '1.0.0',

@@ -78,7 +78,7 @@ const moduleData: ConditionModule = {
       channel: 'E3 Rehab',
       channelUrl: 'https://www.youtube.com/@E3Rehab',
       approved: false,
-      note: 'Re-curated to an evidence-based source (E3 Rehab / Rehab Science); pending physician review.',
+      note: 'Re-curated to an evidence-based rehab source; pending physician review.',
     },
     anatomyDiagram: {
       key: 'anatomy-knee',
@@ -450,7 +450,7 @@ const moduleData: ConditionModule = {
         citationIds: ['kolasinski-2020-acr-oa'],
       },
     ],
-    relatedConditionIds: [],
+    relatedConditionIds: ['patellofemoral-pain', 'patellar-tendinopathy'],
     review: {
       status: 'physician-review-pending',
       contentVersion: '1.0.0',

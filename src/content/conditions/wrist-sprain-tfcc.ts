@@ -78,7 +78,7 @@ const moduleData: ConditionModule = {
       channel: 'E3 Rehab',
       channelUrl: 'https://www.youtube.com/@E3Rehab',
       approved: false,
-      note: 'Re-curated to an evidence-based source (E3 Rehab / Rehab Science); pending physician review.',
+      note: 'Re-curated to an evidence-based rehab source; pending physician review.',
     },
     anatomyDiagram: {
       key: 'anatomy-wrist-thumb',
@@ -274,7 +274,7 @@ const moduleData: ConditionModule = {
                 'Slow turn',
               ],
               painRule:
-                'Pain rule: default — mild pain up to ~3/10 that settles by next morning.',
+                'Mild pain up to ~3/10 that settles by next morning.',
               equipment: ['Optional light hammer or weighted stick for progression'],
               diagram: {
                 key: 'anatomy-wrist-thumb',
@@ -394,7 +394,7 @@ const moduleData: ConditionModule = {
         citationIds: ['wrist-jawed-2020-review'],
       },
     ],
-    relatedConditionIds: [],
+    relatedConditionIds: ['de-quervain-tenosynovitis', 'trigger-finger'],
     review: {
       status: 'physician-review-pending',
       contentVersion: '1.0.0',

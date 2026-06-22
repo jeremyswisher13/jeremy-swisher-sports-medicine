@@ -77,7 +77,7 @@ const moduleData: ConditionModule = {
       channel: 'E3 Rehab',
       channelUrl: 'https://www.youtube.com/@E3Rehab',
       approved: false,
-      note: 'Re-curated to an evidence-based source (E3 Rehab / Rehab Science); pending physician review.',
+      note: 'Re-curated to an evidence-based rehab source; pending physician review.',
     },
     anatomyDiagram: {
       key: 'anatomy-ankle',
@@ -281,7 +281,7 @@ const moduleData: ConditionModule = {
               target: 'Ankle proprioception and stability',
               purpose:
                 'Retrains the balance control that pain reduces — a key recurrence-prevention exercise.',
-              dose: { sets: 3, holdSeconds: 38, notes: '30–45 seconds per set' },
+              dose: { sets: 3, holdSeconds: 30, notes: '30–45 seconds per set' },
               frequency: 'Daily',
               progression: 'Progress to eyes closed, then add head turns, then an unstable surface.',
               regression: 'Use fingertip support on a wall or chair.',
@@ -455,7 +455,7 @@ const moduleData: ConditionModule = {
         citationIds: ['lateral-ankle-sprain-smith-2021-rts'],
       },
     ],
-    relatedConditionIds: [],
+    relatedConditionIds: ['achilles-tendinopathy'],
     review: {
       status: 'physician-review-pending',
       contentVersion: '1.0.0',

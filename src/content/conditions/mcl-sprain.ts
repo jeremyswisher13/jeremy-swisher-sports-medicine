@@ -77,7 +77,7 @@ const moduleData: ConditionModule = {
       channel: 'E3 Rehab',
       channelUrl: 'https://www.youtube.com/c/E3Rehab',
       approved: false,
-      note: 'Re-curated to an evidence-based source (E3 Rehab / Rehab Science); pending physician review.',
+      note: 'Re-curated to an evidence-based rehab source; pending physician review.',
     },
     anatomyDiagram: {
       key: 'anatomy-knee',
@@ -147,7 +147,7 @@ const moduleData: ConditionModule = {
       'A stable, pain-controlled knee with confident cutting and a graded return to sport',
     hep: {
       overview:
-        'A staged home program that protects the healing ligament while restoring motion, quad strength, and side-to-side control. Each phase has a goal and exit criteria — advance when you meet them, not by the calendar. Use the default pain rule throughout: mild pain up to about 3/10 that settles by the next morning.',
+        'A staged home program that protects the healing ligament while restoring motion, quad strength, and side-to-side control. Each phase has a goal and exit criteria — advance when you meet them, not by the calendar. Use the same pain rule throughout: mild pain up to about 3/10 that settles by the next morning.',
       phases: [
         {
           id: 'mcl-sprain-phase-1',
@@ -168,7 +168,7 @@ const moduleData: ConditionModule = {
           ],
           educationPoints: [
             'Early range of motion and quad activation protect the knee better than full rest.',
-            'Some discomfort during exercise is OK if it settles by the next morning (pain rule: default).',
+            'Some discomfort during exercise is OK if it settles by the next morning.',
             'Controlling swelling early makes the next phases easier.',
           ],
           exercises: [
@@ -469,7 +469,7 @@ const moduleData: ConditionModule = {
         citationIds: ['mcl-hss-nonop-guideline'],
       },
     ],
-    relatedConditionIds: [],
+    relatedConditionIds: ['knee-osteoarthritis'],
     review: {
       status: 'physician-review-pending',
       contentVersion: '1.0.0',

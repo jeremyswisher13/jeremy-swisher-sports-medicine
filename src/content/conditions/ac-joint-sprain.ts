@@ -78,7 +78,7 @@ const moduleData: ConditionModule = {
       channel: 'E3 Rehab',
       channelUrl: 'https://www.youtube.com/@E3Rehab',
       approved: false,
-      note: 'Re-curated to an evidence-based source (E3 Rehab / Rehab Science); pending physician review.',
+      note: 'Re-curated to an evidence-based rehab source; pending physician review.',
     },
     anatomyDiagram: {
       key: 'anatomy-shoulder',
@@ -146,7 +146,7 @@ const moduleData: ConditionModule = {
       'Settle pain, protect the healing AC joint, and rebuild shoulder strength for a confident return to pushing, overhead work, and sport',
     hep: {
       overview:
-        'A staged shoulder program that starts with gentle motion, adds rotator cuff and scapular control, and progresses to band-resisted strengthening. Advance by meeting each phase’s goals rather than by the calendar. If a phase flares you, drop back a step. Pain rule: default — mild pain up to about 3/10 that settles by the next morning is acceptable.',
+        'A staged shoulder program that starts with gentle motion, adds rotator cuff and scapular control, and progresses to band-resisted strengthening. Advance by meeting each phase’s goals rather than by the calendar. If a phase flares you, drop back a step. Mild pain up to about 3/10 that settles by the next morning is acceptable.',
       phases: [
         {
           id: 'ac-joint-sprain-phase-1',
@@ -187,7 +187,7 @@ const moduleData: ConditionModule = {
                 'Keep the shoulder muscles relaxed',
               ],
               painRule:
-                'Pain rule: default — mild pain up to about 3/10 that settles by the next morning.',
+                'Mild pain up to about 3/10 that settles by the next morning.',
               diagram: {
                 key: 'pendulum',
                 altText: 'Person bent forward letting the arm hang and swing in gentle circles.',
@@ -210,7 +210,7 @@ const moduleData: ConditionModule = {
                 'Don’t shrug — keep the shoulders down',
               ],
               painRule:
-                'Pain rule: default — mild pain up to about 3/10 that settles by the next morning.',
+                'Mild pain up to about 3/10 that settles by the next morning.',
               diagram: {
                 key: 'scapular-retraction',
                 altText: 'Person gently squeezing the shoulder blades down and back.',
@@ -256,7 +256,7 @@ const moduleData: ConditionModule = {
                 'Lower slowly under control',
               ],
               painRule:
-                'Pain rule: default — mild pain up to about 3/10 that settles by the next morning.',
+                'Mild pain up to about 3/10 that settles by the next morning.',
               equipment: ['A light stick or cane (optional)'],
               diagram: {
                 key: 'anatomy-shoulder',
@@ -281,7 +281,7 @@ const moduleData: ConditionModule = {
                 'Build effort smoothly, then ease off',
               ],
               painRule:
-                'Pain rule: default — mild pain up to about 3/10 that settles by the next morning.',
+                'Mild pain up to about 3/10 that settles by the next morning.',
               diagram: {
                 key: 'cuff-isometric',
                 altText: 'Person pressing the forearm into a wall with the elbow tucked at the side.',
@@ -304,7 +304,7 @@ const moduleData: ConditionModule = {
                 'Keep the shoulders down — no shrug',
               ],
               painRule:
-                'Pain rule: default — mild pain up to about 3/10 that settles by the next morning.',
+                'Mild pain up to about 3/10 that settles by the next morning.',
               equipment: ['Resistance band'],
               diagram: {
                 key: 'scapular-row',
@@ -352,7 +352,7 @@ const moduleData: ConditionModule = {
                 'No shrug',
               ],
               painRule:
-                'pain rule: default (mild pain up to about 3/10 that settles by the next morning)',
+                'Mild pain up to about 3/10 that settles by the next morning',
               equipment: ['Resistance band'],
               diagram: {
                 key: 'scapular-row',
@@ -376,7 +376,7 @@ const moduleData: ConditionModule = {
                 'Keep the shoulders down — no shrug',
               ],
               painRule:
-                'Pain rule: default — mild pain up to about 3/10 that settles by the next morning.',
+                'Mild pain up to about 3/10 that settles by the next morning.',
               equipment: ['Light dumbbells (optional)'],
               diagram: {
                 key: 'anatomy-shoulder',
@@ -400,7 +400,7 @@ const moduleData: ConditionModule = {
                 'Keep the body in a straight line and shoulders down',
               ],
               painRule:
-                'Pain rule: default — mild pain up to about 3/10 that settles by the next morning.',
+                'Mild pain up to about 3/10 that settles by the next morning.',
               cautions: ['Begin against the wall; avoid floor push-ups until tolerated.'],
               diagram: {
                 key: 'plank',
@@ -492,7 +492,7 @@ const moduleData: ConditionModule = {
         citationIds: ['ac-welch-2024-review'],
       },
     ],
-    relatedConditionIds: [],
+    relatedConditionIds: ['rotator-cuff-tendinopathy', 'biceps-tendinopathy'],
     review: {
       status: 'physician-review-pending',
       contentVersion: '1.0.0',

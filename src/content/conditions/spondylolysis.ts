@@ -495,7 +495,7 @@ const moduleData: ConditionModule = {
         citationIds: ['spondylolysis-li-2022-review'],
       },
     ],
-    relatedConditionIds: [],
+    relatedConditionIds: ['low-back-pain', 'lumbar-radiculopathy'],
     review: {
       status: 'physician-review-pending',
       contentVersion: '1.0.0',

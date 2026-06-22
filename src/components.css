@@ -253,6 +253,42 @@
   overflow: hidden;
 }
 
+/* --- related conditions (condition page) --------------------------------- */
+.related-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  padding: 1rem 1.2rem 1.2rem;
+}
+
+.related-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface-2);
+  color: var(--text);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.45rem 0.5rem 0.45rem 0.9rem;
+  transition: border-color var(--ease), color var(--ease), background var(--ease);
+}
+
+.related-chip:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--surface);
+}
+
+.related-chip svg {
+  color: var(--subtle);
+}
+
+.related-chip:hover svg {
+  color: var(--accent);
+}
+
 .continue-list {
   display: grid;
 }

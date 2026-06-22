@@ -391,7 +391,7 @@ const moduleData: ConditionModule = {
               name: 'Band lateral walk',
               target: 'Frontal-plane hip control',
               purpose: 'Improves proximal (hip) endurance for knee control.',
-              dose: { sets: 1, reps: '10 to 15 steps each way', notes: '2 to 3 sets' },
+              dose: { sets: 3, reps: '10 to 15 steps each way' },
               frequency: '3 to 5 days/week',
               progression: 'Progress band tension.',
               regression: 'Regress to unbanded marching.',
@@ -677,7 +677,7 @@ const moduleData: ConditionModule = {
         citationIds: ['patellofemoral-jospt-2019-cpg'],
       },
     ],
-    relatedConditionIds: [],
+    relatedConditionIds: ['patellar-tendinopathy', 'knee-osteoarthritis', 'it-band-syndrome'],
     review: {
       status: 'physician-review-pending',
       contentVersion: '1.0.0',

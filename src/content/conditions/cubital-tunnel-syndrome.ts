@@ -77,7 +77,7 @@ const moduleData: ConditionModule = {
       channel: 'Rehab Science',
       channelUrl: 'https://www.youtube.com/@RehabScience',
       approved: false,
-      note: 'Re-curated to an evidence-based source (E3 Rehab / Rehab Science); pending physician review.',
+      note: 'Re-curated to an evidence-based rehab source; pending physician review.',
     },
     anatomyDiagram: {
       key: 'anatomy-elbow',
@@ -266,7 +266,7 @@ const moduleData: ConditionModule = {
               target: 'Ulnar nerve (neural mobility)',
               purpose:
                 'Targets neural mobility, helping the ulnar nerve move freely through the cubital tunnel without irritation.',
-              dose: { sets: 1, reps: '8–10', notes: '1 to 2 sets of 8–10' },
+              dose: { sets: 1, reps: '8–10', notes: 'Build to 2 sets as tolerated' },
               frequency: '1–2 times/day',
               progression:
                 'Progress only if non-irritating; add the second set or a slightly larger range as tolerated.',
@@ -452,7 +452,7 @@ const moduleData: ConditionModule = {
         citationIds: ['cubital-wieczorek-2024-conservative'],
       },
     ],
-    relatedConditionIds: [],
+    relatedConditionIds: ['golfers-elbow', 'cervical-radiculopathy'],
     review: {
       status: 'physician-review-pending',
       contentVersion: '1.0.0',

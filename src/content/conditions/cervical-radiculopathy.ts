@@ -69,7 +69,7 @@ const moduleData: ConditionModule = {
       channel: 'E3 Rehab',
       channelUrl: 'https://www.youtube.com/c/E3Rehab',
       approved: false,
-      note: 'Re-curated to an evidence-based source (E3 Rehab / Rehab Science); pending physician review.',
+      note: 'Re-curated to an evidence-based rehab source; pending physician review.',
     },
     anatomyDiagram: {
       key: 'anatomy-cervical',
@@ -186,7 +186,7 @@ const moduleData: ConditionModule = {
               target: 'Cervical nerve root / directional preference',
               purpose:
                 'A directional-preference movement that can reduce and centralize arm symptoms when retraction is the helpful direction.',
-              dose: { sets: 2, reps: '10', notes: '2 x 10, 3–5 times/day' },
+              dose: { sets: 2, reps: '10' },
               frequency: '3–5 times/day',
               progression: 'Progress gentle extension only if symptoms centralize.',
               regression:
@@ -494,7 +494,7 @@ const moduleData: ConditionModule = {
         citationIds: ['cervical-rad-statpearls-2025'],
       },
     ],
-    relatedConditionIds: [],
+    relatedConditionIds: ['mechanical-neck-pain', 'cubital-tunnel-syndrome'],
     review: {
       status: 'physician-review-pending',
       contentVersion: '1.0.0',

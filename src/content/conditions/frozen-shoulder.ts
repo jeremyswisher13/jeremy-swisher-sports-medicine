@@ -81,7 +81,7 @@ const moduleData: ConditionModule = {
       channel: 'E3 Rehab',
       channelUrl: 'https://www.youtube.com/@E3Rehab',
       approved: false,
-      note: 'Re-curated to an evidence-based source (E3 Rehab / Rehab Science); pending physician review.',
+      note: 'Re-curated to an evidence-based rehab source; pending physician review.',
     },
     anatomyDiagram: {
       key: 'anatomy-shoulder',
@@ -409,7 +409,7 @@ const moduleData: ConditionModule = {
         procedureId: 'hyaluronic-acid',
         relevance: 'rarely',
         evidenceNote:
-          'Not a routine option for frozen shoulder (hydrodilatation — a different procedure — is the selected-case option).',
+          'Not a routine option for frozen shoulder.',
       },
       {
         procedureId: 'shockwave',
@@ -455,7 +455,7 @@ const moduleData: ConditionModule = {
         citationIds: ['frozen-challoumas-2020-nma'],
       },
     ],
-    relatedConditionIds: [],
+    relatedConditionIds: ['rotator-cuff-tendinopathy', 'biceps-tendinopathy'],
     review: {
       status: 'physician-review-pending',
       contentVersion: '1.0.0',

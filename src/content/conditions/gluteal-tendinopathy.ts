@@ -80,7 +80,7 @@ const moduleData: ConditionModule = {
       channel: 'E3 Rehab',
       channelUrl: 'https://www.youtube.com/@E3Rehab',
       approved: false,
-      note: 'Re-curated to an evidence-based source (E3 Rehab / Rehab Science); pending physician review.',
+      note: 'Re-curated to an evidence-based rehab source; pending physician review.',
     },
     anatomyDiagram: {
       key: 'anatomy-hip',
@@ -142,7 +142,7 @@ const moduleData: ConditionModule = {
         'Adjust sleep position: avoid lying directly on the sore side; a pillow between the knees when on your back or other side helps.',
         'Do your hip-abductor exercises consistently — isometric holds early, then progressive strengthening.',
         'Use the pain-monitoring rule: discomfort up to about 3/10 during exercise is acceptable if it settles by the next morning.',
-        'Manage walking/running volume so symptoms stay stable rather than spiking it.',
+        'Manage your walking/running volume so symptoms stay stable — avoid sudden jumps in distance or pace.',
       ],
       donts: [
         'Don’t "hang" on one hip when standing or stand with your weight slumped to one side.',
@@ -478,7 +478,7 @@ const moduleData: ConditionModule = {
         citationIds: ['gluteal-kjeldsen-2024-sr'],
       },
     ],
-    relatedConditionIds: [],
+    relatedConditionIds: ['hip-osteoarthritis', 'proximal-hamstring-tendinopathy'],
     review: {
       status: 'physician-review-pending',
       contentVersion: '1.0.0',

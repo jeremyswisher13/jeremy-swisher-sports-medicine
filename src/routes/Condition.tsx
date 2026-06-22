@@ -30,6 +30,7 @@ export function ConditionRoute() {
   if (!condition) return <NotFound />
 
   const region = getRegion(condition.region)
+  const related = condition.relatedConditionIds ?? []
 
   return (
     <section className="content-grid">
@@ -187,6 +188,26 @@ export function ConditionRoute() {
             <p className="return-timeline">{condition.returnToActivity.timelineGuidance}</p>
           </div>
         </section>
+
+        {related.length > 0 && (
+          <section className="panel related-panel">
+            <div className="panel-title-row">
+              <h2>Related conditions</h2>
+            </div>
+            <div className="related-list">
+              {related.map((id) => {
+                const rc = conditionById.get(id)
+                if (!rc) return null
+                return (
+                  <Link key={id} to={`/condition/${rc.slug}`} className="related-chip">
+                    <span>{rc.name}</span>
+                    <Icon name="chevronRight" size={15} />
+                  </Link>
+                )
+              })}
+            </div>
+          </section>
+        )}
       </div>
 
       <aside className="right-rail" aria-label="Evidence and safety">

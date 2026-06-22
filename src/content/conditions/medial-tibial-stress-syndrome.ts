@@ -70,7 +70,7 @@ const moduleData: ConditionModule = {
     oneLiner:
       'Exercise-related pain along the inner shin from bone stress and soft-tissue overload that improves with reduced impact and progressive lower-leg loading.',
     overview:
-      'Medial tibial stress syndrome (MTSS), often called shin splints, is exercise-related pain along the inner edge of the shin — the distal posteromedial tibial border. It usually shows up when training load goes up faster than the leg can adapt.\n\nIt is thought to reflect a bone-stress and soft-tissue-load problem rather than one single inflamed muscle or fascia. In other words, the shin bone and the muscles that attach to it are being asked to handle more impact than they are currently used to.\n\nThe good news is that most cases settle with a smart plan: temporarily reducing impact volume, building lower-leg strength, and returning to running gradually. The most important thing your clinician will watch for is whether the pain is a stress fracture rather than MTSS, because that changes the plan.',
+      'Medial tibial stress syndrome (MTSS), often called shin splints, is exercise-related pain along the inner edge of the shin (the lower inner part of the shin bone). It usually shows up when training load goes up faster than the leg can adapt.\n\nIt is thought to reflect a bone-stress and soft-tissue-load problem rather than one single inflamed muscle or fascia. In other words, the shin bone and the muscles that attach to it are being asked to handle more impact than they are currently used to.\n\nThe good news is that most cases settle with a smart plan: temporarily reducing impact volume, building lower-leg strength, and returning to running gradually. The most important thing your clinician will watch for is whether the pain is a stress fracture rather than MTSS, because that changes the plan.',
     tissue:
       'The distal posteromedial border of the tibia (shin bone) and the soft tissues — including the surrounding muscles and fascia — that load it.',
     video: {
@@ -79,7 +79,7 @@ const moduleData: ConditionModule = {
       channel: 'E3 Rehab',
       channelUrl: 'https://www.youtube.com/@E3Rehab',
       approved: false,
-      note: 'Re-curated to an evidence-based source (E3 Rehab / Rehab Science); pending physician review.',
+      note: 'Re-curated to an evidence-based rehab source; pending physician review.',
     },
     anatomyDiagram: {
       key: 'anatomy-tibia',
@@ -149,7 +149,7 @@ const moduleData: ConditionModule = {
       'A pain-free, durable return to running and impact sport through load management and progressive lower-leg strengthening — while ruling out tibial stress fracture.',
     hep: {
       overview:
-        'A staged lower-leg loading program: settle the irritable shin by reducing impact, rebuild calf and foot/tibialis posterior strength, then graduate back to running with a run-walk progression. Move on by meeting each phase’s criteria, not the calendar — if a phase flares the shin, step back. Use the default pain rule throughout: mild discomfort up to about 3/10 that settles by the next morning is acceptable.',
+        'A staged lower-leg loading program: settle the irritable shin by reducing impact, rebuild calf and foot/tibialis posterior strength, then graduate back to running with a run-walk progression. Move on by meeting each phase’s criteria, not the calendar — if a phase flares the shin, step back. Use the same pain rule throughout: mild discomfort up to about 3/10 that settles by the next morning is acceptable.',
       phases: [
         {
           id: 'medial-tibial-stress-syndrome-phase-1',
@@ -212,7 +212,7 @@ const moduleData: ConditionModule = {
                 'Tripod foot (weight through big toe, little toe, and heel)',
                 'No bounce',
               ],
-              painRule: 'Pain rule: default (mild discomfort up to ~3/10 that settles by next morning).',
+              painRule: 'Mild discomfort up to ~3/10 that settles by next morning.',
               equipment: ['A wall or rail for balance'],
               diagram: {
                 key: 'calf-raise',
@@ -259,7 +259,7 @@ const moduleData: ConditionModule = {
                 'Tripod foot',
                 'No bounce',
               ],
-              painRule: 'Pain rule: default (mild discomfort up to ~3/10 that settles by next morning).',
+              painRule: 'Mild discomfort up to ~3/10 that settles by next morning.',
               equipment: ['A wall or rail for balance', 'Optional dumbbell or backpack'],
               diagram: {
                 key: 'single-leg-calf-raise',
@@ -281,7 +281,7 @@ const moduleData: ConditionModule = {
                 'Keep the movement slow and controlled',
                 'Hold a tall arch — avoid letting the foot collapse',
               ],
-              painRule: 'Pain rule: default (mild discomfort up to ~3/10 that settles by next morning).',
+              painRule: 'Mild discomfort up to ~3/10 that settles by next morning.',
               equipment: ['Resistance band'],
               diagram: {
                 key: 'ankle-balance',
@@ -327,7 +327,7 @@ const moduleData: ConditionModule = {
                 'Advance only when next-day shin symptoms are stable',
                 'Build mileage slowly',
               ],
-              painRule: 'Pain rule: default (mild discomfort up to ~3/10 that settles by next morning).',
+              painRule: 'Mild discomfort up to ~3/10 that settles by next morning.',
               diagram: {
                 key: 'ankle-balance',
                 altText: 'Person jogging during a graded run-walk return-to-running progression.',
@@ -347,7 +347,7 @@ const moduleData: ConditionModule = {
                 'Slow lower',
                 'Tripod foot',
               ],
-              painRule: 'Pain rule: default (mild discomfort up to ~3/10 that settles by next morning).',
+              painRule: 'Mild discomfort up to ~3/10 that settles by next morning.',
               diagram: {
                 key: 'single-leg-calf-raise',
                 altText: 'Person performing a calf raise as ongoing lower-leg maintenance strength.',
@@ -437,7 +437,7 @@ const moduleData: ConditionModule = {
         citationIds: ['mtss-menendez-2020-systematicreview'],
       },
     ],
-    relatedConditionIds: [],
+    relatedConditionIds: ['achilles-tendinopathy', 'plantar-heel-pain'],
     review: {
       status: 'physician-review-pending',
       contentVersion: '1.0.0',

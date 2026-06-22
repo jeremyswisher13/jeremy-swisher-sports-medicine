@@ -78,7 +78,7 @@ const moduleData: ConditionModule = {
       channel: 'E3 Rehab',
       channelUrl: 'https://www.youtube.com/@E3Rehab',
       approved: false,
-      note: 'Re-curated to an evidence-based source (E3 Rehab / Rehab Science); pending physician review.',
+      note: 'Re-curated to an evidence-based rehab source; pending physician review.',
     },
     anatomyDiagram: {
       key: 'anatomy-elbow',
@@ -149,7 +149,7 @@ const moduleData: ConditionModule = {
       'Pain-controlled gripping and forearm load with a durable return to golf, throwing, and lifting',
     hep: {
       overview:
-        'A staged forearm-loading program that mirrors tendinopathy loading principles: settle the tendon with isometrics, build strength with eccentric/loaded wrist flexion and pronation and grip endurance, then a gradual return to throwing and gripping. Move on when you meet each phase\'s exit criteria, not by the calendar. Pain rule: default — mild pain up to about 3/10 during exercise is OK if it settles by the next morning.',
+        'A staged forearm-loading program that mirrors tendinopathy loading principles: settle the tendon with isometrics, build strength with eccentric/loaded wrist flexion and pronation and grip endurance, then a gradual return to throwing and gripping. Move on when you meet each phase\'s exit criteria, not by the calendar. Mild pain up to about 3/10 during exercise is OK if it settles by the next morning.',
       phases: [
         {
           id: 'golfers-elbow-phase-1',
@@ -260,7 +260,7 @@ const moduleData: ConditionModule = {
                 'No shoulder shrug',
                 'Pain stays mild',
               ],
-              painRule: 'Pain rule: default — mild pain up to ~3/10 that settles by next morning.',
+              painRule: 'Mild pain up to ~3/10 that settles by next morning.',
               equipment: ['Light dumbbell', 'A table or bench for forearm support'],
               diagram: {
                 key: 'eccentric-wrist-flexion',
@@ -284,7 +284,7 @@ const moduleData: ConditionModule = {
                 'Keep the wrist neutral',
                 'No shoulder shrug',
               ],
-              painRule: 'Pain rule: default — mild pain up to ~3/10 that settles by next morning.',
+              painRule: 'Mild pain up to ~3/10 that settles by next morning.',
               equipment: ['Hammer or weighted bar'],
               diagram: {
                 key: 'eccentric-wrist-flexion',
@@ -307,7 +307,7 @@ const moduleData: ConditionModule = {
                 'Steady, controlled squeeze and release',
                 'Keep the forearm relaxed between reps',
               ],
-              painRule: 'Pain rule: default — mild pain up to ~3/10 that settles by next morning.',
+              painRule: 'Mild pain up to ~3/10 that settles by next morning.',
               equipment: ['Soft ball or grip trainer'],
               diagram: {
                 key: 'grip-squeeze',
@@ -357,7 +357,7 @@ const moduleData: ConditionModule = {
                 'Advance only when next-day symptoms are stable',
                 'Track how the inner elbow feels the morning after',
               ],
-              painRule: 'Pain rule: default — mild pain up to ~3/10 that settles by next morning.',
+              painRule: 'Mild pain up to ~3/10 that settles by next morning.',
               diagram: {
                 key: 'anatomy-elbow',
                 altText: 'Person performing a controlled throwing or gripping motion.',
@@ -377,7 +377,7 @@ const moduleData: ConditionModule = {
                 'Train both wrist flexion and pronation',
                 'No shoulder shrug',
               ],
-              painRule: 'Pain rule: default — mild pain up to ~3/10 that settles by next morning.',
+              painRule: 'Mild pain up to ~3/10 that settles by next morning.',
               equipment: ['Light dumbbell or grip trainer'],
               diagram: {
                 key: 'eccentric-wrist-flexion',
@@ -474,7 +474,7 @@ const moduleData: ConditionModule = {
         citationIds: ['golfers-reece-2025-statpearls'],
       },
     ],
-    relatedConditionIds: [],
+    relatedConditionIds: ['tennis-elbow', 'cubital-tunnel-syndrome'],
     review: {
       status: 'physician-review-pending',
       contentVersion: '1.0.0',

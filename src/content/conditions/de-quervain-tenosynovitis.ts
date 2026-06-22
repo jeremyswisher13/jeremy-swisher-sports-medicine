@@ -111,7 +111,7 @@ const moduleData: ConditionModule = {
       typicalTimeline:
         'Many improve over 2 to 8 weeks with rest, activity modification, and gradual strengthening.',
       encouragement:
-        'Most thumb-side wrist pain settles with patient activity modification and a gradual return to gripping and pinching. When symptoms persist, an injection plus short immobilization is an effective next step.',
+        'Most thumb-side wrist pain settles with steady activity modification and a gradual return to gripping and pinching. When symptoms persist, an injection plus short immobilization is an effective next step.',
     },
     redFlags: [
       {
@@ -219,7 +219,7 @@ const moduleData: ConditionModule = {
                 'Abductor pollicis longus and extensor pollicis brevis (first dorsal compartment)',
               purpose:
                 'Builds early thumb strength with a static hold that loads the tendons without much movement.',
-              dose: { sets: 5, holdSeconds: 20, notes: '5 x 15–20 sec' },
+              dose: { sets: 5, holdSeconds: 20 },
               frequency: 'Daily',
               progression: 'Progress band resistance later.',
               regression: 'Regress lighter effort.',
@@ -230,7 +230,7 @@ const moduleData: ConditionModule = {
                 'Relax shoulders',
               ],
               painRule:
-                'Pain rule: default — mild discomfort up to ~3/10 during the hold that settles by the next morning.',
+                'Mild discomfort up to ~3/10 during the hold that settles by the next morning.',
               diagram: {
                 key: 'thumb-tendon-glide',
                 altText:
@@ -426,7 +426,7 @@ const moduleData: ConditionModule = {
         a: 'See a clinician if you have persistent swelling, catching, or numbness, or if a splint-and-load program has not helped.',
       },
     ],
-    relatedConditionIds: [],
+    relatedConditionIds: ['trigger-finger', 'wrist-sprain-tfcc'],
     review: {
       status: 'physician-review-pending',
       contentVersion: '1.0.0',

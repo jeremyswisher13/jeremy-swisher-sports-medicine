@@ -78,7 +78,7 @@ const moduleData: ConditionModule = {
       channel: 'E3 Rehab',
       channelUrl: 'https://www.youtube.com/@E3Rehab',
       approved: false,
-      note: 'Re-curated to an evidence-based source (E3 Rehab / Rehab Science); pending physician review.',
+      note: 'Re-curated to an evidence-based rehab source; pending physician review.',
     },
     anatomyDiagram: {
       key: 'anatomy-knee',
@@ -251,7 +251,7 @@ const moduleData: ConditionModule = {
             {
               id: 'itb-clamshell',
               name: 'Clamshell',
-              target: 'Gluteus medius / hip abductors',
+              target: 'Hip abductors (side-hip muscles)',
               purpose:
                 'Activates and strengthens the hip abductors that control the knee.',
               dose: { sets: 3, reps: '8–12' },
@@ -278,7 +278,7 @@ const moduleData: ConditionModule = {
             {
               id: 'itb-side-lying-abduction',
               name: 'Side-lying hip abduction',
-              target: 'Gluteus medius / hip abductors',
+              target: 'Hip abductors (side-hip muscles)',
               purpose:
                 'Directly loads the hip abductors to rebuild lateral hip strength.',
               dose: { sets: 3, reps: '8–12' },
@@ -550,7 +550,7 @@ const moduleData: ConditionModule = {
         citationIds: ['itb-sanchez-alvarado-2024'],
       },
     ],
-    relatedConditionIds: [],
+    relatedConditionIds: ['patellofemoral-pain', 'knee-osteoarthritis'],
     review: {
       status: 'physician-review-pending',
       contentVersion: '1.0.0',

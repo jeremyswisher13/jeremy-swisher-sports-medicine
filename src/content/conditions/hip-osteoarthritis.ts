@@ -78,7 +78,7 @@ const moduleData: ConditionModule = {
       channel: 'E3 Rehab',
       channelUrl: 'https://www.youtube.com/c/E3Rehab',
       approved: false,
-      note: 'Re-curated to an evidence-based source (E3 Rehab / Rehab Science); pending physician review.',
+      note: 'Re-curated to an evidence-based rehab source; pending physician review.',
     },
     anatomyDiagram: {
       key: 'anatomy-hip',
@@ -102,7 +102,7 @@ const moduleData: ConditionModule = {
     symptoms: [
       'Deep groin pain',
       'Stiffness',
-      'Trouble with shoes/socks',
+      'Trouble putting on shoes or socks',
       'Difficulty walking',
       'Difficulty getting up from chairs',
     ],
@@ -223,7 +223,7 @@ const moduleData: ConditionModule = {
                 'Control down — no flopping into the chair',
                 'Keep breathing throughout',
               ],
-              painRule: 'Pain rule: default (mild pain ≤3/10 that settles by morning).',
+              painRule: 'Mild pain ≤3/10 that settles by morning.',
               equipment: ['A sturdy chair'],
               diagram: {
                 key: 'wall-sit',
@@ -249,7 +249,7 @@ const moduleData: ConditionModule = {
                 'Control the lower down',
                 'Keep breathing throughout',
               ],
-              painRule: 'Pain rule: default (mild pain ≤3/10 that settles by morning).',
+              painRule: 'Mild pain ≤3/10 that settles by morning.',
               equipment: ['A mat or comfortable surface'],
               diagram: {
                 key: 'glute-bridge',
@@ -299,7 +299,7 @@ const moduleData: ConditionModule = {
                 'Lead with the heel when side-lying',
                 'Keep breathing throughout',
               ],
-              painRule: 'Pain rule: default (mild pain ≤3/10 that settles by morning).',
+              painRule: 'Mild pain ≤3/10 that settles by morning.',
               equipment: ['Optional resistance band', 'A mat'],
               diagram: {
                 key: 'side-lying-hip-abduction',
@@ -325,7 +325,7 @@ const moduleData: ConditionModule = {
                 'Control down',
                 'Keep breathing throughout',
               ],
-              painRule: 'Pain rule: default (mild pain ≤3/10 that settles by morning).',
+              painRule: 'Mild pain ≤3/10 that settles by morning.',
               equipment: ['A sturdy chair', 'Optional weight to hold'],
               diagram: {
                 key: 'wall-sit',
@@ -375,7 +375,7 @@ const moduleData: ConditionModule = {
                 'Lower under control',
                 'Keep breathing throughout',
               ],
-              painRule: 'Pain rule: default (mild pain ≤3/10 that settles by morning).',
+              painRule: 'Mild pain ≤3/10 that settles by morning.',
               cautions: [
                 'Use support as needed; this is a balance and strength challenge.',
               ],
@@ -502,7 +502,7 @@ const moduleData: ConditionModule = {
         citationIds: ['hip-oa-nice-ng226-2022'],
       },
     ],
-    relatedConditionIds: [],
+    relatedConditionIds: ['gluteal-tendinopathy', 'femoroacetabular-impingement'],
     review: {
       status: 'physician-review-pending',
       contentVersion: '1.0.0',

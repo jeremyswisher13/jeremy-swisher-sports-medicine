@@ -38,7 +38,7 @@ const citations: Citation[] = [
     id: 'femoroacetabular-griffin-2018-rct',
     label: 'Griffin 2018 — FASHIoN RCT (Lancet)',
     authorsOrOrg: 'Griffin DR, et al.',
-    source: 'Lancet/BMJ-linked trial report',
+    source: 'The Lancet',
     year: 2018,
     type: 'rct',
     url: 'https://pubmed.ncbi.nlm.nih.gov/29893223/',
@@ -79,7 +79,7 @@ const moduleData: ConditionModule = {
       channel: 'E3 Rehab',
       channelUrl: 'https://www.youtube.com/@E3Rehab',
       approved: false,
-      note: 'Re-curated to an evidence-based source (E3 Rehab / Rehab Science); pending physician review.',
+      note: 'Re-curated to an evidence-based rehab source; pending physician review.',
     },
     anatomyDiagram: {
       key: 'anatomy-hip',
@@ -256,7 +256,7 @@ const moduleData: ConditionModule = {
               dose: { sets: 3, reps: '10–12', tempo: '2s up, 2s down' },
               frequency: 'Daily or every other day',
               progression:
-                'Progress to single-leg or add load as tolerated; regress shorter hold if needed.',
+                'Progress to single-leg or add load as tolerated.',
               regression: 'Shorten the hold or use a smaller range.',
               formCues: [
                 'Push through the heels',
@@ -371,7 +371,7 @@ const moduleData: ConditionModule = {
               aka: ['Loaded glute bridge'],
               target: 'Gluteal muscles and posterior hip',
               purpose:
-                'Continues hip extension strengthening, progressing to single-leg or added load. Specified in the source as the core bridge exercise.',
+                'Continues hip extension strengthening, progressing to single-leg or added load.',
               dose: { sets: 3, reps: '8–12' },
               frequency: '3x/week',
               progression:
@@ -383,7 +383,7 @@ const moduleData: ConditionModule = {
                 'Knees stay hip-width — “knees hip-width”',
                 'No pinch in the front of the hip — “no pinch in front of hip”',
               ],
-              painRule: 'Pain rule: default — mild discomfort up to ~3/10 that settles by the next morning.',
+              painRule: 'Mild discomfort up to ~3/10 that settles by the next morning.',
               equipment: ['Optional weight for added load'],
               diagram: {
                 key: 'glute-bridge',
@@ -581,7 +581,7 @@ const moduleData: ConditionModule = {
         citationIds: ['femoroacetabular-aaos-orthoinfo'],
       },
     ],
-    relatedConditionIds: [],
+    relatedConditionIds: ['hip-osteoarthritis', 'gluteal-tendinopathy'],
     review: {
       status: 'physician-review-pending',
       contentVersion: '1.0.0',

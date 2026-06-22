@@ -176,7 +176,7 @@ const moduleData: ConditionModule = {
               target: 'Patellar tendon and quadriceps',
               purpose:
                 'A sustained isometric hold that loads the patellar tendon and can reduce pain while building early strength.',
-              dose: { sets: 5, holdSeconds: 38, notes: '5 × 30–45 sec' },
+              dose: { sets: 5, holdSeconds: 45, notes: '5 × 30–45 sec' },
               frequency: 'Daily / as needed',
               progression: 'Progress to longer holds or a deeper squat position.',
               regression: 'Make the hold shallower (less knee bend).',
@@ -434,7 +434,7 @@ const moduleData: ConditionModule = {
         citationIds: ['patellar-malliaras-2015-review'],
       },
     ],
-    relatedConditionIds: [],
+    relatedConditionIds: ['patellofemoral-pain', 'knee-osteoarthritis'],
     review: {
       status: 'physician-review-pending',
       contentVersion: '1.0.0',
