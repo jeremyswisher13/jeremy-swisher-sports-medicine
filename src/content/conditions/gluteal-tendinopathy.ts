@@ -120,8 +120,8 @@ const moduleData: ConditionModule = {
         urgency: 'urgent',
       },
       {
-        text: 'Fever.',
-        urgency: 'urgent',
+        text: 'Fever with a hot, red, or swollen hip, or an inability to move the hip — this can signal a joint infection and needs emergency care.',
+        urgency: 'emergency',
       },
       {
         text: 'Groin-dominant pain suggesting something else (e.g., hip joint pathology).',

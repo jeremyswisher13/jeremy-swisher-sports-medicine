@@ -148,7 +148,7 @@ const moduleData: ConditionModule = {
       },
       {
         text: 'Myelopathic signs (such as clumsy hands, balance trouble, or coordination changes).',
-        urgency: 'urgent',
+        urgency: 'emergency',
       },
       {
         text: 'Persistent arm symptoms.',

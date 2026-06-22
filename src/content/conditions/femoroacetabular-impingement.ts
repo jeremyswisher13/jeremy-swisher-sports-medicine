@@ -116,6 +116,10 @@ const moduleData: ConditionModule = {
     },
     redFlags: [
       {
+        text: 'Fever with a hot, swollen, or severely painful hip, or rapidly worsening groin pain you cannot bear weight on without an injury — this can signal a joint infection and needs emergency care.',
+        urgency: 'emergency',
+      },
+      {
         text: 'Inability to bear weight after trauma.',
         urgency: 'urgent',
       },

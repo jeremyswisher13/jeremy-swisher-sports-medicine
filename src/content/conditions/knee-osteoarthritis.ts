@@ -114,8 +114,8 @@ const moduleData: ConditionModule = {
     },
     redFlags: [
       {
-        text: 'A hot, red, swollen knee with fever — this can signal a joint infection and needs urgent evaluation.',
-        urgency: 'urgent',
+        text: 'A hot, red, swollen knee with fever — this can signal a joint infection (septic arthritis) and needs emergency evaluation right away.',
+        urgency: 'emergency',
       },
       {
         text: 'Inability to bear weight after trauma.',
@@ -376,7 +376,7 @@ const moduleData: ConditionModule = {
         'Exercise and progressive strengthening of the muscles around the knee',
         'Education and self-management',
         'Weight loss when body-weight load is relevant',
-        'Topical or oral NSAIDs in appropriate patients',
+        'Topical or oral NSAIDs in appropriate patients — use the lowest effective dose for the shortest time, and check with your clinician before regular use if you have stomach, kidney, heart, or blood-pressure problems or take blood thinners (topical NSAIDs are often preferred first, especially in older adults)',
       ],
       whatsUncertain: [
         'PRP wording intentionally reflects controversy — the evidence for PRP in knee OA is genuinely mixed.',

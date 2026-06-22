@@ -101,7 +101,11 @@ const moduleData: ConditionModule = {
     },
     redFlags: [
       {
-        text: 'Neurologic deficit (numbness, weakness, or changes in bowel or bladder control).',
+        text: 'Loss of bladder or bowel control, or numbness around the groin or saddle area — go to the emergency department now (possible cauda equina syndrome).',
+        urgency: 'emergency',
+      },
+      {
+        text: 'New or progressive numbness or weakness in the legs.',
         urgency: 'urgent',
       },
       {

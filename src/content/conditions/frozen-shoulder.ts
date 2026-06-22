@@ -123,6 +123,10 @@ const moduleData: ConditionModule = {
         urgency: 'urgent',
       },
       {
+        text: 'Constant or night pain unrelated to position or movement, unexplained weight loss, a new lump, or new numbness, tingling, or weakness in the arm or hand — these warrant evaluation for causes other than a frozen shoulder.',
+        urgency: 'see-clinician',
+      },
+      {
         text: 'Progressive, severe stiffness.',
         urgency: 'see-clinician',
       },

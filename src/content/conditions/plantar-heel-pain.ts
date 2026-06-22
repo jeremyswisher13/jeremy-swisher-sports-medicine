@@ -410,7 +410,7 @@ const moduleData: ConditionModule = {
         'Extracorporeal shockwave therapy (ESWT) for persistent cases',
       ],
       whatsUncertain: [
-        'Corticosteroid injection gives short-term relief but carries recurrence and fat-pad atrophy concerns.',
+        'Corticosteroid injection gives short-term relief but carries recurrence, fat-pad atrophy, and (uncommonly) plantar fascia rupture concerns.',
         'PRP results remain variable for plantar heel pain.',
         'The optimal strengthening dose and the added value of ESWT over loading alone are not fully settled.',
       ],
@@ -425,7 +425,7 @@ const moduleData: ConditionModule = {
         procedureId: 'corticosteroid',
         relevance: 'commonly-discussed',
         evidenceNote:
-          'Commonly discussed; short-term relief only, with recurrence and fat-pad atrophy concerns.',
+          'Commonly discussed; short-term relief only, with recurrence, fat-pad atrophy, and a risk of plantar fascia rupture.',
         citationIds: ['plantar-cortes-2024-sr'],
       },
       {
@@ -483,7 +483,7 @@ const moduleData: ConditionModule = {
       },
       {
         q: 'Do I need a steroid injection?',
-        a: 'Stretching and progressive strengthening are first-line. A corticosteroid injection is commonly discussed and can give short-term relief, but it carries recurrence and fat-pad atrophy concerns, so it is usually not the first step. ESWT is a reasonable option for persistent cases.',
+        a: 'Stretching and progressive strengthening are first-line. A corticosteroid injection is commonly discussed and can give short-term relief, but it carries recurrence, fat-pad atrophy, and (uncommonly) plantar fascia rupture concerns, so it is usually not the first step. ESWT is a reasonable option for persistent cases.',
         citationIds: ['plantar-cortes-2024-sr', 'plantar-rathleff-2015-rct'],
       },
       {

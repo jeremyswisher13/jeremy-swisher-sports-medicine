@@ -114,6 +114,14 @@ const moduleData: ConditionModule = {
     },
     redFlags: [
       {
+        text: 'New numbness or tingling in the hand, a cold, pale, or dusky hand, or rapidly worsening pain out of proportion after wrist trauma — go to the emergency department (possible nerve, blood-vessel, or compartment problem).',
+        urgency: 'emergency',
+      },
+      {
+        text: 'A hot, red, swollen wrist with fever or feeling unwell — this can signal a joint infection and needs emergency care.',
+        urgency: 'emergency',
+      },
+      {
         text: 'Major trauma to the wrist.',
         urgency: 'urgent',
       },

@@ -166,7 +166,11 @@ const moduleData: ConditionModule = {
         urgency: 'urgent',
       },
       {
-        text: 'Suspected septic or inflammatory joint disease.',
+        text: 'Suspected septic (infected) joint — a hot, swollen knee with fever or feeling unwell.',
+        urgency: 'emergency',
+      },
+      {
+        text: 'Suspected inflammatory joint disease (e.g., a crystal or rheumatologic flare).',
         urgency: 'urgent',
       },
       {

@@ -412,8 +412,8 @@ const moduleData: ConditionModule = {
       },
       {
         procedureId: 'ultrasound-guided',
-        relevance: 'selected-cases',
-        evidenceNote: 'Ultrasound-guided injection: selected cases only.',
+        relevance: 'rarely',
+        evidenceNote: 'Ultrasound-guided (perineural) injection is rarely used here; like a corticosteroid injection it is not a routine treatment for cubital tunnel syndrome.',
       },
       {
         procedureId: 'tenotomy',

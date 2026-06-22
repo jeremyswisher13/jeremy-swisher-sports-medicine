@@ -113,6 +113,10 @@ const moduleData: ConditionModule = {
     },
     redFlags: [
       {
+        text: 'A cold, pale, or pulseless foot, or new numbness or foot-drop after the injury — go to the emergency department (possible blood-vessel or nerve injury from a high-energy knee injury or knee dislocation).',
+        urgency: 'emergency',
+      },
+      {
         text: 'Inability to bear weight on the leg.',
         urgency: 'urgent',
       },

@@ -113,7 +113,11 @@ const moduleData: ConditionModule = {
     },
     redFlags: [
       {
-        text: 'Inability to bear weight, bony tenderness, or deformity after the injury — get evaluated to rule out a fracture (Ottawa ankle rules).',
+        text: 'An obviously deformed, angulated, or dislocated-looking ankle after the injury — go to the emergency department immediately (possible fracture-dislocation).',
+        urgency: 'emergency',
+      },
+      {
+        text: 'Inability to bear weight or bony tenderness after the injury — get evaluated to rule out a fracture (Ottawa ankle rules).',
         urgency: 'urgent',
       },
       {

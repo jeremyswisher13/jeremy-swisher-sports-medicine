@@ -120,6 +120,10 @@ const moduleData: ConditionModule = {
         urgency: 'emergency',
       },
       {
+        text: 'Fever (or a recent infection or IV drug use) together with new or worsening neck pain AND any new arm or leg weakness, numbness, or change in coordination or walking — seek emergency care (possible spinal infection).',
+        urgency: 'emergency',
+      },
+      {
         text: 'Progressive motor deficit (weakness that is getting worse).',
         urgency: 'urgent',
       },

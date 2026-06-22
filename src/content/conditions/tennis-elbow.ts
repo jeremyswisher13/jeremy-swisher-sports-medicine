@@ -120,6 +120,10 @@ const moduleData: ConditionModule = {
         urgency: 'emergency',
       },
       {
+        text: 'A hot, red, swollen, or warm elbow with fever — this can signal a joint infection or an infected bursa and needs emergency care.',
+        urgency: 'emergency',
+      },
+      {
         text: 'Neurologic deficit (numbness, weakness, or loss of function).',
         urgency: 'urgent',
       },

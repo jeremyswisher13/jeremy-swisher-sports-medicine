@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components -- route-config module: exports the router table, not HMR-refreshable components */
 import { lazy, Suspense } from 'react'
 import { createHashRouter } from 'react-router-dom'
 import { AppShell } from './components/layout/AppShell'

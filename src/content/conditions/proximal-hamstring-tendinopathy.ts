@@ -174,7 +174,7 @@ const moduleData: ConditionModule = {
               target: 'Proximal hamstring tendon at the ischial tuberosity',
               purpose:
                 'An isometric hold that builds early hamstring tendon strength and can reduce pain.',
-              dose: { sets: 5, holdSeconds: 30, notes: '5 × 20–30 sec' },
+              dose: { sets: 5, holdSeconds: 30, notes: '5 × 30 sec' },
               frequency: 'Daily / every other day',
               progression: 'Progress to single-leg or elevated heels.',
               regression: 'Use a shorter lever (bend the knees more, heels closer to the hips).',

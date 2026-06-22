@@ -119,8 +119,12 @@ const moduleData: ConditionModule = {
         urgency: 'see-clinician',
       },
       {
-        text: 'Inability to extend (straighten) the knee.',
-        urgency: 'see-clinician',
+        text: 'Inability to actively extend (straighten) the knee or do a straight-leg raise — this can signal an extensor-mechanism injury (patellar or quadriceps tendon, or a kneecap fracture).',
+        urgency: 'urgent',
+      },
+      {
+        text: 'A hot, red, swollen knee with fever or feeling unwell — this can signal a joint infection (septic arthritis) and needs emergency evaluation.',
+        urgency: 'emergency',
       },
       {
         text: 'Failed months of appropriate rehab without improvement.',
