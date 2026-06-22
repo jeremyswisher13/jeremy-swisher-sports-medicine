@@ -23,7 +23,7 @@ export function HomeExerciseProgram({ condition }: { condition: Condition }) {
   const pct = total ? Math.round((doneInPhase / total) * 100) : 0
 
   return (
-    <section className="panel exercise-panel" aria-labelledby="exercise-title">
+    <section className="panel" aria-labelledby="exercise-title">
       <div className="panel-title-row">
         <h2 id="exercise-title">
           <Icon name="exercises" size={22} />

@@ -50,6 +50,7 @@ export function RegionRoute() {
           <button
             type="button"
             className={`chip ${sport === 'all' ? 'active' : ''}`}
+            aria-pressed={sport === 'all'}
             onClick={() => setSport('all')}
           >
             All
@@ -59,6 +60,7 @@ export function RegionRoute() {
               key={s.id}
               type="button"
               className={`chip ${sport === s.id ? 'active' : ''}`}
+              aria-pressed={sport === s.id}
               onClick={() => setSport(s.id)}
             >
               {s.name}

@@ -76,6 +76,13 @@
   padding: 0.5rem 0;
 }
 
+/* Empty state inside the auto-fill condition grid should span the full row */
+.condition-grid .empty-note {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 2rem 0;
+}
+
 .panel-pad {
   padding: 1.25rem 1.4rem 1.4rem;
 }
@@ -98,7 +105,7 @@
 
 .search-placeholder {
   color: var(--subtle);
-  font-size: 0.92rem;
+  font-size: 0.94rem;
 }
 
 .search-modal {
@@ -202,6 +209,7 @@
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
 /* --- dashboard ------------------------------------------------------------ */
@@ -241,6 +249,10 @@
   font-size: 0.84rem;
 }
 
+.continue-panel {
+  overflow: hidden;
+}
+
 .continue-list {
   display: grid;
 }
@@ -269,8 +281,12 @@
 }
 
 .continue-row small {
-  color: var(--subtle);
+  color: var(--muted);
   font-size: 0.78rem;
+}
+
+.continue-row > svg {
+  color: var(--accent);
 }
 
 .region-section {
@@ -324,13 +340,6 @@
   color: var(--muted);
   font-size: 0.78rem;
   line-height: 1.3;
-}
-
-.region-card-body em {
-  color: var(--accent);
-  font-size: 0.74rem;
-  font-style: normal;
-  font-weight: 600;
 }
 
 .condition-grid {
@@ -441,7 +450,7 @@
 .strength-strong {
   border-color: rgba(230, 189, 115, 0.4);
   background: var(--gold-soft);
-  color: var(--gold);
+  color: var(--gold-strong);
 }
 .strength-moderate {
   border-color: rgba(28, 71, 127, 0.35);
@@ -487,7 +496,7 @@
 }
 
 .status-physician-review-pending {
-  color: var(--gold);
+  color: var(--gold-strong);
 }
 
 /* --- red-flag banner + safety flags --------------------------------------- */
@@ -585,7 +594,7 @@
 
 /* elegant pull-quote / executive summary callout */
 .condition-exec {
-  margin: 0.4rem 0 0;
+  margin: 0;
   border-left: 3px solid var(--accent);
   border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
   background: var(--accent-soft);
@@ -788,35 +797,6 @@
 .exercise-card.done {
   border-color: var(--accent);
   background: linear-gradient(90deg, var(--accent-soft), var(--surface-2) 60%);
-}
-
-.exercise-card-media {
-  display: grid;
-  align-content: start;
-}
-
-.svg-illustration {
-  display: grid;
-  gap: 0.35rem;
-  margin: 0;
-}
-
-.svg-illustration svg {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 1 / 1;
-  border: 1px solid var(--line);
-  border-radius: var(--radius-sm);
-  background: var(--surface-3);
-  color: var(--accent);
-  padding: 0.4rem;
-}
-
-.svg-illustration figcaption {
-  color: var(--subtle);
-  font-size: 0.7rem;
-  line-height: 1.25;
-  text-align: center;
 }
 
 .exercise-card-body {
@@ -1044,7 +1024,7 @@
   border-radius: 4px;
   border: 1px solid rgba(230, 189, 115, 0.35);
   background: var(--gold-soft);
-  color: var(--gold);
+  color: var(--gold-strong);
   font-size: 0.62rem;
   font-style: normal;
   font-weight: 700;
@@ -1079,6 +1059,16 @@
   align-items: center;
   border-top: 1px solid var(--line);
   padding: 0.85rem 1.2rem;
+  transition: background var(--ease);
+}
+
+.relevance-row:hover {
+  background: var(--surface-2);
+}
+
+.relevance-row > svg {
+  color: var(--subtle);
+  align-self: center;
 }
 
 .relevance-row:first-child {
@@ -1310,7 +1300,7 @@
 }
 
 .citation-unverified {
-  color: var(--gold);
+  color: var(--gold-strong);
   font-weight: 700;
 }
 
@@ -1442,6 +1432,7 @@
 
 .evidence-table {
   width: 100%;
+  min-width: 42rem;
   border-collapse: collapse;
   font-size: 0.84rem;
 }
@@ -1455,6 +1446,9 @@
 }
 
 .evidence-table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
   background: var(--surface-2);
   color: var(--muted);
   font-size: 0.7rem;
@@ -1505,7 +1499,7 @@
 
 .library-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(22rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 22rem), 1fr));
   gap: 1rem;
 }
 
@@ -1766,7 +1760,7 @@
 
 .sport-pathway-card {
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
+  grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: center;
   gap: 1rem;
   border: 1px solid var(--line);
@@ -1783,6 +1777,11 @@
   transform: translateY(-2px);
   border-color: var(--accent);
   box-shadow: var(--shadow-lift), var(--inset-hi);
+}
+
+/* trailing arrow (direct child) sits in the third track, accent-colored */
+.sport-pathway-card > svg {
+  color: var(--accent);
 }
 
 .sport-pathway-icon {
@@ -1819,6 +1818,15 @@
   margin: 0;
 }
 
+/* the "N related conditions" count reads as a quiet metadata label, not italic body */
+.sport-pathway-body em {
+  color: var(--subtle);
+  font-size: 0.74rem;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
 /* sport page hero */
 .sport-page {
   display: grid;
@@ -1851,7 +1859,7 @@
 }
 
 .sport-eyebrow {
-  color: var(--gold);
+  color: var(--gold-strong);
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.14em;
@@ -2084,31 +2092,6 @@
   letter-spacing: 0.03em;
 }
 
-.print-pic-col {
-  width: 13rem;
-}
-
-.print-ex-name {
-  display: grid;
-  grid-template-columns: 3rem minmax(0, 1fr);
-  gap: 0.5rem;
-  align-items: center;
-}
-
-.print-diagram svg {
-  width: 3rem;
-  height: 3rem;
-  border: 1px solid #dbe3e8;
-  border-radius: 6px;
-  background: #ffffff;
-  color: #142033;
-  padding: 0.15rem;
-}
-
-.print-diagram figcaption {
-  display: none;
-}
-
 .print-redflags {
   margin-top: 0.5rem;
   border-left: 3px solid #d84315;
@@ -2176,8 +2159,7 @@
   .print-page small,
   .print-page li,
   .print-page td,
-  .print-page th,
-  .print-page figcaption {
+  .print-page th {
     color: #1a2433 !important;
   }
 
@@ -2204,12 +2186,6 @@
     background: #fff0e9 !important;
     color: #5a3326 !important;
     border-left: 3px solid #d84315 !important;
-  }
-
-  .print-diagram svg {
-    border: 1px solid #dbe3e8 !important;
-    background: #fff !important;
-    color: #142033 !important;
   }
 
   .print-disclaimer,
@@ -2393,7 +2369,7 @@
 }
 
 .session-eyebrow {
-  color: var(--gold);
+  color: var(--gold-strong);
   font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -2689,5 +2665,43 @@
   }
   .hep-actionbar {
     grid-template-columns: 1fr;
+  }
+
+  .session-body {
+    padding: 1.2rem 1.1rem;
+  }
+
+  /* Restack Back / Skip on one row, the primary "next" action full-width below */
+  .session-nav {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .session-nav .small-button {
+    justify-self: stretch;
+  }
+
+  .session-next {
+    grid-column: 1 / -1;
+    justify-self: stretch;
+  }
+
+  /* Program header: let the action buttons wrap below the name field */
+  .program-header-row,
+  .program-header-actions {
+    flex-wrap: wrap;
+  }
+
+  /* On-screen print preview: scroll the wide table instead of crushing columns */
+  .print-page {
+    padding: 1.1rem;
+    overflow-x: auto;
+  }
+
+  .print-table {
+    min-width: 34rem;
+  }
+
+  .stat-tile {
+    padding: 1rem;
   }
 }

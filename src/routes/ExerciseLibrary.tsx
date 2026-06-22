@@ -50,6 +50,8 @@ export function ExerciseLibraryRoute() {
         <Icon name="search" size={20} strokeWidth={1.9} />
         <input
           type="search"
+          spellCheck={false}
+          autoComplete="off"
           value={query}
           placeholder="Filter exercises…"
           onChange={(e) => setQuery(e.target.value)}

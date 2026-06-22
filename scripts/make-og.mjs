@@ -20,12 +20,7 @@ const html = `<!doctype html>
       radial-gradient(700px 520px at -6% 110%, rgba(60,130,200,0.18), transparent 60%),
       linear-gradient(135deg, #0c1c38 0%, #143257 55%, #0e2647 100%);
   }
-  .frame {
-    position: absolute; inset: 30px;
-    border: 1px solid rgba(212,175,95,0.32);
-    border-radius: 20px;
-  }
-  .content { position: absolute; top: 96px; left: 96px; right: 96px; }
+  .content { position: absolute; top: 100px; left: 96px; right: 96px; }
   .emblem {
     width: 88px; height: 88px; border-radius: 20px;
     background: linear-gradient(160deg, #1c3d6b, #0d2142);
@@ -54,7 +49,6 @@ const html = `<!doctype html>
   }
 </style></head>
 <body>
-  <div class="frame"></div>
   <div class="content">
     <div class="emblem">
       <svg width="44" height="44" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">

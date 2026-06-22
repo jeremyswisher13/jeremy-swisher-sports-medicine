@@ -24,6 +24,7 @@ export function SearchModal({ onClose }: { onClose: () => void }) {
   const [query, setQuery] = useState('')
   const [active, setActive] = useState(0)
   const inputRef = useRef<HTMLInputElement>(null)
+  const listRef = useRef<HTMLDivElement>(null)
   const navigate = useNavigate()
 
   const results = useMemo(() => search(query), [query])
@@ -31,6 +32,12 @@ export function SearchModal({ onClose }: { onClose: () => void }) {
   useEffect(() => {
     inputRef.current?.focus()
   }, [])
+
+  // Keep the keyboard-selected result visible in the scrolling list.
+  useEffect(() => {
+    const el = listRef.current?.querySelector('[aria-selected="true"]')
+    el?.scrollIntoView({ block: 'nearest' })
+  }, [active])
 
   function onQueryChange(value: string) {
     setQuery(value)
@@ -66,6 +73,8 @@ export function SearchModal({ onClose }: { onClose: () => void }) {
           <input
             ref={inputRef}
             type="search"
+            spellCheck={false}
+            autoComplete="off"
             value={query}
             placeholder="Search conditions, exercises, procedures…"
             onChange={(e) => onQueryChange(e.target.value)}
@@ -74,7 +83,7 @@ export function SearchModal({ onClose }: { onClose: () => void }) {
           />
           <kbd>Esc</kbd>
         </div>
-        <div className="search-results" role="listbox">
+        <div className="search-results" role="listbox" ref={listRef}>
           {query.trim() === '' && (
             <p className="search-hint">Start typing to search across the app.</p>
           )}

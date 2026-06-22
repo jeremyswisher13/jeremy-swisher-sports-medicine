@@ -31,6 +31,7 @@ export function ProgramBuilderRoute() {
           <div className="program-create">
             <input
               type="text"
+              spellCheck={false}
               value={newName}
               placeholder="New program name"
               onChange={(e) => setNewName(e.target.value)}
@@ -78,6 +79,7 @@ export function ProgramBuilderRoute() {
               <div className="panel-title-row program-header-row">
                 <input
                   className="program-name-input"
+                  spellCheck={false}
                   value={active.name}
                   onChange={(e) => program.renameProgram(active.id, e.target.value)}
                   aria-label="Program name"
@@ -152,7 +154,7 @@ export function ProgramBuilderRoute() {
                         <div className="program-item-order">
                           <button
                             type="button"
-                            aria-label="Move up"
+                            aria-label={`Move ${c.name} up`}
                             disabled={i === 0}
                             onClick={() =>
                               program.moveProgramItem(active.id, c.id, 'up')
@@ -160,10 +162,10 @@ export function ProgramBuilderRoute() {
                           >
                             <Icon name="arrowRight" size={15} className="rot-up" />
                           </button>
-                          <span>{i + 1}</span>
+                          <span aria-hidden="true">{i + 1}</span>
                           <button
                             type="button"
-                            aria-label="Move down"
+                            aria-label={`Move ${c.name} down`}
                             disabled={i === active.items.length - 1}
                             onClick={() =>
                               program.moveProgramItem(active.id, c.id, 'down')
