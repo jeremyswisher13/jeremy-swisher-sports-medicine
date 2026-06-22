@@ -1,61 +1,67 @@
 :root {
-  color-scheme: dark;
+  color-scheme: light;
   font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
   /* --- typography ------------------------------------------------------- */
   --font-display: "Fraunces", Georgia, "Times New Roman", serif;
   --font-sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
-  /* --- ink palette ------------------------------------------------------ */
-  --bg: #0a0e17;
-  --surface: #121826;
-  --surface-2: #161d2e;
-  --surface-3: #1c2438;
-  /* legacy aliases (kept so every old reference resolves on dark) */
-  --surface-soft: #161d2e;
-  --surface-cool: #14202b;
+  /* --- surfaces (light) ------------------------------------------------- */
+  --bg: #eef1f6;
+  --surface: #ffffff;
+  --surface-2: #f5f7fb;
+  --surface-3: #e9eef5;
+  /* legacy aliases */
+  --surface-soft: #f5f7fb;
+  --surface-cool: #eef3f8;
 
-  --line: rgba(176, 196, 228, 0.1);
-  --line-strong: rgba(176, 196, 228, 0.2);
+  --line: rgba(20, 35, 66, 0.1);
+  --line-strong: rgba(20, 35, 66, 0.18);
 
-  --text: #e9eef7;
-  --text-strong: #ffffff;
-  --muted: #9aa9c2;
-  --subtle: #6e7f99;
+  /* --- ink (navy) ------------------------------------------------------- */
+  --text: #1f2d44;
+  --text-strong: #112038;
+  --muted: #566479;
+  --subtle: #8693a6;
 
-  /* --- accents ---------------------------------------------------------- */
-  --accent: #3fd9c6;
-  --accent-deep: #1eb8a6;
-  --accent-soft: rgba(63, 217, 198, 0.12);
-  --accent-glow: rgba(63, 217, 198, 0.28);
+  /* --- accent: navy (primary/interactive) ------------------------------- */
+  --navy: #16315a;
+  --navy-deep: #0f2342;
+  --accent: #1c477f;
+  --accent-deep: #143a6b;
+  --accent-soft: rgba(28, 71, 127, 0.1);
+  --accent-glow: rgba(20, 58, 107, 0.22);
+  --on-accent: #ffffff;
 
-  --gold: #e6bd73;
-  --gold-soft: rgba(230, 189, 115, 0.14);
+  /* --- gold accent ------------------------------------------------------ */
+  --gold: #b0852e;
+  --gold-strong: #876326;
+  --gold-soft: rgba(176, 133, 46, 0.14);
 
-  --danger: #ff7a7a;
-  --danger-soft: rgba(255, 122, 122, 0.1);
-  --danger-strong: rgba(255, 122, 122, 0.22);
+  --danger: #c0392b;
+  --danger-soft: rgba(192, 57, 43, 0.08);
+  --danger-strong: rgba(192, 57, 43, 0.18);
 
-  /* legacy named-color aliases, retuned for dark so old rules read well */
+  /* legacy named-color aliases, retuned for light */
   --teal: var(--accent);
-  --teal-dark: var(--accent);
+  --teal-dark: var(--accent-deep);
   --teal-soft: var(--accent-soft);
-  --cobalt: #6ba8ff;
-  --cobalt-dark: #8cc0ff;
-  --cobalt-soft: rgba(107, 168, 255, 0.14);
-  --orange: #f0a060;
-  --orange-soft: rgba(240, 160, 96, 0.12);
-  --violet: #b09bff;
-  --violet-soft: rgba(176, 155, 255, 0.14);
-  --graphite: #c3d0e4;
+  --cobalt: #1c477f;
+  --cobalt-dark: #143a6b;
+  --cobalt-soft: rgba(28, 71, 127, 0.1);
+  --orange: #c2410c;
+  --orange-soft: rgba(194, 65, 12, 0.1);
+  --violet: #6d4bb6;
+  --violet-soft: rgba(109, 75, 182, 0.1);
+  --graphite: #2a3854;
 
   /* --- depth ------------------------------------------------------------ */
   --radius: 13px;
   --radius-sm: 9px;
-  --shadow: 0 24px 48px -28px rgba(0, 0, 0, 0.7);
-  --shadow-lift: 0 30px 60px -30px rgba(0, 0, 0, 0.78);
-  --inset-hi: inset 0 1px 0 rgba(255, 255, 255, 0.04);
-  --elevate: var(--shadow), var(--inset-hi);
+  --shadow: 0 18px 40px -24px rgba(16, 33, 64, 0.26);
+  --shadow-lift: 0 26px 52px -26px rgba(16, 33, 64, 0.3);
+  --inset-hi: inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  --elevate: var(--shadow);
   --ease: 150ms ease;
 }
 
@@ -73,9 +79,8 @@ body {
   min-height: 100vh;
   margin: 0;
   background:
-    radial-gradient(1200px 720px at 78% -8%, rgba(63, 217, 198, 0.07), transparent 60%),
-    radial-gradient(1000px 640px at 8% 4%, rgba(107, 168, 255, 0.06), transparent 58%),
-    radial-gradient(900px 900px at 50% 120%, rgba(176, 196, 228, 0.04), transparent 60%),
+    radial-gradient(1200px 720px at 82% -10%, rgba(176, 133, 46, 0.07), transparent 60%),
+    radial-gradient(1000px 640px at 6% 2%, rgba(28, 71, 127, 0.05), transparent 58%),
     var(--bg);
   background-attachment: fixed;
   color: var(--text);
@@ -121,16 +126,30 @@ a {
    Sidebar
    ========================================================================= */
 .sidebar {
+  /* Navy "island": locally override tokens so every child reads on dark navy. */
+  --surface-2: rgba(255, 255, 255, 0.05);
+  --surface-3: rgba(255, 255, 255, 0.09);
+  --text: #e7edf9;
+  --text-strong: #ffffff;
+  --muted: #aab8d2;
+  --subtle: #8294b4;
+  --line: rgba(255, 255, 255, 0.12);
+  --line-strong: rgba(255, 255, 255, 0.16);
+  --accent: var(--gold);
+  --accent-deep: var(--gold-strong);
+  --accent-soft: rgba(212, 175, 95, 0.16);
+  --on-accent: #1a1303;
+
   position: sticky;
   top: 0;
   display: flex;
   height: 100vh;
   flex-direction: column;
   justify-content: space-between;
-  border-right: 1px solid var(--line);
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
   background:
-    linear-gradient(180deg, rgba(63, 217, 198, 0.05), transparent 26%),
-    #0c111c;
+    radial-gradient(120% 60% at 50% -10%, rgba(212, 175, 95, 0.1), transparent 60%),
+    linear-gradient(180deg, #163059, #0e2140);
   padding: 1.6rem 0.85rem 1.15rem;
 }
 
@@ -208,7 +227,7 @@ a {
 
 .nav-item.active svg {
   color: var(--accent);
-  fill: rgba(63, 217, 198, 0.1);
+  fill: var(--accent-soft);
 }
 
 .profile-block {
@@ -235,8 +254,8 @@ a {
   place-items: center;
   border-radius: 50%;
   background: linear-gradient(135deg, var(--accent), var(--accent-deep));
-  box-shadow: 0 0 0 1px rgba(63, 217, 198, 0.35), 0 6px 16px -6px var(--accent-glow);
-  color: #06221f;
+  box-shadow: 0 0 0 1px rgba(28, 71, 127, 0.35), 0 6px 16px -6px var(--accent-glow);
+  color: var(--on-accent);
   font-size: 0.82rem;
   font-weight: 800;
 }
@@ -320,8 +339,7 @@ a {
   min-height: 3rem;
   border: 1px solid var(--line-strong);
   border-radius: var(--radius-sm);
-  background: rgba(18, 24, 38, 0.7);
-  backdrop-filter: blur(8px);
+  background: var(--surface);
   box-shadow: var(--inset-hi);
   color: var(--muted);
   padding: 0 0.9rem;
@@ -403,7 +421,7 @@ a {
   border: 1px solid var(--accent-deep);
   background: linear-gradient(180deg, var(--accent), var(--accent-deep));
   box-shadow: 0 12px 26px -12px var(--accent-glow), var(--inset-hi);
-  color: #06221f;
+  color: var(--on-accent);
 }
 
 .primary-action:hover {
@@ -412,7 +430,7 @@ a {
 }
 
 .primary-action svg {
-  color: #06221f;
+  color: var(--on-accent);
 }
 
 /* =========================================================================
@@ -486,7 +504,7 @@ a {
 
 .sport-card.selected svg {
   color: var(--accent);
-  fill: rgba(63, 217, 198, 0.14);
+  fill: rgba(28, 71, 127, 0.14);
 }
 
 .check-dot {
@@ -496,7 +514,7 @@ a {
   place-items: center;
   border-radius: 50%;
   background: var(--accent);
-  color: #06221f;
+  color: var(--on-accent);
 }
 
 /* =========================================================================
@@ -637,13 +655,13 @@ a {
 .pathway-step.complete .step-number {
   background: var(--accent);
   box-shadow: 0 0 0 7px var(--surface), 0 0 18px -4px var(--accent-glow);
-  color: #06221f;
+  color: var(--on-accent);
 }
 
 .pathway-step.active .step-number {
   background: var(--accent);
   box-shadow: 0 0 0 7px var(--surface), 0 0 22px -2px var(--accent-glow);
-  color: #06221f;
+  color: var(--on-accent);
 }
 
 .step-body {
@@ -1032,7 +1050,7 @@ a {
 
 .phase-tab.selected > span {
   background: var(--accent);
-  color: #06221f;
+  color: var(--on-accent);
 }
 
 .phase-tab strong {
@@ -1063,7 +1081,7 @@ a {
 }
 
 .phase-tab.selected small {
-  border-color: rgba(63, 217, 198, 0.4);
+  border-color: rgba(28, 71, 127, 0.4);
   color: var(--accent);
 }
 
@@ -1141,7 +1159,7 @@ a {
   place-items: center;
   border: 1.5px solid var(--line-strong);
   border-radius: 3px;
-  color: #06221f;
+  color: var(--on-accent);
 }
 
 .exercise-row.done .checkbox {
@@ -1282,7 +1300,7 @@ a {
   inset: 0;
   z-index: 30;
   border: 0;
-  background: rgba(5, 8, 14, 0.62);
+  background: rgba(15, 28, 51, 0.5);
   backdrop-filter: blur(2px);
   cursor: pointer;
 }
@@ -1538,7 +1556,7 @@ summary:focus-visible {
 @media (max-width: 980px) {
   body {
     background:
-      radial-gradient(900px 600px at 80% -10%, rgba(63, 217, 198, 0.06), transparent 60%),
+      radial-gradient(900px 600px at 80% -10%, rgba(28, 71, 127, 0.06), transparent 60%),
       var(--bg);
   }
 
