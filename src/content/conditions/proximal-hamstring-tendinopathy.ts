@@ -72,6 +72,13 @@ const moduleData: ConditionModule = {
       'Proximal hamstring tendinopathy is pain where the hamstring tendons attach to the ischial tuberosity — the "sit bone" at the bottom of the pelvis. It is often felt deep in the lower buttock.\n\nThe pain tends to flare with sprinting, uphill running, long periods of sitting, or heavy hip hinging (such as deadlifts). It is common in runners, field athletes, and lifters, and reflects a tendon that is being asked to do more than it currently tolerates rather than a sign of permanent damage.\n\nRecovery is often slow but reliable with a patient, progressive loading program. The goal is to gradually rebuild the tendon\'s capacity so it can handle sitting, hinging, and running again.',
     tissue:
       'The proximal hamstring tendons at their attachment to the ischial tuberosity (the sit bone).',
+    video: {
+      videoId: '8KI2XL2vg2Q',
+      title: 'Proximal Hamstring Tendinopathy Rehab (Education, Exercises, Running)',
+      channel: 'E3 Rehab',
+      approved: true,
+      note: 'Physician-curated demonstration video.',
+    },
     anatomyDiagram: {
       key: 'anatomy-hip',
       altText:

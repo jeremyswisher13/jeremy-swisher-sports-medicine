@@ -3,6 +3,7 @@ import {
   conditions,
   procedures,
   regions,
+  sportPathways,
   type SearchRecord,
 } from '../content'
 
@@ -54,6 +55,17 @@ function buildRecords(): SearchRecord[] {
       subtitle: 'Procedure',
       route: `/procedure/${p.id}`,
       keywords: [p.title, p.tag, p.summary],
+    })
+  }
+
+  for (const sp of sportPathways) {
+    records.push({
+      type: 'pathway',
+      id: sp.id,
+      title: sp.name,
+      subtitle: 'Sport pathway',
+      route: `/sport/${sp.id}`,
+      keywords: [sp.name, sp.id, sp.sportTag, sp.tagline],
     })
   }
 

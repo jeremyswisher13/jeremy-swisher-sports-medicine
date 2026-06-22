@@ -9,6 +9,7 @@ const typeLabel: Record<SearchRecordType, string> = {
   exercise: 'Exercise',
   procedure: 'Procedure',
   region: 'Region',
+  pathway: 'Sport',
 }
 
 const typeIconKey: Record<SearchRecordType, string> = {
@@ -16,6 +17,7 @@ const typeIconKey: Record<SearchRecordType, string> = {
   exercise: 'exercises',
   procedure: 'procedures',
   region: 'regions',
+  pathway: 'running',
 }
 
 export function SearchModal({ onClose }: { onClose: () => void }) {

@@ -75,6 +75,13 @@ const moduleData: ConditionModule = {
       'Frozen shoulder, also called adhesive capsulitis, is a painful loss of both active and passive shoulder motion. The main problem is the glenohumeral joint capsule — the sleeve of tissue around the shoulder ball-and-socket — which becomes thickened, stiff, and painful.\n\nIt often comes on gradually and then seems to "lock down," so that even when someone else tries to move your arm for you, the shoulder will not go. The good news is that frozen shoulder usually improves; the recovery is just slow, frequently measured in months rather than weeks.',
     tissue:
       'The glenohumeral joint capsule, which becomes thickened, stiff, and painful.',
+    video: {
+      videoId: 'xXsUexaQEp0',
+      title: '7 Best Frozen Shoulder Exercises & Stretches - Ask Doctor Jo',
+      channel: 'AskDoctorJo',
+      approved: true,
+      note: 'Physician-curated demonstration video.',
+    },
     anatomyDiagram: {
       key: 'anatomy-shoulder',
       altText:

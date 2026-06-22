@@ -63,6 +63,13 @@ const moduleData: ConditionModule = {
       'Cervical radiculopathy is irritation or compression of a cervical nerve root — one of the nerves that exits the spine in your neck and travels down into your arm. It often comes from narrowing of the small bony openings the nerve passes through (foraminal narrowing) or from disc problems.\n\nBecause an irritated nerve root sends signals down its path, this condition can cause neck pain plus pain, numbness, tingling, or weakness that travels into the arm in a recognizable nerve-root pattern. In many people the arm pain is actually worse than the neck pain.\n\nThe good news is that the natural course is often favorable, with most people improving over a few weeks to a few months without surgery. The main thing to watch for is progressive weakness or other neurologic change, which deserves closer review.',
     tissue:
       'A cervical nerve root — one of the spinal nerves exiting the neck — irritated or compressed by foraminal narrowing or disc pathology.',
+    video: {
+      videoId: 'gZUNcfcdHW4',
+      title: 'Pinched Nerve (Cervical Radiculopathy) Stretches & Exercises - Ask Doctor Jo',
+      channel: 'AskDoctorJo',
+      approved: true,
+      note: 'Physician-curated demonstration video.',
+    },
     anatomyDiagram: {
       key: 'anatomy-cervical',
       altText:

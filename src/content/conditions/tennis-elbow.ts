@@ -72,6 +72,13 @@ const moduleData: ConditionModule = {
       'Tennis elbow is pain from the common extensor tendon, especially near the extensor carpi radialis brevis origin on the outside of the elbow. Despite the name, it usually comes from repeated gripping, lifting, or wrist-extension loads — not only tennis.\n\nIt is best thought of as a load-related tendon problem rather than a permanently inflamed or "wearing-out" tendon. The tendon has simply been asked to do more than it can currently handle, and the goal of care is to gradually rebuild its tolerance for gripping and lifting.\n\nMost people improve over weeks to a few months with a patient, progressive loading program, although stubborn cases can take longer.',
     tissue:
       'The common extensor tendon on the outside of the elbow, especially near the extensor carpi radialis brevis (ECRB) origin.',
+    video: {
+      videoId: 'uFNhlBR-Ae0',
+      title: 'Tennis Elbow Stretches & Exercises - Ask Doctor Jo',
+      channel: 'AskDoctorJo',
+      approved: true,
+      note: 'Physician-curated demonstration video.',
+    },
     anatomyDiagram: {
       key: 'anatomy-elbow',
       altText:

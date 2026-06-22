@@ -71,6 +71,13 @@ const moduleData: ConditionModule = {
       'A lateral ankle sprain is an injury to the ligaments on the outside of the ankle, especially the anterior talofibular ligament (ATFL), and sometimes the calcaneofibular ligament. It is one of the most common sports injuries.\n\nIt usually happens when the foot rolls inward on a planted foot — landing awkwardly, cutting, or stepping on someone\'s foot. The ankle becomes painful, swollen, and often bruised on the outside, and it can feel unstable.\n\nMost mild-to-moderate (grade I–II) sprains settle and rebuild well over a few weeks. The key is to get the ankle moving and strengthening early — skipping rehab is what leads some people to develop ongoing instability and repeat sprains.',
     tissue:
       'The lateral ankle ligaments — primarily the anterior talofibular ligament (ATFL), and sometimes the calcaneofibular ligament.',
+    video: {
+      videoId: '3JJayVC0-20',
+      title: 'Lateral Sprained Ankle Stretches & Exercises - Ask Doctor Jo',
+      channel: 'AskDoctorJo',
+      approved: true,
+      note: 'Physician-curated demonstration video.',
+    },
     anatomyDiagram: {
       key: 'anatomy-ankle',
       altText:

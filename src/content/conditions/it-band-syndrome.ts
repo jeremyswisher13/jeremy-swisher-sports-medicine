@@ -72,6 +72,13 @@ const moduleData: ConditionModule = {
       'Iliotibial band syndrome (IT band syndrome) is lateral knee pain related to the iliotibial band and the tissue it compresses near the lateral femoral epicondyle — the bony bump on the outer side of your knee. It tends to show up during running and similar repetitive activity, and it is common in runners and cyclists.\n\nIt is often linked to training errors, downhill running volume, weak or poorly coordinated hip control, and running mechanics — not to the band being permanently damaged. The pain usually starts during or after running, on the outer side of the knee.\n\nThe good news is that most people improve over a few weeks with load modification and rehab that strengthens the hip. The goal is to calm the irritated tissue and rebuild your hip control so you can get back to running and cycling comfortably.',
     tissue:
       'The iliotibial band and the tissue it compresses near the lateral femoral epicondyle (outer side of the knee).',
+    video: {
+      videoId: 'x8wbFjIMFL4',
+      title: 'IT Band Syndrome Stretches & Exercises - Ask Doctor Jo',
+      channel: 'AskDoctorJo',
+      approved: true,
+      note: 'Physician-curated demonstration video.',
+    },
     anatomyDiagram: {
       key: 'anatomy-knee',
       altText:

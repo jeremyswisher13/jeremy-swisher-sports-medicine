@@ -72,6 +72,14 @@ const moduleData: ConditionModule = {
       'An AC joint sprain is an injury to the acromioclavicular joint ligaments at the top of the shoulder and, in more severe cases, to the coracoclavicular ligaments below. It usually happens after landing on the point of the shoulder — a common mechanism in a cycling crash, a fall during basketball, or a heavy fall.\n\nMild sprains are common and often heal well without surgery. In higher-grade injuries you may notice a visible bump where the collarbone sits up, and recovery is longer and more individualized.\n\nThe goal of care is to settle the pain, protect the joint while the ligaments heal, and gradually rebuild shoulder strength and motion so you can return to the activities you care about.',
     tissue:
       'The acromioclavicular (AC) joint ligaments at the top of the shoulder and, in more severe cases, the coracoclavicular ligaments below.',
+    video: {
+      videoId: 'hc4QDSqpw-k',
+      title: 'AC Joint Sprain Stretches & Exercises - Ask Doctor Jo',
+      channel: 'AskDoctorJo',
+      channelUrl: 'https://www.youtube.com/@AskDoctorJo',
+      approved: true,
+      note: 'Physician-curated demonstration video.',
+    },
     anatomyDiagram: {
       key: 'anatomy-shoulder',
       altText:

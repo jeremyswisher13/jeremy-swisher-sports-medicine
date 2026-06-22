@@ -72,6 +72,13 @@ const moduleData: ConditionModule = {
       'Patellar tendinopathy is pain coming from the patellar tendon, usually near the inferior pole of the patella — the bottom tip of the kneecap. This tendon connects your kneecap to your shin and takes a lot of force every time you jump, land, or push off.\n\nIt is common in jumping sports and causes load-related pain with jumping, landing, squatting, or going up and down stairs. The pain is typically felt right at the tendon and gets worse as the load on it goes up.\n\nLike other tendon problems, it reflects a mismatch between how much load the tendon is asked to handle and how much it is currently prepared for — not a sign that the knee is "wearing out." Most people improve with a patient, progressive loading program.',
     tissue:
       'The patellar tendon, especially at its attachment to the inferior pole of the patella (the bottom tip of the kneecap).',
+    video: {
+      videoId: 'e7oGNVUQi2I',
+      title: "Patellar Tendinopathy / Tendinitis / Tendinosis | Jumper's Knee Rehab (Education, Myths, Exercises)",
+      channel: 'E3 Rehab',
+      approved: true,
+      note: 'Physician-curated demonstration video.',
+    },
     anatomyDiagram: {
       key: 'anatomy-knee',
       altText:

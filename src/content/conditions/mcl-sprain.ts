@@ -71,6 +71,13 @@ const moduleData: ConditionModule = {
       'An MCL sprain is an injury to the medial collateral ligament on the inside of the knee. It often happens when the knee is forced inward, such as in football, soccer, or skiing.\n\nMany isolated MCL injuries heal well without surgery. Most are managed with early rehab and a staged return to loading, so the focus is on protecting the ligament while keeping the knee moving and rebuilding strength.',
     tissue:
       'The medial collateral ligament (MCL) on the inside of the knee.',
+    video: {
+      videoId: '1ppC8e1nEHo',
+      title: 'Top 7 MCL Sprain Treatments - Ask Doctor Jo',
+      channel: 'AskDoctorJo',
+      approved: true,
+      note: 'Physician-curated demonstration video.',
+    },
     anatomyDiagram: {
       key: 'anatomy-knee',
       altText:

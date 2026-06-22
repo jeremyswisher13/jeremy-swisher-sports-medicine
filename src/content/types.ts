@@ -357,12 +357,16 @@ export interface Condition {
   sportTags: SportTag[]
   careTier: CareTier
   oneLiner: string
+  /** Punchy clinician-oriented summary (one short paragraph). */
+  executiveSummary?: string
 
   /** Patient-friendly, 2-4 short paragraphs. */
   overview: string
   /** Plain description of the affected tissue/structure. */
   tissue: string
   anatomyDiagram?: DiagramRef
+  /** Condition-level curated demonstration video (shown prominently). */
+  video?: YouTubeRef
 
   causes: string[]
   riskFactors: string[]
@@ -429,7 +433,12 @@ export interface SportMeta {
 // Search
 // ---------------------------------------------------------------------------
 
-export type SearchRecordType = 'condition' | 'exercise' | 'procedure' | 'region'
+export type SearchRecordType =
+  | 'condition'
+  | 'exercise'
+  | 'procedure'
+  | 'region'
+  | 'pathway'
 
 export interface SearchRecord {
   type: SearchRecordType

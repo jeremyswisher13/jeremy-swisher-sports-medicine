@@ -71,6 +71,13 @@ const moduleData: ConditionModule = {
       'Cubital tunnel syndrome is irritation or compression of the ulnar nerve at the elbow, usually behind the bony bump on the inside of the elbow (the medial epicondyle) where the nerve runs through a space called the cubital tunnel. This is the same nerve that gives you the "funny bone" zing when you knock your elbow.\n\nIt can cause numbness and tingling in the ring and small fingers, and pain or irritation on the inside of the elbow. Symptoms are often worse when the elbow is bent for a long time — for example, while sleeping, holding a phone, or leaning on the elbow.\n\nMild cases frequently settle with simple changes: avoiding prolonged elbow bending and direct pressure, gentle nerve glides, and attention to posture and shoulder mechanics. Progressive weakness or muscle wasting is a more serious sign that needs prompt specialist attention.',
     tissue:
       'The ulnar nerve as it passes through the cubital tunnel at the elbow, behind the medial epicondyle.',
+    video: {
+      videoId: 'beKmfvOYtz4',
+      title: 'Cubital Tunnel Syndrome, aka Ulnar Nerve Entrapment - Ask Doctor Jo',
+      channel: 'AskDoctorJo',
+      approved: true,
+      note: 'Physician-curated demonstration video.',
+    },
     anatomyDiagram: {
       key: 'anatomy-elbow',
       altText:

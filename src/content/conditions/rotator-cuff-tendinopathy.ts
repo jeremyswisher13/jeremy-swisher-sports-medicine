@@ -78,6 +78,14 @@ const moduleData: ConditionModule = {
       'This is pain from the rotator cuff tendons and the tissues in the subacromial space — the area beneath the bony tip of the shoulder blade where the cuff tendons glide. It often hurts with overhead reaching, lifting away from the body, or sleeping on that side.\n\nMany people worry that shoulder pain means a tear that needs surgery, but many rotator cuff problems improve with non-surgical care, especially education plus exercise. Imaging abnormalities are common even in people without symptoms, so what shows up on an MRI must match the exam rather than drive the diagnosis on its own.',
     tissue:
       'The rotator cuff tendons and the tissues within the subacromial space beneath the acromion.',
+    video: {
+      videoId: 'y5CZHeQEDrU',
+      title: 'Rotator Cuff Tendinopathy Stretches & Exercises - Ask Doctor Jo',
+      channel: 'AskDoctorJo',
+      channelUrl: 'https://www.youtube.com/@AskDoctorJo',
+      approved: true,
+      note: 'Physician-curated demonstration video.',
+    },
     anatomyDiagram: {
       key: 'anatomy-shoulder',
       altText:

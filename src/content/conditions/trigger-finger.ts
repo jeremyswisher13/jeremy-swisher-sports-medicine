@@ -75,6 +75,13 @@ const moduleData: ConditionModule = {
       'Trigger finger is catching or locking of a finger because the flexor tendon does not glide smoothly through the A1 pulley — a small band the tendon normally slides under at the base of the finger. The finger may click, catch, or get stuck bent and then painfully pop straight.\n\nIt is often linked to gripping, diabetes, and local thickening of the tendon sheath. Common symptoms are catching, morning stiffness, and a tender nodule near the palm.\n\nMany mild cases improve with splinting or a change in activity, while persistent cases often respond to a corticosteroid injection.',
     tissue:
       'The flexor tendon of the affected finger and its A1 pulley — a band at the base of the finger that the tendon normally glides under, which becomes thickened so the tendon no longer glides smoothly.',
+    video: {
+      videoId: 'jJ6LBu6ATgU',
+      title: '5 Trigger Finger Rehab Exercises',
+      channel: 'Rehab Science',
+      approved: true,
+      note: 'Physician-curated demonstration video.',
+    },
     anatomyDiagram: {
       key: 'anatomy-wrist-thumb',
       altText:

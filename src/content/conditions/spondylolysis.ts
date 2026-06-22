@@ -59,6 +59,13 @@ const moduleData: ConditionModule = {
       'Spondylolysis is a stress injury in the pars interarticularis — a small bony bridge in a vertebra — usually in the low back. It is essentially an overuse stress fracture of the spine that develops from repeated arching (extension) and twisting (rotation).\n\nIt is especially relevant in younger athletes who do a lot of repeated back extension and rotation, such as gymnasts, football players, divers, and athletes in some throwing sports. The typical complaint is focal low back pain that is worse with arching backward.\n\nMany athletes improve over weeks to a few months with activity modification and a graded rehabilitation program focused on trunk and hip control. Whether the bone itself fully heals is variable, but good function and a return to sport are common.',
     tissue:
       'The pars interarticularis — the bony bridge of a vertebra (usually in the lumbar spine) — and the surrounding trunk and hip muscles that control spinal load.',
+    video: {
+      videoId: 'xFy9euq6_aU',
+      title: 'Functional Progression Exercises for Spondylolysis | SYNOPSIS',
+      channel: 'Physiotutors',
+      approved: true,
+      note: 'Physician-curated demonstration video.',
+    },
     anatomyDiagram: {
       key: 'anatomy-lumbar',
       altText:

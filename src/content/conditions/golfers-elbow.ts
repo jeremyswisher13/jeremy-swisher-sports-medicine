@@ -72,6 +72,13 @@ const moduleData: ConditionModule = {
       "Golfer's elbow is pain coming from the common flexor-pronator tendon at the inside of the elbow — the spot where the muscles that bend your wrist and rotate your forearm attach to the bony bump (medial epicondyle). It typically builds up from repeated gripping, wrist flexion, pronation, throwing, climbing, or manual tasks rather than a single injury.\n\nBecause this part of the elbow sits close to the ulnar nerve and the inner-elbow ligaments, the inside of the elbow can hurt for more than one reason. It may coexist with ulnar-nerve irritation or throwing-related ligament problems, so the diagnosis deserves a careful look.\n\nThe good news is that, like other tendon problems, it usually settles with a patient, progressive loading program. Recovery often takes a few months, and \"golfer's elbow\" is typically a load-related tendon issue rather than a permanently inflamed or damaged tendon.",
     tissue:
       'The common flexor-pronator tendon at the medial epicondyle (the wrist-flexor and forearm-pronator muscles where they attach to the inner elbow).',
+    video: {
+      videoId: 'CzT3oE7DgWM',
+      title: "Golfer's Elbow Stretches & Exercises - Ask Doctor Jo",
+      channel: 'AskDoctorJo',
+      approved: true,
+      note: 'Physician-curated demonstration video.',
+    },
     anatomyDiagram: {
       key: 'anatomy-elbow',
       altText:

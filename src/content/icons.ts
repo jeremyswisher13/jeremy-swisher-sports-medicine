@@ -3,7 +3,6 @@
  * don't all import lucide directly, and so content stays easy to serialize.
  */
 import {
-  Accessibility,
   Activity,
   AlertTriangle,
   ArrowRight,
@@ -29,13 +28,14 @@ import {
   ListPlus,
   Microscope,
   Move,
-  PersonStanding,
+  Orbit,
   Play,
   Plus,
   Printer,
   Search,
   ShieldAlert,
   ShieldCheck,
+  Spline,
   Stethoscope,
   Syringe,
   Target,
@@ -46,13 +46,13 @@ import {
 import type { IconComponent } from './types'
 
 export const icons: Record<string, IconComponent> = {
-  // regions
-  shoulder: PersonStanding,
+  // regions (non-figurative glyphs — no human/stick figures)
+  shoulder: CircleDot,
   elbow: Move,
   'wrist-hand': Hand,
   neck: Brain,
-  'low-back': Accessibility,
-  'hip-pelvis': PersonStanding,
+  'low-back': Spline,
+  'hip-pelvis': Orbit,
   knee: Bone,
   'lower-leg': Activity,
   'ankle-foot': Footprints,

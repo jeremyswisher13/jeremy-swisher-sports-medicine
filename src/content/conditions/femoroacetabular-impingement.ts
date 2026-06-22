@@ -73,6 +73,13 @@ const moduleData: ConditionModule = {
       'Femoroacetabular impingement (FAI) is a motion-related hip pain problem caused by shape-related contact between the femoral head-neck junction (the top of the thigh bone where the ball meets the neck) and the acetabular rim (the edge of the hip socket). When the hip is moved into certain positions, these bony areas can bump together, often irritating the labrum or cartilage inside the joint.\n\nPeople with FAI often feel groin pain with deep hip flexion, pivoting, or long periods of sitting. It is a problem of how the hip is shaped and how it is loaded — not necessarily a sign that the joint is wearing out. Importantly, many people without any pain also have these same cam or pincer bone shapes, so the shape alone does not equal a problem.\n\nMany people improve with activity modification and a focused exercise (physical therapy) program over a few weeks to a few months. A smaller number of carefully selected people who do not improve may be considered for keyhole hip surgery (arthroscopy).',
     tissue:
       'The hip joint, specifically the femoral head-neck junction and the acetabular rim, with the labrum and cartilage that can become irritated.',
+    video: {
+      videoId: 'ATQcSDuumL8',
+      title: 'Hip Impingement (FAI) Pain Stretches & Exercises - Ask Doctor Jo',
+      channel: 'AskDoctorJo',
+      approved: true,
+      note: 'Physician-curated demonstration video.',
+    },
     anatomyDiagram: {
       key: 'anatomy-hip',
       altText:

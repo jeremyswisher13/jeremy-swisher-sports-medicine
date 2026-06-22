@@ -13,6 +13,7 @@ import { EvidenceBadge, ReviewStatus } from '../components/common/badges'
 import { CitationList } from '../components/common/Citations'
 import { Disclaimer } from '../components/common/Disclaimer'
 import { AddToProgram } from '../components/program/AddToProgram'
+import { MediaEmbed } from '../components/common/MediaEmbed'
 import { Icon } from '../components/common/Icon'
 import { NotFound } from './NotFound'
 
@@ -61,6 +62,9 @@ export function ConditionRoute() {
               <AddToProgram condition={condition} />
             </div>
           </div>
+          {condition.executiveSummary && (
+            <p className="condition-exec">{condition.executiveSummary}</p>
+          )}
           <div className="condition-overview">
             {condition.overview.split('\n\n').map((para, i) => (
               <p key={i}>{para}</p>
@@ -90,6 +94,20 @@ export function ConditionRoute() {
             </div>
           </div>
         </section>
+
+        {condition.video && (
+          <section className="panel condition-video">
+            <div className="panel-title-row">
+              <h2>
+                <Icon name="play" size={20} />
+                Watch: overview & exercises
+              </h2>
+            </div>
+            <div className="condition-video-body">
+              <MediaEmbed video={condition.video} />
+            </div>
+          </section>
+        )}
 
         <CarePathway condition={condition} />
         <HomeExerciseProgram condition={condition} />

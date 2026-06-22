@@ -5,6 +5,7 @@ import {
   populatedRegions,
   procedures,
   regions,
+  sportPathways,
   GLOBAL_DISCLAIMER,
 } from '../content'
 import { useProgram } from '../hooks/useProgram'
@@ -87,6 +88,24 @@ export function DashboardRoute() {
               </Link>
             )
           })}
+        </div>
+      </section>
+
+      <section className="region-section">
+        <h2 className="section-title">Browse by sport</h2>
+        <div className="sport-grid">
+          {sportPathways.map((p) => (
+            <Link key={p.id} to={`/sport/${p.id}`} className="sport-pathway-card">
+              <div className="sport-pathway-icon">
+                <Icon name={p.iconKey} size={28} strokeWidth={1.7} />
+              </div>
+              <div className="sport-pathway-body">
+                <strong>{p.name}</strong>
+                <span>{p.tagline}</span>
+              </div>
+              <Icon name="arrowRight" size={18} />
+            </Link>
+          ))}
         </div>
       </section>
 

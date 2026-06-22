@@ -75,6 +75,13 @@ const moduleData: ConditionModule = {
       'Mechanical neck pain means neck pain coming from the cervical joints, muscles, and soft tissues, without a clear nerve root syndrome or serious disease. In plain terms, the structures of the neck are irritated and overloaded, not damaged in a dangerous way.\n\nIt often flares after posture stress, sudden load changes, poor sleep, or holding sustained positions — for example a long ride on the bike, a heavy lifting day, or hours hunched over a screen. There is usually no numbness, weakness, or pain shooting down the arm.\n\nMost episodes settle over days to weeks. The goal is to keep moving, use a few targeted exercises to rebuild tolerance, and avoid prolonged rest, which tends to make a stiff neck worse rather than better.',
     tissue:
       'The cervical joints, muscles, and soft tissues of the neck (not a nerve root or serious structural disease).',
+    video: {
+      videoId: 'u3Ocw5UIpYs',
+      title: 'Real Time Neck Pain Stretches - Ask Doctor Jo',
+      channel: 'AskDoctorJo',
+      approved: true,
+      note: 'Physician-curated demonstration video.',
+    },
     anatomyDiagram: {
       key: 'anatomy-cervical',
       altText:

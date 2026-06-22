@@ -73,6 +73,13 @@ const moduleData: ConditionModule = {
       'Medial tibial stress syndrome (MTSS), often called shin splints, is exercise-related pain along the inner edge of the shin — the distal posteromedial tibial border. It usually shows up when training load goes up faster than the leg can adapt.\n\nIt is thought to reflect a bone-stress and soft-tissue-load problem rather than one single inflamed muscle or fascia. In other words, the shin bone and the muscles that attach to it are being asked to handle more impact than they are currently used to.\n\nThe good news is that most cases settle with a smart plan: temporarily reducing impact volume, building lower-leg strength, and returning to running gradually. The most important thing your clinician will watch for is whether the pain is a stress fracture rather than MTSS, because that changes the plan.',
     tissue:
       'The distal posteromedial border of the tibia (shin bone) and the soft tissues — including the surrounding muscles and fascia — that load it.',
+    video: {
+      videoId: 'Z2G5WCJBpps',
+      title: 'Shin Splints Stretches & Exercises - Ask Doctor Jo',
+      channel: 'AskDoctorJo',
+      approved: true,
+      note: 'Physician-curated demonstration video.',
+    },
     anatomyDiagram: {
       key: 'anatomy-tibia',
       altText:

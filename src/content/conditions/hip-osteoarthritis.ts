@@ -72,6 +72,13 @@ const moduleData: ConditionModule = {
       'Hip osteoarthritis (OA) is wear-and-repair change in the hip joint cartilage, bone, and synovium (the joint lining). It commonly causes deep groin pain, stiffness, and reduced walking tolerance.\n\nEven with OA, exercise is still one of the most important treatments. The condition is chronic, but symptoms often improve meaningfully with exercise, weight management, and a sensible medication strategy.',
     tissue:
       'The hip joint cartilage, bone, and synovium (joint lining).',
+    video: {
+      videoId: 'tQNk6mpFsww',
+      title: 'Hip Arthritis Stretches & Exercises - Ask Doctor Jo',
+      channel: 'AskDoctorJo',
+      approved: true,
+      note: 'Physician-curated demonstration video.',
+    },
     anatomyDiagram: {
       key: 'anatomy-hip',
       altText:

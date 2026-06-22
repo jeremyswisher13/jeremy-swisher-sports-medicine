@@ -4,6 +4,7 @@ import { Icon } from '../common/Icon'
 const navItems = [
   { label: 'Dashboard', iconKey: 'dashboard', to: '/', end: true },
   { label: 'Body Regions', iconKey: 'regions', to: '/regions', end: false },
+  { label: 'Sport Pathways', iconKey: 'running', to: '/sports', end: false },
   { label: 'Exercise Library', iconKey: 'exercises', to: '/exercises', end: false },
   { label: 'Procedures', iconKey: 'procedures', to: '/procedures', end: false },
   { label: 'My Program', iconKey: 'program', to: '/program', end: false },

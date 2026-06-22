@@ -74,6 +74,13 @@ const moduleData: ConditionModule = {
       'Greater trochanteric pain syndrome usually reflects pain from the gluteus medius and/or gluteus minimus tendons near the greater trochanter — the bony point on the outside of the hip — with or without irritation of the nearby bursa. It causes side-of-the-hip pain that is often worse when lying on that side, climbing stairs, or walking longer distances.\n\nThis is best understood as a tendon problem of load and capacity, not simply "bursitis." The older "hip bursitis" label is outdated; the tendons are usually the main source, so treatment focuses on calming the irritation and rebuilding the tendons\' tolerance to load.\n\nMost people improve with a combination of education, load modification, and targeted hip-abductor exercise, often over a couple of months.',
     tissue:
       'The gluteus medius and/or gluteus minimus tendons where they attach near the greater trochanter, with or without bursal irritation.',
+    video: {
+      videoId: 'E3bQU7AEVII',
+      title: 'Hip Pain Relief Exercises (Hip Bursitis & Gluteal Tendinopathy)',
+      channel: 'Rehab Science',
+      approved: true,
+      note: 'Physician-curated demonstration video.',
+    },
     anatomyDiagram: {
       key: 'anatomy-hip',
       altText:

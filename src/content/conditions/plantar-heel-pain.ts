@@ -71,6 +71,13 @@ const moduleData: ConditionModule = {
       'Plantar heel pain usually means pain where the plantar fascia attaches near the heel bone. The plantar fascia is the thick band of tissue along the bottom of your foot that supports the arch.\n\nIt often hurts with the first steps in the morning or after sitting, then loosens a bit as you move. The problem is usually related to load and the tissue\'s capacity rather than a sign that the foot is damaged.\n\nMost people improve over a few weeks to months with stretching, progressive strengthening, and sensible load management. Although it is widely known as "plantar fasciitis," the tissue is often more degenerative or enthesopathic than purely inflammatory.',
     tissue:
       'The plantar fascia, the thick band of tissue on the sole of the foot, where it attaches near the heel bone (medial calcaneal tubercle).',
+    video: {
+      videoId: '0PeVmTMdWhk',
+      title: 'Plantar Fasciitis Stretches & Exercises - Ask Doctor Jo',
+      channel: 'AskDoctorJo',
+      approved: true,
+      note: 'Physician-curated demonstration video.',
+    },
     anatomyDiagram: {
       key: 'anatomy-plantar',
       altText:

@@ -6,6 +6,7 @@ import { regions, regionById } from './regions'
 export * from './types'
 export { regions, regionById, sportMeta, sportMetaById } from './regions'
 export { procedures, procedureById } from './procedures'
+export { sportPathways, sportPathwayById, type SportPathway } from './pathways'
 export {
   GLOBAL_DISCLAIMER,
   HEP_DISCLAIMER,

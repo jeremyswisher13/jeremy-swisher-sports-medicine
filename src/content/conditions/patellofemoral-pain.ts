@@ -98,6 +98,14 @@ const moduleData: ConditionModule = {
       'Patellofemoral pain means pain in the front of the knee, usually around or behind the kneecap. It is common in runners, field and court athletes, and active teens and adults, but it can also happen in people who are not athletes. Pain is usually related to how much load the knee is handling and how the leg controls that load, not to one single "damaged structure." The main painful area is the patellofemoral joint and the tissues that sense load around it.\n\nPeople often feel pain with stairs, squatting, lunging, running, jumping, or sitting with the knee bent for a long time. Most people improve with good rehab, especially a mix of hip and knee strengthening plus education on load management. Recovery often takes 6 to 12 weeks, but some people need 3 to 6 months, and recurrence is common if the person returns to full activity too fast or stops strength work when pain settles.',
     tissue:
       'The patellofemoral joint surfaces, retinacular/peripatellar pain-sensitive tissues, and load-sharing structures around the kneecap. PFP is a clinical syndrome, not a single lesion.',
+    video: {
+      videoId: 'K3HxB6rAeDo',
+      title: 'Patellofemoral Pain | Chondromalacia Patellae | Runner’s Knee',
+      channel: 'E3 Rehab',
+      channelUrl: 'https://www.youtube.com/@E3Rehab',
+      approved: true,
+      note: 'Physician-curated demonstration video.',
+    },
     anatomyDiagram: {
       key: 'anatomy-knee',
       altText:

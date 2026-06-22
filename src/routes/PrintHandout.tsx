@@ -3,7 +3,6 @@ import { conditionById, HEP_DISCLAIMER, GLOBAL_DISCLAIMER } from '../content'
 import type { RehabPhase } from '../content'
 import { useProgram } from '../hooks/useProgram'
 import { formatDose } from '../lib/format'
-import { SvgIllustration } from '../components/common/SvgIllustration'
 import { Icon } from '../components/common/Icon'
 
 export function PrintHandoutRoute() {
@@ -68,7 +67,7 @@ export function PrintHandoutRoute() {
             <table className="print-table">
               <thead>
                 <tr>
-                  <th className="print-pic-col">Exercise</th>
+                  <th>Exercise</th>
                   <th>Dose</th>
                   <th>Frequency</th>
                   <th>Cues</th>
@@ -77,11 +76,8 @@ export function PrintHandoutRoute() {
               <tbody>
                 {phase.exercises.map((ex) => (
                   <tr key={ex.id}>
-                    <td className="print-pic-col">
-                      <div className="print-ex-name">
-                        <SvgIllustration diagram={ex.diagram} className="print-diagram" />
-                        <strong>{ex.name}</strong>
-                      </div>
+                    <td>
+                      <strong>{ex.name}</strong>
                     </td>
                     <td>{formatDose(ex.dose)}</td>
                     <td>{ex.frequency}</td>

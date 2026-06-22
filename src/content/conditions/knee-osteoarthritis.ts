@@ -72,6 +72,13 @@ const moduleData: ConditionModule = {
       'Knee osteoarthritis (OA) is a chronic change in the knee joint cartilage, bone, and synovium (the joint lining). It often causes pain with walking, stairs, squatting, and getting up from chairs.\n\nEven when imaging shows OA, exercise remains one of the best treatments. OA is long-term, but symptoms can improve substantially with exercise, weight management, and a sensible medication strategy. The goal is to move more, strengthen regularly, and address body-weight load when it is relevant — not to "rest the knee" until it feels better.',
     tissue:
       'The knee joint — its cartilage, the underlying bone, and the synovium (joint lining).',
+    video: {
+      videoId: 'Rl3OkKlftsI',
+      title: 'Knee Osteoarthritis (OA) Stretches & Exercises -  Ask Doctor Jo',
+      channel: 'AskDoctorJo',
+      approved: true,
+      note: 'Physician-curated demonstration video.',
+    },
     anatomyDiagram: {
       key: 'anatomy-knee',
       altText:

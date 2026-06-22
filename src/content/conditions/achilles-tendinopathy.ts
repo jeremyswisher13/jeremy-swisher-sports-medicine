@@ -58,6 +58,14 @@ const moduleData: ConditionModule = {
       'Achilles tendinopathy is pain, stiffness, and sometimes thickening of the Achilles tendon — the strong cord that connects your calf muscles to your heel bone. It usually comes on gradually when the tendon is asked to do more than it is currently used to (a jump in running mileage, new court sport, or change in footwear). It is a problem of tendon capacity and load, not a sign that the tendon is "wearing out."\n\nMost people improve substantially with a patient, progressive loading program over a few months. The tendon often feels stiff and sore for the first few minutes of activity, then warms up — and is frequently most stiff first thing in the morning. The goal of rehab is to gradually rebuild the tendon\'s tolerance so it can handle the activities you care about.',
     tissue:
       'The Achilles tendon and the calf (gastrocnemius–soleus) complex that loads it.',
+    video: {
+      videoId: '_uCUCmVpU88',
+      title: 'Achilles Tendinopathy Stretches & Exercises - Ask Doctor Jo',
+      channel: 'AskDoctorJo',
+      channelUrl: 'https://www.youtube.com/@AskDoctorJo',
+      approved: true,
+      note: 'Physician-curated demonstration video.',
+    },
     anatomyDiagram: {
       key: 'anatomy-achilles',
       altText:

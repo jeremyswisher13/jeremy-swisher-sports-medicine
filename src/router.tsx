@@ -36,6 +36,12 @@ const ProgramBuilderRoute = lazy(() =>
 const EvidenceRoute = lazy(() =>
   import('./routes/Evidence').then((m) => ({ default: m.EvidenceRoute })),
 )
+const SportsIndexRoute = lazy(() =>
+  import('./routes/Sports').then((m) => ({ default: m.SportsIndexRoute })),
+)
+const SportRoute = lazy(() =>
+  import('./routes/Sport').then((m) => ({ default: m.SportRoute })),
+)
 const PrintHandoutRoute = lazy(() =>
   import('./routes/PrintHandout').then((m) => ({ default: m.PrintHandoutRoute })),
 )
@@ -47,6 +53,8 @@ export const router = createHashRouter([
       { index: true, element: <DashboardRoute /> },
       { path: 'regions', element: <RegionsIndexRoute /> },
       { path: 'region/:regionId', element: <RegionRoute /> },
+      { path: 'sports', element: <SportsIndexRoute /> },
+      { path: 'sport/:sportId', element: <SportRoute /> },
       { path: 'condition/:conditionId', element: <ConditionRoute /> },
       { path: 'exercises', element: <ExerciseLibraryRoute /> },
       { path: 'procedures', element: <ProceduresIndexRoute /> },

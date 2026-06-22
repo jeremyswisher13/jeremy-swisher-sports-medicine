@@ -74,6 +74,13 @@ const moduleData: ConditionModule = {
       'De Quervain’s tenosynovitis is pain coming from the first dorsal compartment tendons at the thumb side of the wrist — mainly the abductor pollicis longus and extensor pollicis brevis. These thumb tendons run through a snug tunnel near the base of the thumb, and when they become irritated the area gets sore.\n\nIt often hurts with everyday loads that combine the thumb and wrist — lifting a child, gripping, pinching, or twisting open a jar. Repetitive thumb and wrist loading is the common thread, and postpartum care or repeated lifting are frequent triggers.\n\nWith good treatment, many people improve over a few weeks by resting the thumb, modifying activity, and gradually rebuilding pinch and grip strength. Persistent cases may need an injection.',
     tissue:
       'The first dorsal compartment tendons at the thumb side of the wrist — mainly abductor pollicis longus and extensor pollicis brevis — and their tendon sheath.',
+    video: {
+      videoId: '7jeEZUGqDNw',
+      title: "De Quervain's Syndrome Stretches, aka Blackberry Thumb - Ask Doctor Jo",
+      channel: 'AskDoctorJo',
+      approved: true,
+      note: 'Physician-curated demonstration video.',
+    },
     anatomyDiagram: {
       key: 'anatomy-wrist-thumb',
       altText:

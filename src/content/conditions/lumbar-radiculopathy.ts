@@ -78,6 +78,13 @@ const moduleData: ConditionModule = {
       'Lumbar radiculopathy is irritation or compression of a lumbar nerve root, often from a disc herniation. It causes back-related pain that travels into the buttock or leg and may include numbness, tingling, or weakness.\n\nWhen the irritated nerve runs down the back of the leg, people often call it "sciatica." The leg pain typically follows a specific path (a "root pattern") and, for some people, is worse with coughing or sneezing.\n\nThe encouraging part is that many cases settle over time without surgery. The goal of care is to keep you moving, protect the nerve, and gradually rebuild your tolerance for walking, lifting, and sport — while watching for the small number of warning signs that change the urgency.',
     tissue:
       'A lumbar nerve root — the part of a spinal nerve where it exits the low back — most often irritated or compressed by a herniated disc.',
+    video: {
+      videoId: 'pX-QI4wRpiE',
+      title: 'Sciatica Stretches & Exercises - Ask Doctor Jo',
+      channel: 'AskDoctorJo',
+      approved: true,
+      note: 'Physician-curated demonstration video.',
+    },
     anatomyDiagram: {
       key: 'anatomy-lumbar',
       altText:

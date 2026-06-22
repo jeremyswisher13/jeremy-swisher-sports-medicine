@@ -1,12 +1,11 @@
 import type { Exercise } from '../../content'
 import { formatDose } from '../../lib/format'
-import { SvgIllustration } from '../common/SvgIllustration'
-import { MediaEmbed } from '../common/MediaEmbed'
 import { Icon } from '../common/Icon'
+import { MediaEmbed } from '../common/MediaEmbed'
 
 /**
- * Full exercise detail: diagram, dose table, cues, progression/regression, and
- * an optional curated video. Used in the condition page and exercise library.
+ * Exercise detail: dose table, cues, progression/regression, and an optional
+ * curated video. No figure illustrations (premium, text- and video-led).
  */
 export function ExerciseCard({
   exercise,
@@ -19,9 +18,6 @@ export function ExerciseCard({
 }) {
   return (
     <article className={`exercise-card ${done ? 'done' : ''}`}>
-      <div className="exercise-card-media">
-        <SvgIllustration diagram={exercise.diagram} />
-      </div>
       <div className="exercise-card-body">
         <div className="exercise-card-head">
           <div>

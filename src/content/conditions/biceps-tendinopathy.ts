@@ -72,6 +72,14 @@ const moduleData: ConditionModule = {
       'Biceps tendinopathy usually means pain from the long head of the biceps tendon in the front of the shoulder. The long head of the biceps runs through a groove at the top of the upper arm and into the shoulder joint, and it can become irritated and painful when it is loaded more than it can currently handle.\n\nThis problem often overlaps with rotator cuff problems, so patients commonly feel front-shoulder pain with lifting, reaching, or pulling. Because the biceps tendon rarely acts alone, the front-shoulder pain you feel is frequently part of a broader shoulder picture rather than a single isolated tendon.\n\nMost cases settle with patient load management and a progressive rehab program that also strengthens the rotator cuff and shoulder blade muscles. The goal is to rebuild the tendon and surrounding shoulder so it tolerates the lifting, reaching, and overhead tasks you care about.',
     tissue:
       'The long head of the biceps tendon (LHBT) at the front of the shoulder, often together with the rotator cuff and scapular muscles that share the load.',
+    video: {
+      videoId: 'M9-yNm0NpVc',
+      title: 'Biceps Tendonitis Stretches & Exercises - Ask Doctor Jo',
+      channel: 'AskDoctorJo',
+      channelUrl: 'https://www.youtube.com/@AskDoctorJo',
+      approved: true,
+      note: 'Physician-curated demonstration video.',
+    },
     anatomyDiagram: {
       key: 'anatomy-shoulder',
       altText:

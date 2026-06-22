@@ -71,6 +71,13 @@ const moduleData: ConditionModule = {
       'Non-specific low back pain means back pain without a clear fracture, infection, cancer, inflammatory disease, or dominant nerve root syndrome. The painful structures can include muscles, joints, discs, and ligaments, but in most primary-care cases a single exact tissue cannot be identified reliably.\n\nThis does not mean the pain is "all in your head" or that nothing is wrong. It means the back is sensitive and irritable rather than damaged, and that no specific structure needs to be singled out to treat it well.\n\nMost back pain settles with time and gentle, gradual activity. Acute episodes often improve over days to a few weeks. The goal is to keep moving, stay reassured, and rebuild your tolerance for the activities you care about.',
     tissue:
       'No single tissue can be identified reliably — the painful structures may include the muscles, joints, discs, and ligaments of the lower back.',
+    video: {
+      videoId: '2VuLBYrgG94',
+      title: 'Back Pain Relief Exercises & Stretches - Ask Doctor Jo',
+      channel: 'AskDoctorJo',
+      approved: true,
+      note: 'Physician-curated demonstration video.',
+    },
     anatomyDiagram: {
       key: 'anatomy-lumbar',
       altText:

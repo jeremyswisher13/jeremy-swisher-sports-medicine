@@ -72,6 +72,13 @@ const moduleData: ConditionModule = {
       'A wrist sprain means overstretching of the wrist ligaments. When the pain is on the little-finger side of the wrist, the injured structure is often the triangular fibrocartilage complex (TFCC), which helps stabilize the ulnar side of the wrist and the distal radioulnar joint.\n\nMany simple sprains improve over a few weeks with a period of brace/rest followed by gentle motion and strengthening. Confirmed traumatic TFCC tears can take longer to settle, but the natural history is favorable for many cases.',
     tissue:
       'The wrist ligaments and, on the little-finger side, the triangular fibrocartilage complex (TFCC) — the cartilage-and-ligament structure that stabilizes the ulnar wrist and distal radioulnar joint.',
+    video: {
+      videoId: 'H4ds4CJbKdc',
+      title: 'TFCC Tear / Repair Stretches & Exercises (Triangular Fibrocartilage Complex) - Ask Doctor Jo',
+      channel: 'AskDoctorJo',
+      approved: true,
+      note: 'Physician-curated demonstration video.',
+    },
     anatomyDiagram: {
       key: 'anatomy-wrist-thumb',
       altText:
