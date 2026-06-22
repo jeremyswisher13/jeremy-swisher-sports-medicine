@@ -109,7 +109,7 @@ const moduleData: ConditionModule = {
       summary:
         'Most cases settle with load management and targeted exercise. Tendons adapt gradually, so progress is measured over weeks.',
       typicalTimeline:
-        'Recovery is often 6 to 12 weeks, though chronic cases can last longer.',
+        'Recovery is often 6 weeks to 6 months, though chronic cases can last longer.',
       encouragement:
         'Reducing compression (how you sit, stand, and sleep) plus consistent abductor strengthening tends to hold up better over time than passive waiting or a steroid injection alone.',
     },
@@ -448,7 +448,7 @@ const moduleData: ConditionModule = {
         'Side-sleeping tolerance has improved',
       ],
       timelineGuidance:
-        'Often 6 to 12 weeks, though chronic cases can last longer; highly individual.',
+        'Often 6 weeks to 6 months, though chronic cases can last longer; highly individual.',
       reinjuryPrevention: [
         'Keep hip-abductor strength work going',
         'Maintain decompression habits (avoid hip "hang," crossed legs, side-lying on the sore hip)',
@@ -473,7 +473,7 @@ const moduleData: ConditionModule = {
       },
       {
         q: 'How long until I feel better?',
-        a: 'Recovery is often 6 to 12 weeks with consistent load management and exercise, though chronic cases can last longer.',
+        a: 'Recovery is often 6 weeks to 6 months with consistent load management and exercise, though chronic cases can last longer.',
         citationIds: ['gluteal-kjeldsen-2024-sr'],
       },
     ],

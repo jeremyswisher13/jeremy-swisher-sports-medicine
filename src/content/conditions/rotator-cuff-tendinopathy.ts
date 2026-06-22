@@ -141,6 +141,10 @@ const moduleData: ConditionModule = {
         urgency: 'urgent',
       },
       {
+        text: 'New weakness, numbness, or tingling in the arm or hand (possible nerve involvement rather than cuff pain).',
+        urgency: 'urgent',
+      },
+      {
         text: 'Persistent night pain.',
         urgency: 'see-clinician',
       },
@@ -422,14 +426,14 @@ const moduleData: ConditionModule = {
       },
       {
         procedureId: 'hyaluronic-acid',
-        relevance: 'rarely',
-        evidenceNote: 'Rarely used for rotator cuff / subacromial pain.',
+        relevance: 'not-indicated',
+        evidenceNote: 'Not indicated for rotator cuff / subacromial pain.',
       },
       {
         procedureId: 'shockwave',
-        relevance: 'selected-cases',
+        relevance: 'rarely',
         evidenceNote:
-          'Mainly for calcific disease, not routine noncalcific cuff pain.',
+          'Rarely; mainly for calcific disease, not routine noncalcific cuff pain.',
       },
       {
         procedureId: 'ultrasound-guided',

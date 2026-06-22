@@ -381,8 +381,8 @@ const moduleData: ConditionModule = {
       },
       {
         procedureId: 'shockwave',
-        relevance: 'selected-cases',
-        evidenceNote: 'ESWT: selected cases, secondary option.',
+        relevance: 'not-indicated',
+        evidenceNote: 'ESWT: not a routine option for De Quervain’s.',
       },
       {
         procedureId: 'ultrasound-guided',

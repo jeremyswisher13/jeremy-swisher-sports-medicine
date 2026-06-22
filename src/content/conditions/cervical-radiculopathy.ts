@@ -123,6 +123,10 @@ const moduleData: ConditionModule = {
         urgency: 'urgent',
       },
       {
+        text: 'Fever, unexplained weight loss, night pain, or a history of cancer with new neck or arm symptoms.',
+        urgency: 'urgent',
+      },
+      {
         text: 'Persistent severe arm pain.',
         urgency: 'see-clinician',
       },

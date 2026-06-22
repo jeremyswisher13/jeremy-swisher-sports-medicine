@@ -406,8 +406,9 @@ const moduleData: ConditionModule = {
       },
       {
         procedureId: 'hyaluronic-acid',
-        relevance: 'selected-cases',
-        evidenceNote: 'Selected cases; uncertain.',
+        relevance: 'rarely',
+        evidenceNote:
+          'Not a routine option for frozen shoulder (hydrodilatation — a different procedure — is the selected-case option).',
       },
       {
         procedureId: 'shockwave',

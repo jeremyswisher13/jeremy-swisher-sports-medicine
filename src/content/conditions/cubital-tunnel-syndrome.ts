@@ -391,8 +391,8 @@ const moduleData: ConditionModule = {
     procedures: [
       {
         procedureId: 'corticosteroid',
-        relevance: 'selected-cases',
-        evidenceNote: 'Selected cases, evidence limited.',
+        relevance: 'not-indicated',
+        evidenceNote: 'Not a routine treatment for cubital tunnel syndrome.',
       },
       {
         procedureId: 'prp',

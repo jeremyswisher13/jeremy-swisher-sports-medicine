@@ -112,11 +112,7 @@ const moduleData: ConditionModule = {
     },
     redFlags: [
       {
-        text: 'Inability to bear weight along with bony tenderness, deformity, or concern for a fracture.',
-        urgency: 'emergency',
-      },
-      {
-        text: 'Inability to bear weight with bony tenderness or deformity — urgent evaluation to rule out fracture.',
+        text: 'Inability to bear weight, bony tenderness, or deformity after the injury — get evaluated to rule out a fracture (Ottawa ankle rules).',
         urgency: 'urgent',
       },
       {

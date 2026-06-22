@@ -449,8 +449,9 @@ const moduleData: ConditionModule = {
       },
       {
         procedureId: 'hyaluronic-acid',
-        relevance: 'not-indicated',
-        evidenceNote: 'Not recommended by NICE and overall mixed.',
+        relevance: 'selected-cases',
+        evidenceNote:
+          'Mixed/selected for hip OA — evidence is mixed and it is considered case by case (unlike knee OA, where guidelines generally do not recommend it).',
         citationIds: ['hip-oa-nice-ng226-2022'],
       },
       {

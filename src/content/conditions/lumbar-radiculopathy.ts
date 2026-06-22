@@ -470,9 +470,9 @@ const moduleData: ConditionModule = {
     procedures: [
       {
         procedureId: 'corticosteroid',
-        relevance: 'commonly-discussed',
+        relevance: 'selected-cases',
         evidenceNote:
-          'Commonly discussed as an epidural injection in selected cases for short-term symptom control.',
+          'Selected cases — an epidural steroid injection can give short-term relief in appropriately evaluated radicular pain.',
         citationIds: ['lumbar-nice-ng59'],
       },
       {

@@ -107,7 +107,7 @@ const moduleData: ConditionModule = {
       summary:
         'Most cases improve with progressive loading. Tendons adapt slowly, so recovery is often gradual and measured over weeks to months.',
       typicalTimeline:
-        'Recovery is often slow, commonly 2 to 6 months.',
+        'Recovery is often slow, commonly 3 to 9 months.',
       encouragement:
         'Slow progress is normal for this tendon. Consistent, staged loading is what rebuilds its tolerance for sitting, hinging, and running.',
     },
@@ -397,7 +397,7 @@ const moduleData: ConditionModule = {
         'Progressive loading — isometric and hamstring bridges, heavy slow hinging, and slider curls',
         'A staged running progression with sprinting reintroduced last',
         'Modifying aggravating sitting, hills, and heavy hinging rather than resting fully',
-        'Patience: tendon recovery commonly takes 2 to 6 months',
+        'Patience: tendon recovery commonly takes 3 to 9 months',
       ],
       whatsUncertain: [
         'High-quality comparative evidence is sparse, so the best loading protocol is not established.',
@@ -454,7 +454,7 @@ const moduleData: ConditionModule = {
         'Sprinting reintroduced last',
       ],
       timelineGuidance:
-        'Recovery is often slow, commonly 2 to 6 months and individual to the demands of your sport.',
+        'Recovery is often slow, commonly 3 to 9 months and individual to the demands of your sport.',
       reinjuryPrevention: [
         'Keep a weekly hamstring-strength habit',
         'Increase sprinting, hills, and hinge loads gradually',
@@ -469,7 +469,7 @@ const moduleData: ConditionModule = {
       },
       {
         q: 'How long until I feel better?',
-        a: 'Recovery is often slow, commonly 2 to 6 months with consistent, progressive loading. Tendons adapt gradually, so steady progress matters more than speed.',
+        a: 'Recovery is often slow, commonly 3 to 9 months with consistent, progressive loading. Tendons adapt gradually, so steady progress matters more than speed.',
         citationIds: ['proximal-hamstring-nasser-2021'],
       },
       {

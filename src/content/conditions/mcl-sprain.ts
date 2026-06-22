@@ -106,7 +106,7 @@ const moduleData: ConditionModule = {
       summary:
         'Most isolated MCL sprains are managed nonoperatively with early rehab and staged loading, and recover by grade. Recovery estimates depend heavily on the grade and any associated injuries.',
       typicalTimeline:
-        'Grade I often recovers in 1 to 3 weeks; grade II in 3 to 6+ weeks; grade III takes longer and is more individualized.',
+        'Grade I often recovers in 2 to 6 weeks; grade II in 4 to 8 weeks; grade III takes longer and is more individualized.',
       encouragement:
         'Isolated MCL injuries have a strong capacity to heal. Keeping the knee moving early and rebuilding quad strength is what restores stability.',
     },
@@ -444,7 +444,7 @@ const moduleData: ConditionModule = {
         'Sport drills are tolerated',
       ],
       timelineGuidance:
-        'Varies by grade and associated injuries — grade I roughly 1–3 weeks, grade II 3–6+ weeks, grade III longer and more individualized.',
+        'Varies by grade and associated injuries — grade I roughly 2–6 weeks, grade II 4–8 weeks, grade III longer and more individualized.',
       reinjuryPrevention: [
         'Maintain quad and hip strength',
         'Keep training lateral control and good cutting mechanics',
@@ -459,7 +459,7 @@ const moduleData: ConditionModule = {
       },
       {
         q: 'How long until I recover?',
-        a: 'It depends on the grade. Grade I often recovers in 1 to 3 weeks, grade II in 3 to 6+ weeks, and grade III takes longer and is more individualized. Associated injuries can extend the timeline.',
+        a: 'It depends on the grade. Grade I often recovers in 2 to 6 weeks, grade II in 4 to 8 weeks, and grade III takes longer and is more individualized. Associated injuries can extend the timeline.',
         citationIds: ['mcl-svantesson-2024-review'],
       },
       {

@@ -107,7 +107,7 @@ const moduleData: ConditionModule = {
       summary:
         'Many simple wrist sprains improve with a short period of brace/rest and a graded return to motion, grip, and loading. The natural history is favorable for some traumatic TFCC subsets.',
       typicalTimeline:
-        'Many simple sprains improve over 4 to 8 weeks; confirmed traumatic TFCC tears may take longer.',
+        'Many simple sprains improve over 4 to 12 weeks; confirmed traumatic TFCC tears may take longer.',
       encouragement:
         'A short period of protection followed by steady, graded loading is what most stable wrist sprains need to settle.',
     },
@@ -369,7 +369,7 @@ const moduleData: ConditionModule = {
         'Forearm rotation is near-normal',
       ],
       timelineGuidance:
-        'Many simple sprains return over about 4–8 weeks; confirmed traumatic TFCC tears may take longer, and timing varies.',
+        'Many simple sprains return over about 4–12 weeks; confirmed traumatic TFCC tears may take longer, and timing varies.',
       reinjuryPrevention: [
         'Build forearm rotation and grip strength before resuming wrist-twisting sport',
         'Progress sport load gradually rather than spiking it',
@@ -384,7 +384,7 @@ const moduleData: ConditionModule = {
       },
       {
         q: 'How long until my wrist sprain feels better?',
-        a: 'Many simple sprains improve over about 4 to 8 weeks with a short period of brace/rest and graded rehab. Confirmed traumatic TFCC tears can take longer to settle.',
+        a: 'Many simple sprains improve over about 4 to 12 weeks with a short period of brace/rest and graded rehab. Confirmed traumatic TFCC tears can take longer to settle.',
         citationIds: ['wrist-choi-2024-natural-history'],
       },
       {

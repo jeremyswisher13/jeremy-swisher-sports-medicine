@@ -424,9 +424,9 @@ const moduleData: ConditionModule = {
       },
       {
         procedureId: 'tenotomy',
-        relevance: 'selected-cases',
+        relevance: 'not-indicated',
         evidenceNote:
-          'Percutaneous release / tenotomy: selected cases when conservative care fails.',
+          'Percutaneous tenotomy is not a routine option; refractory cases are managed with surgical A1 pulley release.',
         citationIds: ['trigger-pujalte-2024-injection'],
       },
     ],

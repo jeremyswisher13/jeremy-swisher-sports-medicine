@@ -108,7 +108,11 @@ const moduleData: ConditionModule = {
         urgency: 'urgent',
       },
       {
-        text: 'Calf redness, warmth, and swelling, especially with one-sided leg swelling (possible blood clot).',
+        text: 'Chest pain or shortness of breath together with new calf pain or swelling — call emergency services. This can signal a blood clot that has traveled to the lungs (pulmonary embolism).',
+        urgency: 'emergency',
+      },
+      {
+        text: 'Calf redness, warmth, and swelling, especially with one-sided leg swelling (possible blood clot / DVT).',
         urgency: 'urgent',
       },
       {

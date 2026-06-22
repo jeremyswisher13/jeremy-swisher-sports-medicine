@@ -108,7 +108,7 @@ const moduleData: ConditionModule = {
     prognosis: {
       summary:
         'Most cases improve with a consistent forearm-loading program. Like other tendinopathies, progress is measured over weeks rather than days, and the evidence base is thinner than for tennis elbow.',
-      typicalTimeline: 'Recovery often takes 6 to 12+ weeks.',
+      typicalTimeline: 'Recovery often takes 2 to 6 months.',
       encouragement:
         '"Golfer\'s elbow" is usually a load-related tendon problem, not a permanently inflamed tendon. Steady, progressive loading is what rebuilds capacity.',
     },
@@ -427,8 +427,8 @@ const moduleData: ConditionModule = {
       },
       {
         procedureId: 'shockwave',
-        relevance: 'selected-cases',
-        evidenceNote: 'ESWT: selected cases / uncertain.',
+        relevance: 'rarely',
+        evidenceNote: 'ESWT: not routine for golfer’s elbow.',
       },
       {
         procedureId: 'ultrasound-guided',
@@ -449,7 +449,7 @@ const moduleData: ConditionModule = {
         'Progressive practice volume tolerated without flare',
       ],
       timelineGuidance:
-        'Recovery often takes 6 to 12+ weeks and is highly individual; throwing athletes may need longer.',
+        'Recovery often takes 2 to 6 months and is highly individual; throwing athletes may need longer.',
       reinjuryPrevention: [
         'Keep up forearm strength',
         'Pace grip load and training volume as you build back',
@@ -464,7 +464,7 @@ const moduleData: ConditionModule = {
       },
       {
         q: 'How long does it take to recover?',
-        a: 'Recovery often takes 6 to 12+ weeks of consistent loading, though it varies and throwing athletes may take longer.',
+        a: 'Recovery often takes 2 to 6 months of consistent loading, though it varies and throwing athletes may take longer.',
         citationIds: ['golfers-difilippo-2022-overview'],
       },
       {

@@ -442,8 +442,8 @@ const moduleData: ConditionModule = {
       },
       {
         procedureId: 'shockwave',
-        relevance: 'selected-cases',
-        evidenceNote: 'Selected cases, limited evidence.',
+        relevance: 'rarely',
+        evidenceNote: 'Not routine for biceps tendinopathy; limited evidence.',
         citationIds: ['biceps-mcdevitt-2024-scoping'],
       },
       {

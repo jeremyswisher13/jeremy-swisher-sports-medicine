@@ -170,6 +170,10 @@ const moduleData: ConditionModule = {
         urgency: 'urgent',
       },
       {
+        text: 'Calf swelling or unexplained severe pain at rest — a non-routine pattern that does not fit kneecap pain and should be checked.',
+        urgency: 'urgent',
+      },
+      {
         text: 'Persistent symptoms despite 6 to 8 weeks of rehab.',
         urgency: 'see-clinician',
       },
@@ -609,14 +613,14 @@ const moduleData: ConditionModule = {
       },
       {
         procedureId: 'prp',
-        relevance: 'rarely',
-        evidenceNote: 'Rarely; not a routine treatment for standard PFP.',
+        relevance: 'not-indicated',
+        evidenceNote:
+          'Not indicated — no established role unless a different intra-articular diagnosis is being treated.',
       },
       {
         procedureId: 'hyaluronic-acid',
-        relevance: 'rarely',
-        evidenceNote:
-          'Rarely, unless there is a different confirmed intra-articular diagnosis; not routine for typical PFP.',
+        relevance: 'not-indicated',
+        evidenceNote: 'Not indicated for isolated patellofemoral pain.',
       },
       {
         procedureId: 'shockwave',
