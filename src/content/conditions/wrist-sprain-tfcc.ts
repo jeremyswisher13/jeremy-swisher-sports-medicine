@@ -343,7 +343,7 @@ const moduleData: ConditionModule = {
         procedureId: 'corticosteroid',
         relevance: 'selected-cases',
         evidenceNote:
-          'Selected cases for persistent inflammatory pain, not routine acute care.',
+          'Selected cases for persistent inflammatory pain, not routine acute care; injection is placed about the ulnar wrist/DRUJ region rather than into tendon substance, and repeated steroid around load-bearing soft tissue is avoided.',
       },
       {
         procedureId: 'prp',

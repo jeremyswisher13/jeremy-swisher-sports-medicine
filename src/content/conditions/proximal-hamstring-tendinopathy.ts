@@ -185,7 +185,7 @@ const moduleData: ConditionModule = {
                 'Mild buttock/tendon pain only',
               ],
               painRule:
-                'Default: mild pain up to about 3/10 during the hold that settles by the next morning.',
+                'mild pain up to about 3/10 during the hold that settles by the next morning.',
               equipment: ['A mat', 'Optional low step or box to elevate the heels'],
               diagram: {
                 key: 'glute-bridge',
@@ -235,7 +235,7 @@ const moduleData: ConditionModule = {
                 'Control the lowering — no bouncing at the bottom',
               ],
               painRule:
-                'Default: mild pain up to about 3/10 that settles by the next morning.',
+                'mild pain up to about 3/10 that settles by the next morning.',
               cautions: [
                 'Avoid deep, painful hip flexion early — keep the range to what stays within the pain rule.',
               ],
@@ -262,7 +262,7 @@ const moduleData: ConditionModule = {
                 'Ribs down, no arching',
               ],
               painRule:
-                'Default: mild pain up to about 3/10 that settles overnight.',
+                'mild pain up to about 3/10 that settles overnight.',
               equipment: ['A mat', 'Optional step for the heel'],
               diagram: {
                 key: 'glute-bridge',
@@ -311,7 +311,7 @@ const moduleData: ConditionModule = {
                 'Ribs down, no low-back arching',
               ],
               painRule:
-                'Default: mild pain up to about 3/10 that settles by the next morning.',
+                'mild pain up to about 3/10 that settles by the next morning.',
               equipment: ['Furniture sliders or a towel on a smooth floor'],
               diagram: {
                 key: 'glute-bridge',
@@ -359,7 +359,7 @@ const moduleData: ConditionModule = {
                 'Reintroduce sprinting last, after jogging is comfortable',
               ],
               painRule:
-                'Default: mild pain up to about 3/10 that settles by the next morning.',
+                'mild pain up to about 3/10 that settles by the next morning.',
               cautions: ['Hold sprinting and hard stride work until jogging is symptom-stable.'],
               diagram: {
                 key: 'ankle-balance',

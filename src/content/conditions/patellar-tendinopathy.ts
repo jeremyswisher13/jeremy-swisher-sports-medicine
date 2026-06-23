@@ -191,7 +191,7 @@ const moduleData: ConditionModule = {
                 '"Steady tension"',
               ],
               painRule:
-                'Default: mild pain up to about 3/10 during the hold is acceptable if it settles by the next morning.',
+                'mild pain up to about 3/10 during the hold is acceptable if it settles by the next morning.',
               equipment: [
                 'A sturdy strap or band anchored behind the knees, or a decline/wall setup',
               ],
@@ -242,7 +242,7 @@ const moduleData: ConditionModule = {
                 'Drive up smoothly, full range you can control',
               ],
               painRule:
-                'Default: discomfort up to about 3/10 that settles by the next morning is acceptable.',
+                'discomfort up to about 3/10 that settles by the next morning is acceptable.',
               equipment: ['Squat or leg-press setup with adjustable load'],
               diagram: {
                 key: 'wall-sit',
@@ -290,7 +290,7 @@ const moduleData: ConditionModule = {
                 'Keep the knee tracking over the foot',
               ],
               painRule:
-                'Default: pain up to about 3/10 that settles by the next morning is acceptable.',
+                'pain up to about 3/10 that settles by the next morning is acceptable.',
               equipment: ['A decline board or wedge (about 25°)'],
               diagram: {
                 key: 'decline-single-leg-squat',

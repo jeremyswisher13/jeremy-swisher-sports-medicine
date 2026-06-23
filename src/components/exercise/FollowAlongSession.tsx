@@ -24,7 +24,12 @@ export function FollowAlongSession({
 }) {
   const program = useProgram()
   const exercises = phase.exercises
-  const [step, setStep] = useState(0)
+  const [step, setStep] = useState(() => {
+    const firstIncomplete = exercises.findIndex(
+      (ex) => !program.isExerciseDone(condition.id, ex.id),
+    )
+    return firstIncomplete >= 0 ? firstIncomplete : 0
+  })
 
   function markDone(ex: Exercise) {
     if (!program.isExerciseDone(condition.id, ex.id)) {

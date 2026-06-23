@@ -115,6 +115,10 @@ const moduleData: ConditionModule = {
     },
     redFlags: [
       {
+        text: 'Rapidly worsening redness, warmth, swelling, fever, or feeling unwell around the wrist/thumb — seek emergency care to rule out a deep infection.',
+        urgency: 'emergency',
+      },
+      {
         text: 'Persistent swelling, catching, numbness, or failure of a splint-and-load program to help — see a clinician.',
         urgency: 'see-clinician',
       },

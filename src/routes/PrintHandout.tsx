@@ -76,12 +76,12 @@ export function PrintHandoutRoute() {
               <tbody>
                 {phase.exercises.map((ex) => (
                   <tr key={ex.id}>
-                    <td>
+                    <td data-label="Exercise">
                       <strong>{ex.name}</strong>
                     </td>
-                    <td>{formatDose(ex.dose)}</td>
-                    <td>{ex.frequency}</td>
-                    <td>{ex.formCues.join('; ')}</td>
+                    <td data-label="Dose">{formatDose(ex.dose)}</td>
+                    <td data-label="Frequency">{ex.frequency}</td>
+                    <td data-label="Cues">{ex.formCues.join('; ')}</td>
                   </tr>
                 ))}
               </tbody>

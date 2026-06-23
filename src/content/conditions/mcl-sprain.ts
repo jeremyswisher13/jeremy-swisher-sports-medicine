@@ -179,7 +179,7 @@ const moduleData: ConditionModule = {
             {
               id: 'mcl-quad-set',
               name: 'Quad set',
-              target: 'Quadriceps (especially the inner quad/VMO)',
+              target: 'Quadriceps',
               purpose:
                 'Reawakens the quadriceps and supports the knee while the ligament heals.',
               dose: { sets: 3, reps: '10', holdSeconds: 5 },

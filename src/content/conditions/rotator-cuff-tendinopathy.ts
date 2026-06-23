@@ -215,7 +215,7 @@ const moduleData: ConditionModule = {
                 'Easy pace',
               ],
               painRule:
-                'Default: mild discomfort up to about 3/10 during the exercise is OK if it settles by the next morning.',
+                'mild discomfort up to about 3/10 during the exercise is OK if it settles by the next morning.',
               diagram: {
                 key: 'pendulum',
                 altText:
@@ -238,7 +238,7 @@ const moduleData: ConditionModule = {
                 'Neck relaxed',
               ],
               painRule:
-                'Default: mild discomfort up to about 3/10 during the hold is OK if it settles by the next morning.',
+                'mild discomfort up to about 3/10 during the hold is OK if it settles by the next morning.',
               equipment: ['A wall', 'A small towel'],
               diagram: {
                 key: 'cuff-isometric',
@@ -286,7 +286,7 @@ const moduleData: ConditionModule = {
                 'Shoulder down',
               ],
               painRule:
-                'Default: mild discomfort up to about 3/10 during the exercise is OK if it settles by the next morning.',
+                'mild discomfort up to about 3/10 during the exercise is OK if it settles by the next morning.',
               equipment: ['Light dumbbell (optional)'],
               diagram: {
                 key: 'external-rotation-band',
@@ -310,7 +310,7 @@ const moduleData: ConditionModule = {
                 'Slow lower',
               ],
               painRule:
-                'Default: mild discomfort up to about 3/10 during the exercise is OK if it settles by the next morning.',
+                'mild discomfort up to about 3/10 during the exercise is OK if it settles by the next morning.',
               equipment: ['Light dumbbells (optional)'],
               diagram: {
                 key: 'scapular-retraction',
@@ -358,7 +358,7 @@ const moduleData: ConditionModule = {
                 'Smooth slide',
               ],
               painRule:
-                'Default: mild discomfort up to about 3/10 during the exercise is OK if it settles by the next morning.',
+                'mild discomfort up to about 3/10 during the exercise is OK if it settles by the next morning.',
               equipment: ['A wall', 'A resistance band'],
               diagram: {
                 key: 'scapular-row',
@@ -382,7 +382,7 @@ const moduleData: ConditionModule = {
                 'Steady breath',
               ],
               painRule:
-                'Default: mild discomfort up to about 3/10 during the exercise is OK if it settles by the next morning.',
+                'mild discomfort up to about 3/10 during the exercise is OK if it settles by the next morning.',
               equipment: ['Dumbbells or kettlebells'],
               diagram: {
                 key: 'scapular-retraction',

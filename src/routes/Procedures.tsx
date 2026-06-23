@@ -26,6 +26,8 @@ export function ProceduresIndexRoute() {
               <Icon name={p.iconKey} size={30} strokeWidth={1.7} />
               <span>
                 <strong>{p.title}</strong>
+                <small>{p.tag}</small>
+                <p>{p.education.decisionPoint}</p>
                 <EvidenceBadge strength={p.evidence} />
               </span>
               <Icon name="chevronRight" size={18} />

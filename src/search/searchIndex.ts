@@ -48,13 +48,53 @@ function buildRecords(): SearchRecord[] {
   }
 
   for (const p of procedures) {
+    const peri = p.periProcedure
     records.push({
       type: 'procedure',
       id: p.id,
       title: p.title,
       subtitle: 'Procedure',
       route: `/procedure/${p.id}`,
-      keywords: [p.title, p.tag, p.summary],
+      keywords: [
+        p.title,
+        p.tag,
+        p.summary,
+        p.education.decisionPoint,
+        ...p.bestFit,
+        ...p.questions,
+        ...p.education.whatHappens,
+        ...p.education.notFor,
+        ...p.education.aftercare,
+        ...p.education.callClinician,
+        ...(peri
+          ? [
+              peri.title,
+              peri.intro,
+              ...peri.preChecklist.flatMap((item) => [item.title, item.detail, item.basis]),
+              ...peri.medicationGuidance.flatMap((item) => [
+                item.item,
+                item.recommendation,
+                item.basis,
+                item.patientText,
+                item.clinicianNote ?? '',
+              ]),
+              ...peri.recoveryClusters.flatMap((cluster) => [
+                cluster.title,
+                cluster.overview,
+                ...cluster.appliesTo,
+                ...cluster.stages.flatMap((stage) => [
+                  stage.title,
+                  stage.timing,
+                  stage.patientGoal,
+                  stage.loadingGuidance,
+                  stage.basis,
+                ]),
+              ]),
+              ...peri.warningSigns,
+              ...peri.clinicianCaveats,
+            ]
+          : []),
+      ],
     })
   }
 

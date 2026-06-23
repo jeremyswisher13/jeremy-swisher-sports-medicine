@@ -1,5 +1,7 @@
 # Physician Review — Dr. Jeremy Swisher
 
+> Status note, 2026-06-22: this audit is now historical and partially stale. Several findings have been resolved in later Codex passes, including additional red-flag triage fixes, the trigger-finger percutaneous-release contradiction, procedure education expansion, and integrity-check guardrails. Regenerate this file into resolved vs open items before using it as a clinical review packet.
+
 > Output of a deep, adversarially-verified clinical-accuracy audit of all 28 conditions + pathways + procedures (each finding independently re-checked by a second physician-role reviewer). All content still ships `physician-review-pending`. No citations, statistics, or video IDs were fabricated.
 
 Generated 2026-06-22.
@@ -257,4 +259,3 @@ Raised but not independently confirmed. Review at your discretion.
 - **Issue:** Fever plus local redness raises concern for soft-tissue infection / abscess and, in the diabetic or immunocompromised patient, osteomyelitis; the achilles exemplar treats systemic-infection-type red flags conservatively, but combined fever + spreading redness may warrant same-day emergency assessment rather than 'urgent.' This is a defensible triage choice for an isolated heel rather than a joint, so confidence is low.
 - **Suggested:** Consider whether fever WITH spreading redness/cellulitis should be 'emergency' to align with the app's infection-related triage; at minimum acceptable as 'urgent' for an isolated soft-tissue presentation.
 - **Basis:** App convention that hot/red/swollen joint with fever (septic arthritis) = 'emergency'; standard-of-care escalation for cellulitis/abscess with systemic signs.
-

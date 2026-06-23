@@ -85,6 +85,15 @@ export type ProcedureRelevanceLevel =
   | 'rarely'
   | 'not-indicated'
 
+export type RecommendationBasis =
+  | 'evidence-supported'
+  | 'consensus-common-protocol'
+  | 'theoretical-biologic-rationale'
+  | 'safety-driven-physician-decision'
+  | 'insufficient-evidence-variable-practice'
+
+export type RecoveryEvidenceBasis = 'evidence-based' | 'expert-informed' | 'mixed'
+
 /**
  * Keys into the SVG illustration registry (illustrations + diagrams.ts).
  * Every Exercise.diagram and Condition.anatomyDiagram must use one of these,
@@ -304,7 +313,62 @@ export interface Procedure {
   summary: string
   bestFit: string[]
   questions: string[]
+  education: {
+    /** What the patient should understand before choosing the procedure. */
+    decisionPoint: string
+    /** What usually happens in clinic, in plain language. */
+    whatHappens: string[]
+    /** What this procedure is not designed to solve. */
+    notFor: string[]
+    /** Recovery/load-management expectations after the procedure. */
+    aftercare: string[]
+    /** Symptoms after the procedure that should trigger clinician contact. */
+    callClinician: string[]
+  }
+  periProcedure?: ProcedurePeriProcedurePlan
   citationIds?: string[]
+}
+
+export interface ProcedureChecklistItem {
+  title: string
+  detail: string
+  basis: RecommendationBasis
+}
+
+export interface ProcedureMedicationGuidance {
+  item: string
+  recommendation: string
+  basis: RecommendationBasis
+  patientText: string
+  clinicianNote?: string
+  neverStopWithoutApproval?: boolean
+}
+
+export interface ProcedureRecoveryStage {
+  title: string
+  timing: string
+  patientGoal: string
+  loadingGuidance: string
+  basis: RecoveryEvidenceBasis
+}
+
+export interface ProcedureRecoveryCluster {
+  id: string
+  title: string
+  appliesTo: string[]
+  overview: string
+  stages: ProcedureRecoveryStage[]
+}
+
+export interface ProcedurePeriProcedurePlan {
+  title: string
+  intro: string
+  preChecklist: ProcedureChecklistItem[]
+  medicationGuidance: ProcedureMedicationGuidance[]
+  recoveryClusters: ProcedureRecoveryCluster[]
+  warningSigns: string[]
+  clinicianCaveats: string[]
+  citationIds: string[]
 }
 
 // ---------------------------------------------------------------------------

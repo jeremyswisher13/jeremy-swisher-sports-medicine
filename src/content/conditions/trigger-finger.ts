@@ -424,9 +424,9 @@ const moduleData: ConditionModule = {
       },
       {
         procedureId: 'tenotomy',
-        relevance: 'not-indicated',
+        relevance: 'selected-cases',
         evidenceNote:
-          'Percutaneous tenotomy is not a routine option; refractory cases are managed with surgical A1 pulley release.',
+          'For trigger finger, the relevant percutaneous procedure is needle A1 pulley release rather than tendon fenestration; selected refractory cases may be treated with percutaneous or open A1 pulley release.',
         citationIds: ['trigger-pujalte-2024-injection'],
       },
     ],

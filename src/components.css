@@ -387,6 +387,7 @@
 .condition-card {
   display: grid;
   gap: 0.55rem;
+  min-width: 0;
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: var(--surface);
@@ -407,36 +408,44 @@
   align-items: flex-start;
   justify-content: space-between;
   gap: 0.6rem;
+  min-width: 0;
 }
 
 .condition-card-head strong {
+  min-width: 0;
   color: var(--text-strong);
   font-family: var(--font-display);
   font-size: 1.08rem;
   font-weight: 600;
   line-height: 1.2;
+  overflow-wrap: anywhere;
 }
 
 .condition-card p {
+  min-width: 0;
   margin: 0;
   color: var(--muted);
   font-size: 0.84rem;
   line-height: 1.45;
+  overflow-wrap: anywhere;
 }
 
 .condition-card-foot {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  min-width: 0;
   color: var(--subtle);
 }
 
 .condition-card-region {
+  min-width: 0;
   color: var(--subtle);
   font-size: 0.72rem;
   font-weight: 600;
   letter-spacing: 0.04em;
   text-transform: uppercase;
+  overflow-wrap: anywhere;
 }
 
 /* --- filter chips --------------------------------------------------------- */
@@ -1457,6 +1466,358 @@
   font-weight: 600;
 }
 
+.procedure-decision {
+  overflow: hidden;
+}
+
+.procedure-decision-body {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem 1.2rem 1.25rem;
+}
+
+.procedure-decision-point {
+  display: grid;
+  gap: 0.35rem;
+  border-left: 4px solid var(--accent);
+  background: var(--accent-soft);
+  padding: 0.85rem 1rem;
+}
+
+.procedure-decision-point strong {
+  color: var(--accent);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.procedure-decision-point p {
+  margin: 0;
+  color: var(--text);
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.procedure-education-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem 1rem;
+}
+
+.procedure-education-card {
+  display: grid;
+  gap: 0.55rem;
+  min-width: 0;
+  border-top: 1px solid var(--line);
+  padding-top: 0.9rem;
+}
+
+.procedure-education-card h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0;
+  color: var(--text-strong);
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.procedure-education-card h2 svg {
+  color: var(--accent);
+}
+
+.procedure-education-card.caution h2 svg {
+  color: var(--danger);
+}
+
+.basis-tag {
+  display: inline-flex;
+  align-items: center;
+  width: max-content;
+  border: 1px solid var(--line-strong);
+  border-radius: 6px;
+  background: var(--surface-3);
+  color: var(--muted);
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  line-height: 1.1;
+  padding: 0.22rem 0.42rem;
+  text-transform: uppercase;
+}
+
+.basis-evidence-supported,
+.basis-evidence-based {
+  border-color: rgba(28, 71, 127, 0.35);
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.basis-consensus-common-protocol,
+.basis-mixed {
+  border-color: rgba(230, 189, 115, 0.4);
+  background: var(--gold-soft);
+  color: var(--gold-strong);
+}
+
+.basis-theoretical-biologic-rationale,
+.basis-expert-informed {
+  border-color: rgba(176, 155, 255, 0.35);
+  background: var(--violet-soft);
+  color: var(--violet);
+}
+
+.basis-safety-driven-physician-decision {
+  border-color: rgba(255, 122, 122, 0.3);
+  background: var(--danger-soft);
+  color: var(--danger);
+}
+
+.basis-insufficient-evidence-variable-practice {
+  border-color: var(--line-strong);
+  background: var(--surface-2);
+  color: var(--subtle);
+}
+
+.peri-procedure {
+  overflow: hidden;
+}
+
+.peri-body {
+  display: grid;
+  gap: 1.1rem;
+  padding: 1rem 1.2rem 1.25rem;
+}
+
+.peri-intro {
+  margin: 0;
+  border-left: 4px solid var(--orange);
+  background: var(--orange-soft);
+  color: var(--text);
+  font-size: 0.94rem;
+  line-height: 1.55;
+  padding: 0.85rem 1rem;
+}
+
+.peri-section {
+  display: grid;
+  gap: 0.75rem;
+  min-width: 0;
+}
+
+.peri-section h3 {
+  margin: 0;
+  color: var(--text-strong);
+  font-family: var(--font-display);
+  font-size: 1.12rem;
+  font-weight: 600;
+}
+
+.peri-checklist-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.peri-check-item {
+  display: grid;
+  gap: 0.45rem;
+  border-top: 1px solid var(--line);
+  padding-top: 0.8rem;
+}
+
+.peri-check-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.peri-check-head strong {
+  color: var(--text-strong);
+  font-size: 0.93rem;
+}
+
+.peri-check-item p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.84rem;
+  line-height: 1.48;
+}
+
+.med-guidance-table {
+  display: grid;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+}
+
+.med-guidance-row {
+  display: grid;
+  grid-template-columns: minmax(9rem, 0.8fr) minmax(0, 1.6fr) minmax(9rem, 1fr);
+  gap: 0.8rem;
+  border-top: 1px solid var(--line);
+  background: var(--surface);
+  padding: 0.75rem 0.85rem;
+}
+
+.med-guidance-row:first-child {
+  border-top: 0;
+}
+
+.med-guidance-head {
+  background: var(--surface-2);
+  color: var(--muted);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.med-guidance-row.critical {
+  background: linear-gradient(90deg, var(--danger-soft), var(--surface));
+}
+
+.med-guidance-row span {
+  display: grid;
+  align-content: start;
+  gap: 0.25rem;
+  min-width: 0;
+  color: var(--text);
+  font-size: 0.83rem;
+  line-height: 1.35;
+}
+
+.med-guidance-row strong {
+  color: var(--text-strong);
+  font-size: 0.84rem;
+}
+
+.med-guidance-row small,
+.med-guidance-row em {
+  color: var(--muted);
+  font-size: 0.76rem;
+  line-height: 1.38;
+}
+
+.med-guidance-row .med-item em {
+  color: var(--danger);
+  font-style: normal;
+  font-weight: 700;
+}
+
+.recovery-cluster-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.recovery-cluster {
+  display: grid;
+  gap: 0.9rem;
+  border-top: 1px solid var(--line);
+  padding-top: 0.9rem;
+}
+
+.recovery-cluster-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(12rem, 0.7fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+.recovery-cluster h4 {
+  margin: 0 0 0.3rem;
+  color: var(--text-strong);
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.recovery-cluster p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.84rem;
+  line-height: 1.5;
+}
+
+.applies-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.applies-list span {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface-2);
+  color: var(--subtle);
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 0.22rem 0.52rem;
+}
+
+.recovery-stage-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13.5rem, 1fr));
+  gap: 0.7rem;
+}
+
+.recovery-stage {
+  display: grid;
+  gap: 0.35rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--surface-2);
+  padding: 0.75rem 0.8rem;
+}
+
+.recovery-stage-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.recovery-stage strong {
+  color: var(--text-strong);
+  font-size: 0.86rem;
+}
+
+.recovery-stage small {
+  color: var(--accent);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.recovery-stage p,
+.recovery-stage em {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-style: normal;
+  line-height: 1.4;
+}
+
+.peri-safety-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.peri-section.warning,
+.peri-section.caveat {
+  border-top: 1px solid var(--line);
+  padding-top: 0.85rem;
+}
+
+.peri-section.warning h3 {
+  color: var(--danger);
+}
+
 /* --- evidence table page -------------------------------------------------- */
 .evidence-table-wrap {
   overflow-x: auto;
@@ -2263,7 +2624,11 @@
 @media (max-width: 1100px) {
   .condition-facts,
   .phase-meta,
+  .peri-checklist-grid,
+  .peri-safety-grid,
+  .procedure-education-grid,
   .procedure-detail-grid,
+  .recovery-cluster-head,
   .return-body,
   .sport-guidance-grid {
     grid-template-columns: 1fr;
@@ -2312,6 +2677,81 @@
   .search-modal {
     top: 0.75rem;
     width: calc(100vw - 1.5rem);
+  }
+
+  .med-guidance-row {
+    grid-template-columns: 1fr;
+    gap: 0.45rem;
+  }
+
+  .med-guidance-head {
+    display: none;
+  }
+
+  .recovery-stage-list {
+    grid-template-columns: 1fr;
+  }
+
+  .evidence-table-wrap {
+    overflow-x: visible;
+    border-radius: 10px;
+  }
+
+  .evidence-table {
+    display: block;
+    min-width: 0;
+    width: 100%;
+    font-size: 0.82rem;
+  }
+
+  .evidence-table thead {
+    display: none;
+  }
+
+  .evidence-table tbody {
+    display: grid;
+  }
+
+  .evidence-table tbody tr {
+    display: grid;
+    padding: 0.85rem;
+  }
+
+  .evidence-table tbody tr + tr {
+    border-top: 1px solid var(--line);
+  }
+
+  .evidence-table th,
+  .evidence-table td {
+    border-bottom: 0;
+    padding: 0;
+  }
+
+  .evidence-table td {
+    display: grid;
+    grid-template-columns: minmax(5.4rem, 30%) minmax(0, 1fr);
+    gap: 0.65rem;
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .evidence-table td + td {
+    border-top: 1px solid var(--line);
+    margin-top: 0.55rem;
+    padding-top: 0.55rem;
+  }
+
+  .evidence-table td::before {
+    content: attr(data-label);
+    color: var(--subtle);
+    font-size: 0.66rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .evidence-table td > * {
+    min-width: 0;
   }
 }
 
@@ -2727,14 +3167,77 @@
     flex-wrap: wrap;
   }
 
-  /* On-screen print preview: scroll the wide table instead of crushing columns */
+  /* On-screen print preview: keep handouts readable without horizontal drift. */
   .print-page {
     padding: 1.1rem;
-    overflow-x: auto;
+    overflow-x: visible;
+  }
+
+  .print-toolbar,
+  .print-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .print-clinic {
+    justify-items: start;
+    text-align: left;
   }
 
   .print-table {
-    min-width: 34rem;
+    display: block;
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: 0.8rem;
+  }
+
+  .print-table thead {
+    display: none;
+  }
+
+  .print-table tbody {
+    display: grid;
+    gap: 0.65rem;
+  }
+
+  .print-table tr {
+    display: grid;
+    overflow: hidden;
+    border: 1px solid #b7c5ce;
+    border-radius: 8px;
+  }
+
+  .print-table th,
+  .print-table td {
+    border: 0;
+  }
+
+  .print-table td {
+    display: grid;
+    grid-template-columns: minmax(5.4rem, 30%) minmax(0, 1fr);
+    gap: 0.55rem;
+    min-width: 0;
+    border-top: 1px solid #dbe3e8;
+    padding: 0.5rem 0.6rem;
+    overflow-wrap: anywhere;
+  }
+
+  .print-table td:first-child {
+    border-top: 0;
+  }
+
+  .print-table td::before {
+    content: attr(data-label);
+    color: #5f6c7c;
+    font-size: 0.64rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .print-table td > * {
+    min-width: 0;
   }
 
   .stat-tile {

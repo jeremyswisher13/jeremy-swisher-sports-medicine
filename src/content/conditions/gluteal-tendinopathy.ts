@@ -128,6 +128,10 @@ const moduleData: ConditionModule = {
         urgency: 'urgent',
       },
       {
+        text: 'Insidious deep groin or hip pain that worsens with weight-bearing or impact, or pain at night/rest — especially after a rapid walking/running increase (possible hip stress fracture needing urgent imaging).',
+        urgency: 'urgent',
+      },
+      {
         text: 'Severe weakness or a major change in your walking pattern.',
         urgency: 'see-clinician',
       },
@@ -196,7 +200,7 @@ const moduleData: ConditionModule = {
                 'No trunk sway',
               ],
               painRule:
-                'Default: mild discomfort up to about 3/10 is OK if it settles by the next morning.',
+                'mild discomfort up to about 3/10 is OK if it settles by the next morning.',
               equipment: ['A wall'],
               diagram: {
                 key: 'side-lying-hip-abduction',
@@ -224,7 +228,7 @@ const moduleData: ConditionModule = {
                 'Avoid lying directly on the painful side',
               ],
               painRule:
-                'Default: aim to keep lateral hip pain low and settling overnight.',
+                'aim to keep lateral hip pain low and settling overnight.',
               diagram: {
                 key: 'anatomy-hip',
                 altText:
@@ -273,7 +277,7 @@ const moduleData: ConditionModule = {
                 'Lower under control',
               ],
               painRule:
-                'Default: discomfort up to about 3/10 that settles by the next morning.',
+                'discomfort up to about 3/10 that settles by the next morning.',
               diagram: {
                 key: 'glute-bridge',
                 altText:
@@ -300,7 +304,7 @@ const moduleData: ConditionModule = {
                 'Knees tracking over the toes',
               ],
               painRule:
-                'Default: discomfort up to about 3/10 that settles by the next morning.',
+                'discomfort up to about 3/10 that settles by the next morning.',
               equipment: ['Resistance band'],
               diagram: {
                 key: 'banded-lateral-walk',
@@ -349,7 +353,7 @@ const moduleData: ConditionModule = {
                 'Knee tracking over the toes',
               ],
               painRule:
-                'Default: discomfort up to about 3/10 that settles by the next morning.',
+                'discomfort up to about 3/10 that settles by the next morning.',
               equipment: ['A step or sturdy box', 'Optional rail for balance'],
               diagram: {
                 key: 'step-down',
@@ -376,7 +380,7 @@ const moduleData: ConditionModule = {
                 'No trunk lean',
               ],
               painRule:
-                'Default: discomfort up to about 3/10 that settles by the next morning.',
+                'discomfort up to about 3/10 that settles by the next morning.',
               diagram: {
                 key: 'hip-hike',
                 altText:

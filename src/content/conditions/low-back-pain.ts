@@ -131,6 +131,10 @@ const moduleData: ConditionModule = {
         urgency: 'emergency',
       },
       {
+        text: 'New pain, numbness, or weakness in both legs — seek emergency care because this can be an early cauda equina warning sign.',
+        urgency: 'emergency',
+      },
+      {
         text: 'Fever.',
         urgency: 'urgent',
       },

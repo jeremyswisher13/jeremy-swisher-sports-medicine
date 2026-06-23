@@ -101,7 +101,7 @@ const moduleData: ConditionModule = {
     redFlags: [
       {
         text: 'A sudden, sharp pop or snap in the calf/heel with a feeling of being "kicked," then weakness pushing off — this may be an Achilles rupture and needs urgent evaluation.',
-        urgency: 'emergency',
+        urgency: 'urgent',
       },
       {
         text: 'Inability to rise onto your toes, or a visible gap/divot in the tendon.',

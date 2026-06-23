@@ -115,8 +115,8 @@ const moduleData: ConditionModule = {
     },
     redFlags: [
       {
-        text: 'Acute deformity or suspected rupture after a pop.',
-        urgency: 'emergency',
+        text: 'Acute deformity or suspected biceps rupture after a pop (for example, a Popeye-like bulge) — get evaluated promptly.',
+        urgency: 'urgent',
       },
       {
         text: 'Major weakness after injury.',

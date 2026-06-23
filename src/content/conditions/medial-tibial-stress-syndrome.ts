@@ -114,6 +114,10 @@ const moduleData: ConditionModule = {
     },
     redFlags: [
       {
+        text: 'Severe, rapidly worsening lower-leg pain with tight swelling, numbness/weakness, pain with stretching the foot, or a cold/pale foot — go to the emergency department (possible acute compartment or blood-flow problem).',
+        urgency: 'emergency',
+      },
+      {
         text: 'Small, focal bony tenderness on the shin (pain at one pinpoint spot rather than spread along the border) — this can suggest a stress fracture.',
         urgency: 'urgent',
       },

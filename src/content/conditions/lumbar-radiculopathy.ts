@@ -121,7 +121,7 @@ const moduleData: ConditionModule = {
     },
     redFlags: [
       {
-        text: 'Cauda equina symptoms — such as loss of bladder or bowel control, numbness in the saddle/groin area, or rapidly worsening weakness in both legs. Go to the emergency department now.',
+        text: 'Cauda equina symptoms — such as loss of bladder or bowel control, numbness in the saddle/groin area, or rapidly worsening weakness or numbness in one or both legs. Go to the emergency department now.',
         urgency: 'emergency',
       },
       {
@@ -535,7 +535,7 @@ const moduleData: ConditionModule = {
       },
       {
         q: 'When is sciatica an emergency?',
-        a: 'Seek emergency care for cauda equina symptoms — loss of bladder or bowel control, numbness in the saddle/groin area, or rapidly worsening weakness in both legs. Get urgent care for a progressive (worsening) motor deficit or severe, uncontrolled pain.',
+        a: 'Seek emergency care for cauda equina symptoms — loss of bladder or bowel control, numbness in the saddle/groin area, or rapidly worsening weakness or numbness in one or both legs. Get urgent care for a progressive (worsening) motor deficit or severe, uncontrolled pain.',
       },
     ],
     relatedConditionIds: ['low-back-pain', 'spondylolysis'],

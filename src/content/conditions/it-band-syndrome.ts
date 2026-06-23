@@ -115,6 +115,10 @@ const moduleData: ConditionModule = {
     },
     redFlags: [
       {
+        text: 'A hot, red, swollen knee with fever or feeling unwell — this can signal a joint infection and needs emergency care.',
+        urgency: 'emergency',
+      },
+      {
         text: 'Knee swelling or locking (the knee catching or getting stuck).',
         urgency: 'see-clinician',
       },

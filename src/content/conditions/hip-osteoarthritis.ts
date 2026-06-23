@@ -120,8 +120,8 @@ const moduleData: ConditionModule = {
         urgency: 'urgent',
       },
       {
-        text: 'Fever with a hot joint.',
-        urgency: 'urgent',
+        text: 'Fever with a hot, swollen, or severely painful hip — this can signal a joint infection and needs emergency care.',
+        urgency: 'emergency',
       },
       {
         text: 'Rapid major loss of function.',
@@ -148,7 +148,7 @@ const moduleData: ConditionModule = {
         "Don't treat exercise as optional — it is one of the most important treatments for hip OA.",
         "Don't rely only on injections or medications as a substitute for movement and strength work.",
         "Don't push through sharp, worsening, or next-day-increasing pain.",
-        "Don't ignore new inability to bear weight after trauma, fever with a hot joint, or rapid loss of function — these need evaluation.",
+        "Don't ignore new inability to bear weight after trauma, fever with a hot or severely painful joint, or rapid loss of function — these need prompt evaluation.",
       ],
     },
     clinicalGoal:

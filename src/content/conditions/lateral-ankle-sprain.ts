@@ -117,6 +117,10 @@ const moduleData: ConditionModule = {
         urgency: 'emergency',
       },
       {
+        text: 'A cold, pale, blue, numb, or pulseless foot after the injury, or severe worsening pain out of proportion — go to the emergency department immediately (possible blood-vessel, nerve, or compartment problem).',
+        urgency: 'emergency',
+      },
+      {
         text: 'Inability to bear weight or bony tenderness after the injury — get evaluated to rule out a fracture (Ottawa ankle rules).',
         urgency: 'urgent',
       },

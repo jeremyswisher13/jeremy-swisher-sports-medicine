@@ -38,15 +38,15 @@ export function EvidenceRoute() {
           <tbody>
             {cites.map((c) => (
               <tr key={c.id}>
-                <td>
+                <td data-label="Source">
                   <strong>{c.authorsOrOrg}</strong>
                   <small>
                     {c.source} · {c.year}
                   </small>
                 </td>
-                <td>{typeLabel[c.type] ?? c.type}</td>
-                <td>{c.takeaway}</td>
-                <td>
+                <td data-label="Type">{typeLabel[c.type] ?? c.type}</td>
+                <td data-label="Takeaway">{c.takeaway}</td>
+                <td data-label="Link">
                   <a href={c.url} target="_blank" rel="noreferrer">
                     Open
                     <Icon name="external" size={14} />
