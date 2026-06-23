@@ -3256,22 +3256,6 @@
   stroke: var(--accent);
   stroke-width: 9;
   stroke-linecap: round;
-  stroke-dasharray: 327;
-  stroke-dashoffset: 327;
-  animation: cadence-sweep linear forwards;
-}
-
-.cadence-sweep.paused {
-  animation-play-state: paused;
-}
-
-@keyframes cadence-sweep {
-  from {
-    stroke-dashoffset: 327;
-  }
-  to {
-    stroke-dashoffset: 0;
-  }
 }
 
 .cadence-phase {

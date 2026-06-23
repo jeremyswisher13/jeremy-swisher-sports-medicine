@@ -42,6 +42,10 @@ export function parseTempo(tempo?: string): TempoPhase[] {
  */
 export function parseReps(reps?: string): number | null {
   if (!reps) return null
+  // Distances/durations are not rep counts ("20–40 m", "10–30 minutes").
+  if (/\b(m|km|metre|meter|metres|meters|min|mins|minute|minutes|sec|secs|second|seconds)\b/i.test(reps)) {
+    return null
+  }
   const nums = reps.match(/\d+/g)
   if (!nums || !nums.length) return null
   return Math.max(...nums.slice(0, 2).map(Number))

@@ -35,6 +35,7 @@ export function FollowAlongSession({
   const [soundOn, setSoundOn] = useLocalStorage<boolean>('jsm:sound', true)
   const [flow, setFlow] = useState<Flow>('exercises')
   const [logged, setLogged] = useState(false)
+  const sessionDoneRef = useRef<Set<string>>(new Set())
   const [step, setStep] = useState(() => {
     const firstIncomplete = exercises.findIndex(
       (ex) => !program.isExerciseDone(condition.id, ex.id),
@@ -78,9 +79,7 @@ export function FollowAlongSession({
         conditionId: condition.id,
         phaseId: phase.id,
         completedAt: Date.now(),
-        exercisesDone: exercises.filter((e) =>
-          program.isExerciseDone(condition.id, e.id),
-        ).length,
+        exercisesDone: sessionDoneRef.current.size,
         exercisesTotal: total,
         pain,
         effort,
@@ -135,6 +134,7 @@ export function FollowAlongSession({
             total={total}
             soundOn={soundOn}
             onExerciseDone={() => {
+              sessionDoneRef.current.add(exercises[step].id)
               markDone(exercises[step])
               advance()
             }}
@@ -196,10 +196,23 @@ function ExercisePlayer({
 }) {
   const sets = exercise.dose.sets ?? 1
   const holdSeconds = exercise.dose.holdSeconds
-  const isHold = !!holdSeconds
   const tempoPhases = useMemo(() => parseTempo(exercise.dose.tempo), [exercise.dose.tempo])
   const repTarget = useMemo(() => parseReps(exercise.dose.reps), [exercise.dose.reps])
-  const guidedReps = !isHold && tempoPhases.length > 0 && repTarget != null
+  const hasReps = repTarget != null
+  // A pure timed hold is a hold with NO rep count.
+  const isHold = !!holdSeconds && !hasReps
+  // Guided cadence for rep-based work with timing: an explicit tempo, OR
+  // "N reps each held Xs" (reps + holdSeconds). Otherwise the set is manual.
+  const cadencePhases = useMemo<TempoPhase[]>(
+    () =>
+      tempoPhases.length > 0
+        ? tempoPhases
+        : holdSeconds && hasReps
+          ? [{ label: 'Hold', seconds: holdSeconds }]
+          : [],
+    [tempoPhases, holdSeconds, hasReps],
+  )
+  const guidedReps = hasReps && cadencePhases.length > 0
 
   const [setsDone, setSetsDone] = useState(0)
   const [stage, setStage] = useState<'idle' | 'work' | 'rest'>('idle')
@@ -231,17 +244,18 @@ function ExercisePlayer({
   })
 
   function completeSet() {
-    setSetsDone((prev) => {
-      const next = prev + 1
-      if (next < sets) {
-        sound(cue.rest)
-        setStage('rest')
-        rest.start(REST_SECONDS)
-      } else {
-        setStage('idle')
-      }
-      return next
-    })
+    // Side effects stay out of the state updater (StrictMode double-invokes
+    // updaters in dev). setsDone is fresh here because the timer callbacks are
+    // ref-updated each render.
+    const next = setsDone + 1
+    setSetsDone(next)
+    if (next < sets) {
+      sound(cue.rest)
+      setStage('rest')
+      rest.start(REST_SECONDS)
+    } else {
+      setStage('idle')
+    }
   }
 
   function startSet() {
@@ -323,7 +337,7 @@ function ExercisePlayer({
           ) : stage === 'work' && guidedReps ? (
             <RepCadence
               key={`${exercise.id}-set-${setsDone}`}
-              phases={tempoPhases}
+              phases={cadencePhases}
               reps={repTarget!}
               soundOn={soundOn}
               onComplete={() => {
@@ -507,50 +521,84 @@ function RepCadence({
   soundOn: boolean
   onComplete: () => void
 }) {
-  const [rep, setRep] = useState(0) // completed reps
-  const [pi, setPi] = useState(0) // current phase index
+  const perRep = phases.reduce((a, p) => a + p.seconds, 0)
+  const totalSec = reps * perRep
   const [paused, setPaused] = useState(false)
-  const current = phases[pi]
+  const [view, setView] = useState({ rep: 1, label: phases[0].label, frac: 0 })
+  const elapsedRef = useRef(0) // accumulated active seconds (survives pause)
+  const lastTsRef = useRef(0)
+  const beatRef = useRef(-1) // last beat we beeped (rep*phases + phaseIndex)
+  const doneRef = useRef(false)
+  const onCompleteRef = useRef(onComplete)
+  const soundRef = useRef(soundOn)
+  useEffect(() => {
+    onCompleteRef.current = onComplete
+    soundRef.current = soundOn
+  })
 
+  // Interval loop driven by real-time deltas (performance.now): pausing stops
+  // accumulating; resuming continues from the saved elapsed time (no phase
+  // restart, no re-beep). setInterval (not rAF) so it keeps running if the tab
+  // is backgrounded, matching the hold/rest timers.
   useEffect(() => {
     if (paused) return
-    if (soundOn) cue.tick()
-    const id = setTimeout(() => {
-      let nextPi = pi + 1
-      let nextRep = rep
-      if (nextPi >= phases.length) {
-        nextPi = 0
-        nextRep = rep + 1
-      }
-      if (nextRep >= reps) {
-        onComplete()
+    lastTsRef.current = performance.now()
+    const id = setInterval(() => {
+      const now = performance.now()
+      const dt = (now - lastTsRef.current) / 1000
+      lastTsRef.current = now
+      elapsedRef.current += dt
+      const e = elapsedRef.current
+      if (e >= totalSec) {
+        setView({ rep: reps, label: phases[phases.length - 1].label, frac: 1 })
+        if (!doneRef.current) {
+          doneRef.current = true
+          clearInterval(id)
+          onCompleteRef.current()
+        }
         return
       }
-      setRep(nextRep)
-      setPi(nextPi)
-    }, current.seconds * 1000)
-    return () => clearTimeout(id)
-    // re-runs on each phase/rep change to schedule the next beat
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [pi, rep, paused])
+      const within = e % perRep
+      let cum = 0
+      let pi = 0
+      for (let i = 0; i < phases.length; i++) {
+        if (within < cum + phases[i].seconds) {
+          pi = i
+          break
+        }
+        cum += phases[i].seconds
+      }
+      const rep = Math.floor(e / perRep)
+      const beat = rep * phases.length + pi
+      if (beat !== beatRef.current) {
+        beatRef.current = beat
+        if (soundRef.current) cue.tick()
+      }
+      const frac = (within - cum) / phases[pi].seconds
+      setView({ rep: Math.min(rep + 1, reps), label: phases[pi].label, frac })
+    }, 100)
+    return () => clearInterval(id)
+  }, [paused, totalSec, perRep, reps, phases])
 
+  const offset = RING_CIRC * (1 - Math.max(0, Math.min(1, view.frac)))
   return (
     <div className="session-ring-zone">
-      <div className="cadence-ring" key={`${rep}-${pi}`}>
+      <div className="cadence-ring">
         <svg viewBox="0 0 120 120" aria-hidden="true">
           <circle className="cadence-track" cx="60" cy="60" r="52" />
           <circle
-            className={`cadence-sweep ${paused ? 'paused' : ''}`}
+            className="cadence-sweep"
             cx="60"
             cy="60"
             r="52"
-            style={{ animationDuration: `${current.seconds}s` }}
+            strokeDasharray={RING_CIRC}
+            strokeDashoffset={offset}
           />
         </svg>
         <div className="cadence-center">
-          <span className="cadence-phase">{current.label}</span>
+          <span className="cadence-phase">{view.label}</span>
           <span className="cadence-rep">
-            Rep {Math.min(rep + 1, reps)} / {reps}
+            Rep {view.rep} / {reps}
           </span>
         </div>
       </div>
@@ -558,7 +606,7 @@ function RepCadence({
         <button type="button" className="small-button" onClick={() => setPaused((p) => !p)}>
           {paused ? 'Resume' : 'Pause'}
         </button>
-        <button type="button" className="small-button" onClick={onComplete}>
+        <button type="button" className="small-button" onClick={() => onComplete()}>
           Done set
         </button>
       </div>

@@ -145,8 +145,8 @@ function sanitize(raw: unknown): StoreShape {
         completedAt: typeof s.completedAt === 'number' ? s.completedAt : Date.now(),
         exercisesDone: typeof s.exercisesDone === 'number' ? s.exercisesDone : 0,
         exercisesTotal: typeof s.exercisesTotal === 'number' ? s.exercisesTotal : 0,
-        pain: typeof s.pain === 'number' ? s.pain : null,
-        effort: typeof s.effort === 'number' ? s.effort : null,
+        pain: typeof s.pain === 'number' ? Math.max(0, Math.min(10, s.pain)) : null,
+        effort: typeof s.effort === 'number' ? Math.max(1, Math.min(10, s.effort)) : null,
       }))
       .sort((a, b) => a.completedAt - b.completedAt)
   }
