@@ -2356,6 +2356,102 @@
 }
 
 /* --- not found ------------------------------------------------------------ */
+/* --- full-page error fallback -------------------------------------------- */
+.error-screen {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: 2rem 1.25rem;
+  background:
+    radial-gradient(900px 520px at 86% -12%, rgba(176, 133, 46, 0.1), transparent 60%),
+    var(--bg);
+}
+
+.error-card {
+  display: grid;
+  justify-items: center;
+  gap: 0.7rem;
+  width: 100%;
+  max-width: 32rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--elevate);
+  padding: 2.4rem 2rem;
+  text-align: center;
+}
+
+.error-mark {
+  display: grid;
+  place-items: center;
+  width: 4rem;
+  height: 4rem;
+  margin-bottom: 0.3rem;
+  border-radius: 18px;
+  background: var(--gold-soft);
+  color: var(--gold-strong);
+}
+
+.error-eyebrow {
+  color: var(--gold-strong);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.error-card h1 {
+  margin: 0;
+  color: var(--text-strong);
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.error-card p {
+  max-width: 30rem;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.error-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-top: 0.6rem;
+}
+
+.error-details {
+  width: 100%;
+  margin-top: 0.8rem;
+  text-align: left;
+}
+
+.error-details summary {
+  cursor: pointer;
+  color: var(--subtle);
+  font-size: 0.8rem;
+}
+
+.error-details pre {
+  margin-top: 0.5rem;
+  max-height: 16rem;
+  overflow: auto;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--surface-2);
+  color: var(--text);
+  font-size: 0.72rem;
+  line-height: 1.4;
+  padding: 0.75rem;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+}
+
 .not-found {
   display: grid;
   gap: 0.8rem;

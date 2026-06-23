@@ -3,6 +3,7 @@ import { lazy, Suspense } from 'react'
 import { createHashRouter } from 'react-router-dom'
 import { AppShell } from './components/layout/AppShell'
 import { NotFound } from './routes/NotFound'
+import { RouteError } from './components/common/ErrorScreen'
 
 // Route page components are code-split so the initial load stays small; their
 // heavier dependencies (illustrations, media, per-page UI) load on demand.
@@ -50,6 +51,7 @@ const PrintHandoutRoute = lazy(() =>
 export const router = createHashRouter([
   {
     element: <AppShell />,
+    errorElement: <RouteError />,
     children: [
       { index: true, element: <DashboardRoute /> },
       { path: 'regions', element: <RegionsIndexRoute /> },
@@ -68,6 +70,7 @@ export const router = createHashRouter([
   // Print handout renders outside the app shell (no sidebar/topbar).
   {
     path: '/program/print',
+    errorElement: <RouteError />,
     element: (
       <Suspense fallback={<div className="route-loading">Loading…</div>}>
         <PrintHandoutRoute />
