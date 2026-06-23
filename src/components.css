@@ -404,21 +404,25 @@
 }
 
 .condition-card-head {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 0.6rem;
+  display: grid;
+  justify-items: start;
+  gap: 0.5rem;
   min-width: 0;
 }
 
 .condition-card-head strong {
   min-width: 0;
+  max-width: 100%;
   color: var(--text-strong);
   font-family: var(--font-display);
   font-size: 1.08rem;
   font-weight: 600;
   line-height: 1.2;
-  overflow-wrap: anywhere;
+  /* wrap whole words; only hyphenate genuinely long words (>=10 chars) so
+     short words like "Runner's" wrap whole instead of "Run-ner's" */
+  overflow-wrap: break-word;
+  hyphens: auto;
+  hyphenate-limit-chars: 10 4 4;
 }
 
 .condition-card p {
@@ -427,7 +431,7 @@
   color: var(--muted);
   font-size: 0.84rem;
   line-height: 1.45;
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;
 }
 
 .condition-card-foot {
@@ -445,7 +449,7 @@
   font-weight: 600;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;
 }
 
 /* --- filter chips --------------------------------------------------------- */
@@ -2732,7 +2736,7 @@
     grid-template-columns: minmax(5.4rem, 30%) minmax(0, 1fr);
     gap: 0.65rem;
     min-width: 0;
-    overflow-wrap: anywhere;
+    overflow-wrap: break-word;
   }
 
   .evidence-table td + td {
@@ -3592,7 +3596,7 @@
     min-width: 0;
     border-top: 1px solid #dbe3e8;
     padding: 0.5rem 0.6rem;
-    overflow-wrap: anywhere;
+    overflow-wrap: break-word;
   }
 
   .print-table td:first-child {

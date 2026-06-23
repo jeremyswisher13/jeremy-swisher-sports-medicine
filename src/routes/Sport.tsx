@@ -44,8 +44,8 @@ export function SportRoute() {
           {conditions.map((c) => (
             <Link key={c!.id} to={`/condition/${c!.id}`} className="condition-card">
               <div className="condition-card-head">
-                <strong>{c!.name}</strong>
                 <EvidenceBadge strength={c!.evidence.strength} />
+                <strong>{c!.name}</strong>
               </div>
               <p>{c!.oneLiner}</p>
               <div className="condition-card-foot">
