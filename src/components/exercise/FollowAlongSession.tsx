@@ -1,17 +1,25 @@
-import { useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import type { Condition, Exercise, RehabPhase } from '../../content'
 import { formatDose } from '../../lib/format'
+import { parseReps, parseTempo, type TempoPhase } from '../../lib/tempo'
+import { cue } from '../../lib/audio'
 import { useProgram } from '../../hooks/useProgram'
-import { useCountdown, fmtTime } from '../../hooks/useCountdown'
+import { useCoachTimer } from '../../hooks/useCoachTimer'
+import { useLocalStorage } from '../../hooks/useLocalStorage'
+import { fmtTime } from '../../hooks/useCountdown'
 import { Icon } from '../common/Icon'
 import { MediaEmbed } from '../common/MediaEmbed'
 
 const REST_SECONDS = 45
+const RING_CIRC = 327 // 2πr for r=52, used by the SVG progress rings
+
+type Flow = 'exercises' | 'checkin' | 'summary'
 
 /**
- * Full-screen "follow-along" player: walks the patient through one phase, one
- * exercise at a time, with a hold/rest timer, set tracking, form cues, and the
- * curated video. Completing an exercise marks it done in saved progress.
+ * Coached full-screen follow-along player. Walks one phase, one exercise at a
+ * time: holds and rests auto-run with audio/haptic cues, rep exercises with an
+ * explicit tempo get a metronome, and the session ends with a pain/effort
+ * check-in that is logged to the local rehab journal.
  */
 export function FollowAlongSession({
   condition,
@@ -24,12 +32,28 @@ export function FollowAlongSession({
 }) {
   const program = useProgram()
   const exercises = phase.exercises
+  const [soundOn, setSoundOn] = useLocalStorage<boolean>('jsm:sound', true)
+  const [flow, setFlow] = useState<Flow>('exercises')
+  const [logged, setLogged] = useState(false)
   const [step, setStep] = useState(() => {
     const firstIncomplete = exercises.findIndex(
       (ex) => !program.isExerciseDone(condition.id, ex.id),
     )
     return firstIncomplete >= 0 ? firstIncomplete : 0
   })
+
+  const nextPhase = useMemo(
+    () => condition.hep.phases.find((p) => p.order === phase.order + 1) ?? null,
+    [condition, phase],
+  )
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose()
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [onClose])
 
   function markDone(ex: Exercise) {
     if (!program.isExerciseDone(condition.id, ex.id)) {
@@ -38,13 +62,43 @@ export function FollowAlongSession({
   }
 
   const total = exercises.length
-  const isComplete = step >= total
-  const pct = Math.round((Math.min(step, total) / total) * 100)
+  const pct =
+    flow === 'exercises'
+      ? Math.round((Math.min(step, total) / total) * 100)
+      : 100
+
+  function advance() {
+    if (step + 1 >= total) setFlow('checkin')
+    else setStep((s) => s + 1)
+  }
+
+  function saveCheckIn(pain: number | null, effort: number | null) {
+    if (!logged) {
+      program.logSession({
+        conditionId: condition.id,
+        phaseId: phase.id,
+        completedAt: Date.now(),
+        exercisesDone: exercises.filter((e) =>
+          program.isExerciseDone(condition.id, e.id),
+        ).length,
+        exercisesTotal: total,
+        pain,
+        effort,
+      })
+      setLogged(true)
+    }
+    setFlow('summary')
+  }
 
   return (
     <>
       <button className="drawer-scrim" type="button" aria-label="Close session" onClick={onClose} />
-      <section className="session-overlay" role="dialog" aria-modal="true" aria-label="Follow-along session">
+      <section
+        className="session-overlay"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Follow-along session"
+      >
         <header className="session-bar">
           <div className="session-bar-info">
             <span className="session-eyebrow">Follow along · {condition.shortName}</span>
@@ -52,35 +106,66 @@ export function FollowAlongSession({
               Phase {phase.order}: {phase.title}
             </strong>
           </div>
-          <button type="button" className="session-close" onClick={onClose} aria-label="Close">
-            <Icon name="close" size={20} />
-          </button>
+          <div className="session-bar-actions">
+            <button
+              type="button"
+              className="session-icon-btn"
+              onClick={() => setSoundOn((v) => !v)}
+              aria-pressed={soundOn}
+              aria-label={soundOn ? 'Mute audio cues' : 'Unmute audio cues'}
+              title={soundOn ? 'Sound on' : 'Sound off'}
+            >
+              <Icon name={soundOn ? 'volume' : 'volumeOff'} size={20} />
+            </button>
+            <button type="button" className="session-close" onClick={onClose} aria-label="Close">
+              <Icon name="close" size={20} />
+            </button>
+          </div>
         </header>
 
         <div className="session-progress" aria-hidden="true">
           <div className="session-progress-fill" style={{ width: `${pct}%` }} />
         </div>
 
-        {isComplete ? (
-          <SessionComplete
-            condition={condition}
-            phase={phase}
-            doneCount={exercises.filter((e) => program.isExerciseDone(condition.id, e.id)).length}
-            onClose={onClose}
-            onRestart={() => setStep(0)}
-          />
-        ) : (
+        {flow === 'exercises' && (
           <ExercisePlayer
             key={exercises[step].id}
             exercise={exercises[step]}
             index={step}
             total={total}
-            onDone={() => {
+            soundOn={soundOn}
+            onExerciseDone={() => {
               markDone(exercises[step])
-              setStep((s) => s + 1)
+              advance()
             }}
-            onSkip={() => setStep((s) => s + 1)}
+            onSkip={advance}
             onPrev={step > 0 ? () => setStep((s) => s - 1) : undefined}
+          />
+        )}
+
+        {flow === 'checkin' && (
+          <CheckIn
+            condition={condition}
+            onSave={saveCheckIn}
+          />
+        )}
+
+        {flow === 'summary' && (
+          <SessionSummary
+            condition={condition}
+            phase={phase}
+            nextPhase={nextPhase}
+            doneCount={exercises.filter((e) => program.isExerciseDone(condition.id, e.id)).length}
+            streak={program.currentStreakDays}
+            onAdvancePhase={
+              nextPhase
+                ? () => {
+                    program.setActivePhase(condition.id, nextPhase.id)
+                    onClose()
+                  }
+                : undefined
+            }
+            onClose={onClose}
           />
         )}
       </section>
@@ -88,43 +173,109 @@ export function FollowAlongSession({
   )
 }
 
+// ---------------------------------------------------------------------------
+// Per-exercise coached player
+// ---------------------------------------------------------------------------
+
 function ExercisePlayer({
   exercise,
   index,
   total,
-  onDone,
+  soundOn,
+  onExerciseDone,
   onSkip,
   onPrev,
 }: {
   exercise: Exercise
   index: number
   total: number
-  onDone: () => void
+  soundOn: boolean
+  onExerciseDone: () => void
   onSkip: () => void
   onPrev?: () => void
 }) {
   const sets = exercise.dose.sets ?? 1
   const holdSeconds = exercise.dose.holdSeconds
   const isHold = !!holdSeconds
-  const [setsDone, setSetsDone] = useState(0)
-  const [mode, setMode] = useState<'idle' | 'rest'>('idle')
-  const timer = useCountdown()
-  const [showVideo, setShowVideo] = useState(false)
+  const tempoPhases = useMemo(() => parseTempo(exercise.dose.tempo), [exercise.dose.tempo])
+  const repTarget = useMemo(() => parseReps(exercise.dose.reps), [exercise.dose.reps])
+  const guidedReps = !isHold && tempoPhases.length > 0 && repTarget != null
 
+  const [setsDone, setSetsDone] = useState(0)
+  const [stage, setStage] = useState<'idle' | 'work' | 'rest'>('idle')
+  const [showVideo, setShowVideo] = useState(false)
+  const primaryRef = useRef<HTMLButtonElement>(null)
+
+  const sound = (fn: () => void) => {
+    if (soundOn) fn()
+  }
   const allSetsDone = setsDone >= sets
 
-  function logSet() {
-    const next = setsDone + 1
-    setSetsDone(next)
-    timer.reset()
-    if (next < sets) setMode('rest')
-    else setMode('idle')
+  const work = useCoachTimer({
+    onTick: (r) => {
+      if (r > 0 && r <= 3) sound(cue.count)
+    },
+    onComplete: () => {
+      sound(cue.done)
+      completeSet()
+    },
+  })
+  const rest = useCoachTimer({
+    onTick: (r) => {
+      if (r > 0 && r <= 3) sound(cue.count)
+    },
+    onComplete: () => {
+      sound(cue.go)
+      setStage('idle')
+    },
+  })
+
+  function completeSet() {
+    setSetsDone((prev) => {
+      const next = prev + 1
+      if (next < sets) {
+        sound(cue.rest)
+        setStage('rest')
+        rest.start(REST_SECONDS)
+      } else {
+        setStage('idle')
+      }
+      return next
+    })
   }
 
-  function startRest() {
-    setMode('idle')
-    timer.start(REST_SECONDS)
+  function startSet() {
+    sound(cue.go)
+    if (isHold) {
+      setStage('work')
+      work.start(holdSeconds!)
+    } else if (guidedReps) {
+      setStage('work')
+    } else {
+      // manual reps: logging the set is the action
+      completeSet()
+    }
   }
+
+  function skipRest() {
+    rest.reset()
+    setStage('idle')
+  }
+
+  // Space triggers the current primary action.
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === ' ' || e.code === 'Space') {
+        const el = primaryRef.current
+        if (el && !el.disabled) {
+          e.preventDefault()
+          el.click()
+        }
+      }
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [])
 
   return (
     <div className="session-body">
@@ -149,61 +300,47 @@ function ExercisePlayer({
         </span>
       </div>
 
-      {/* Timer / action zone */}
+      {/* Work / rest zone */}
       {!allSetsDone && (
-        <div className="session-timer-zone">
-          {isHold ? (
-            <>
-              <div className={`session-timer ${timer.finished ? 'finished' : ''}`}>
-                <span className="session-timer-num">
-                  {timer.started ? fmtTime(timer.remaining) : fmtTime(holdSeconds!)}
-                </span>
-                <span className="session-timer-unit">
-                  {mode === 'rest' ? 'rest' : 'sec hold'}
-                </span>
-              </div>
-              {mode === 'rest' ? (
-                <div className="session-actions">
-                  <button type="button" className="primary-action" onClick={startRest}>
-                    <Icon name="play" size={18} /> Rest {REST_SECONDS}s
-                  </button>
-                  <button type="button" className="small-button" onClick={() => setMode('idle')}>
-                    Skip rest
-                  </button>
-                </div>
-              ) : !timer.started || timer.finished ? (
-                <div className="session-actions">
-                  {timer.finished ? (
-                    <button type="button" className="primary-action" onClick={logSet}>
-                      <Icon name="check" size={18} /> Log set {setsDone + 1}
-                    </button>
-                  ) : (
-                    <button type="button" className="primary-action" onClick={() => timer.start(holdSeconds!)}>
-                      <Icon name="play" size={18} /> Start {holdSeconds}s hold
-                    </button>
-                  )}
-                </div>
-              ) : (
-                <div className="session-actions">
-                  <button type="button" className="small-button" onClick={timer.pause}>
-                    Pause
-                  </button>
-                  <button type="button" className="small-button" onClick={() => timer.reset()}>
-                    Reset
-                  </button>
-                </div>
-              )}
-            </>
+        <div className="session-stage">
+          {stage === 'rest' ? (
+            <RestZone
+              remaining={rest.remaining}
+              running={rest.running}
+              onPause={rest.pause}
+              onResume={rest.resume}
+              onSkip={skipRest}
+              primaryRef={primaryRef}
+            />
+          ) : stage === 'work' && isHold ? (
+            <HoldZone
+              holdSeconds={holdSeconds!}
+              remaining={work.remaining}
+              running={work.running}
+              onPause={work.pause}
+              onResume={work.resume}
+            />
+          ) : stage === 'work' && guidedReps ? (
+            <RepCadence
+              key={`${exercise.id}-set-${setsDone}`}
+              phases={tempoPhases}
+              reps={repTarget!}
+              soundOn={soundOn}
+              onComplete={() => {
+                sound(cue.done)
+                completeSet()
+              }}
+            />
           ) : (
-            <div className="session-rep-zone">
-              <div className="session-rep-readout">
-                <strong>{exercise.dose.reps ?? '—'}</strong>
-                <span>reps{exercise.dose.tempo ? ` · ${exercise.dose.tempo}` : ''}</span>
-              </div>
-              <button type="button" className="primary-action" onClick={logSet}>
-                <Icon name="check" size={18} /> Complete set {setsDone + 1}
-              </button>
-            </div>
+            <IdleZone
+              setNumber={setsDone + 1}
+              isHold={isHold}
+              guided={guidedReps}
+              reps={exercise.dose.reps}
+              tempo={exercise.dose.tempo}
+              onStart={startSet}
+              primaryRef={primaryRef}
+            />
           )}
         </div>
       )}
@@ -243,7 +380,12 @@ function ExercisePlayer({
         <button type="button" className="small-button" onClick={onSkip}>
           Skip
         </button>
-        <button type="button" className="primary-action session-next" onClick={onDone}>
+        <button
+          type="button"
+          className="primary-action session-next"
+          ref={allSetsDone ? primaryRef : undefined}
+          onClick={onExerciseDone}
+        >
           {allSetsDone ? 'Done — next' : 'Mark done — next'}
           <Icon name="arrowRight" size={18} />
         </button>
@@ -252,39 +394,340 @@ function ExercisePlayer({
   )
 }
 
-function SessionComplete({
+function IdleZone({
+  setNumber,
+  isHold,
+  guided,
+  reps,
+  tempo,
+  onStart,
+  primaryRef,
+}: {
+  setNumber: number
+  isHold: boolean
+  guided: boolean
+  reps?: string
+  tempo?: string
+  onStart: () => void
+  primaryRef: React.RefObject<HTMLButtonElement | null>
+}) {
+  const label = isHold ? 'Start hold' : guided ? 'Start guided set' : 'Complete set'
+  return (
+    <div className="session-idle">
+      <p className="session-idle-hint">
+        Set {setNumber}
+        {!isHold && reps ? ` · ${reps} reps` : ''}
+        {!isHold && tempo ? ` · ${tempo}` : ''}
+      </p>
+      <button type="button" className="primary-action session-bigbtn" ref={primaryRef} onClick={onStart}>
+        <Icon name="play" size={20} /> {label}
+      </button>
+    </div>
+  )
+}
+
+function HoldZone({
+  holdSeconds,
+  remaining,
+  running,
+  onPause,
+  onResume,
+}: {
+  holdSeconds: number
+  remaining: number
+  running: boolean
+  onPause: () => void
+  onResume: () => void
+}) {
+  const shown = running || remaining > 0 ? remaining : holdSeconds
+  const frac = holdSeconds > 0 ? shown / holdSeconds : 0
+  return (
+    <div className="session-ring-zone">
+      <ProgressRing fraction={frac} label={fmtTime(shown)} sub="sec hold" tone="work" />
+      <div className="session-actions">
+        {running ? (
+          <button type="button" className="small-button" onClick={onPause}>
+            Pause
+          </button>
+        ) : (
+          <button type="button" className="small-button" onClick={onResume}>
+            Resume
+          </button>
+        )}
+      </div>
+    </div>
+  )
+}
+
+function RestZone({
+  remaining,
+  running,
+  onPause,
+  onResume,
+  onSkip,
+  primaryRef,
+}: {
+  remaining: number
+  running: boolean
+  onPause: () => void
+  onResume: () => void
+  onSkip: () => void
+  primaryRef: React.RefObject<HTMLButtonElement | null>
+}) {
+  const frac = REST_SECONDS > 0 ? remaining / REST_SECONDS : 0
+  return (
+    <div className="session-ring-zone">
+      <ProgressRing fraction={frac} label={fmtTime(remaining)} sub="rest" tone="rest" />
+      <div className="session-actions">
+        {running ? (
+          <button type="button" className="small-button" onClick={onPause}>
+            Pause
+          </button>
+        ) : (
+          <button type="button" className="small-button" onClick={onResume}>
+            Resume
+          </button>
+        )}
+        <button type="button" className="primary-action" ref={primaryRef} onClick={onSkip}>
+          Skip rest
+        </button>
+      </div>
+    </div>
+  )
+}
+
+function RepCadence({
+  phases,
+  reps,
+  soundOn,
+  onComplete,
+}: {
+  phases: TempoPhase[]
+  reps: number
+  soundOn: boolean
+  onComplete: () => void
+}) {
+  const [rep, setRep] = useState(0) // completed reps
+  const [pi, setPi] = useState(0) // current phase index
+  const [paused, setPaused] = useState(false)
+  const current = phases[pi]
+
+  useEffect(() => {
+    if (paused) return
+    if (soundOn) cue.tick()
+    const id = setTimeout(() => {
+      let nextPi = pi + 1
+      let nextRep = rep
+      if (nextPi >= phases.length) {
+        nextPi = 0
+        nextRep = rep + 1
+      }
+      if (nextRep >= reps) {
+        onComplete()
+        return
+      }
+      setRep(nextRep)
+      setPi(nextPi)
+    }, current.seconds * 1000)
+    return () => clearTimeout(id)
+    // re-runs on each phase/rep change to schedule the next beat
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [pi, rep, paused])
+
+  return (
+    <div className="session-ring-zone">
+      <div className="cadence-ring" key={`${rep}-${pi}`}>
+        <svg viewBox="0 0 120 120" aria-hidden="true">
+          <circle className="cadence-track" cx="60" cy="60" r="52" />
+          <circle
+            className={`cadence-sweep ${paused ? 'paused' : ''}`}
+            cx="60"
+            cy="60"
+            r="52"
+            style={{ animationDuration: `${current.seconds}s` }}
+          />
+        </svg>
+        <div className="cadence-center">
+          <span className="cadence-phase">{current.label}</span>
+          <span className="cadence-rep">
+            Rep {Math.min(rep + 1, reps)} / {reps}
+          </span>
+        </div>
+      </div>
+      <div className="session-actions">
+        <button type="button" className="small-button" onClick={() => setPaused((p) => !p)}>
+          {paused ? 'Resume' : 'Pause'}
+        </button>
+        <button type="button" className="small-button" onClick={onComplete}>
+          Done set
+        </button>
+      </div>
+    </div>
+  )
+}
+
+function ProgressRing({
+  fraction,
+  label,
+  sub,
+  tone,
+}: {
+  fraction: number
+  label: string
+  sub: string
+  tone: 'work' | 'rest'
+}) {
+  const offset = RING_CIRC * (1 - Math.max(0, Math.min(1, fraction)))
+  return (
+    <div className={`session-ring tone-${tone}`}>
+      <svg viewBox="0 0 120 120" aria-hidden="true">
+        <circle className="ring-track" cx="60" cy="60" r="52" />
+        <circle
+          className="ring-fill"
+          cx="60"
+          cy="60"
+          r="52"
+          strokeDasharray={RING_CIRC}
+          strokeDashoffset={offset}
+        />
+      </svg>
+      <div className="session-ring-center">
+        <span className="session-ring-num">{label}</span>
+        <span className="session-ring-sub">{sub}</span>
+      </div>
+    </div>
+  )
+}
+
+// ---------------------------------------------------------------------------
+// End-of-session check-in + summary
+// ---------------------------------------------------------------------------
+
+function CheckIn({
+  condition,
+  onSave,
+}: {
+  condition: Condition
+  onSave: (pain: number | null, effort: number | null) => void
+}) {
+  const [pain, setPain] = useState(2)
+  const [effort, setEffort] = useState(5)
+
+  return (
+    <div className="session-checkin">
+      <div className="session-complete-mark">
+        <Icon name="check" size={36} />
+      </div>
+      <h2>How did that feel?</h2>
+      <p className="session-checkin-intro">
+        A quick check-in helps you track {condition.shortName} over time. This stays private on
+        this device.
+      </p>
+
+      <div className="checkin-field">
+        <div className="checkin-label">
+          <span>Pain during/after</span>
+          <strong>{pain}/10</strong>
+        </div>
+        <input
+          type="range"
+          min={0}
+          max={10}
+          step={1}
+          value={pain}
+          onChange={(e) => setPain(Number(e.target.value))}
+          className="checkin-slider pain"
+          aria-label="Pain level 0 to 10"
+        />
+        <div className="checkin-scale">
+          <span>None</span>
+          <span>Worst</span>
+        </div>
+      </div>
+
+      <div className="checkin-field">
+        <div className="checkin-label">
+          <span>Effort (how hard)</span>
+          <strong>{effort}/10</strong>
+        </div>
+        <input
+          type="range"
+          min={1}
+          max={10}
+          step={1}
+          value={effort}
+          onChange={(e) => setEffort(Number(e.target.value))}
+          className="checkin-slider effort"
+          aria-label="Effort level 1 to 10"
+        />
+        <div className="checkin-scale">
+          <span>Easy</span>
+          <span>Max</span>
+        </div>
+      </div>
+
+      <div className="session-actions">
+        <button type="button" className="primary-action" onClick={() => onSave(pain, effort)}>
+          Save session
+        </button>
+        <button type="button" className="ghost-action" onClick={() => onSave(null, null)}>
+          Skip
+        </button>
+      </div>
+    </div>
+  )
+}
+
+function SessionSummary({
   condition,
   phase,
+  nextPhase,
   doneCount,
+  streak,
+  onAdvancePhase,
   onClose,
-  onRestart,
 }: {
   condition: Condition
   phase: RehabPhase
+  nextPhase: RehabPhase | null
   doneCount: number
+  streak: number
+  onAdvancePhase?: () => void
   onClose: () => void
-  onRestart: () => void
 }) {
+  const phaseComplete = doneCount >= phase.exercises.length
   return (
     <div className="session-complete">
       <div className="session-complete-mark">
         <Icon name="check" size={40} />
       </div>
-      <h2>Session complete</h2>
+      <h2>Session logged</h2>
       <p>
-        Nice work — you finished {doneCount} of {phase.exercises.length} exercises for{' '}
-        {condition.shortName} (Phase {phase.order}).
+        Nice work — {doneCount} of {phase.exercises.length} exercises for {condition.shortName}{' '}
+        (Phase {phase.order}).
       </p>
+      {streak > 0 && (
+        <p className="session-streak">
+          <Icon name="flame" size={18} /> {streak}-day streak
+        </p>
+      )}
       <p className="session-complete-note">
-        Remember the pain rule: a little discomfort that settles by the next morning is usually fine;
-        sharp, worsening, or next-day-building pain means scale back.
+        Remember the pain rule: a little discomfort that settles by the next morning is usually
+        fine; sharp, worsening, or next-day-building pain means scale back.
       </p>
       <div className="session-actions">
-        <button type="button" className="primary-action" onClick={onClose}>
-          Done
-        </button>
-        <button type="button" className="ghost-action" onClick={onRestart}>
-          Restart session
+        {phaseComplete && nextPhase && onAdvancePhase ? (
+          <button type="button" className="primary-action" onClick={onAdvancePhase}>
+            Advance to Phase {nextPhase.order}
+            <Icon name="arrowRight" size={18} />
+          </button>
+        ) : (
+          <button type="button" className="primary-action" onClick={onClose}>
+            Done
+          </button>
+        )}
+        <button type="button" className="ghost-action" onClick={onClose}>
+          Close
         </button>
       </div>
     </div>

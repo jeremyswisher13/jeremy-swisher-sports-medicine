@@ -3,12 +3,26 @@ import { useLocalStorage } from '../hooks/useLocalStorage'
 import { conditionById } from '../content'
 
 const STORAGE_KEY = 'jsm:v1'
-const CURRENT_VERSION = 1
+const CURRENT_VERSION = 2
 
 export interface StoredProgress {
   activePhaseId: string | null
   completedExerciseIds: string[]
   updatedAt: number
+}
+
+/** A completed follow-along session — the dated rehab journal entry. */
+export interface SessionLog {
+  id: string
+  conditionId: string
+  phaseId: string
+  completedAt: number
+  exercisesDone: number
+  exercisesTotal: number
+  /** Patient-reported pain 0–10 after the session (null if skipped). */
+  pain: number | null
+  /** Patient-reported effort / RPE 1–10 (null if skipped). */
+  effort: number | null
 }
 
 export interface ProgramItem {
@@ -30,6 +44,7 @@ interface StoreShape {
   progress: Record<string, StoredProgress>
   programs: Record<string, SavedProgram>
   activeProgramId: string | null
+  sessions: SessionLog[]
 }
 
 const emptyStore = (): StoreShape => ({
@@ -37,12 +52,36 @@ const emptyStore = (): StoreShape => ({
   progress: {},
   programs: {},
   activeProgramId: null,
+  sessions: [],
 })
 
 function newId(prefix: string): string {
   return `${prefix}-${Date.now().toString(36)}-${Math.random()
     .toString(36)
     .slice(2, 8)}`
+}
+
+/** Local calendar-day key for streak math (uses the device's local date). */
+function dayKey(ts: number): string {
+  const d = new Date(ts)
+  return `${d.getFullYear()}-${d.getMonth()}-${d.getDate()}`
+}
+
+/** Consecutive calendar days (ending today or yesterday) with ≥1 session. */
+function computeStreak(sessions: SessionLog[]): number {
+  if (!sessions.length) return 0
+  const days = new Set(sessions.map((s) => dayKey(s.completedAt)))
+  const cursor = new Date()
+  if (!days.has(dayKey(cursor.getTime()))) {
+    cursor.setDate(cursor.getDate() - 1)
+    if (!days.has(dayKey(cursor.getTime()))) return 0
+  }
+  let streak = 0
+  while (days.has(dayKey(cursor.getTime()))) {
+    streak++
+    cursor.setDate(cursor.getDate() - 1)
+  }
+  return streak
 }
 
 /**
@@ -93,7 +132,34 @@ function sanitize(raw: unknown): StoreShape {
     base.activeProgramId = r.activeProgramId
   }
 
+  if (Array.isArray(r.sessions)) {
+    base.sessions = r.sessions
+      .filter(
+        (s): s is SessionLog =>
+          !!s && typeof s === 'object' && conditionById.has((s as SessionLog).conditionId),
+      )
+      .map((s) => ({
+        id: typeof s.id === 'string' ? s.id : newId('sess'),
+        conditionId: s.conditionId,
+        phaseId: typeof s.phaseId === 'string' ? s.phaseId : '',
+        completedAt: typeof s.completedAt === 'number' ? s.completedAt : Date.now(),
+        exercisesDone: typeof s.exercisesDone === 'number' ? s.exercisesDone : 0,
+        exercisesTotal: typeof s.exercisesTotal === 'number' ? s.exercisesTotal : 0,
+        pain: typeof s.pain === 'number' ? s.pain : null,
+        effort: typeof s.effort === 'number' ? s.effort : null,
+      }))
+      .sort((a, b) => a.completedAt - b.completedAt)
+  }
+
   return base
+}
+
+export interface ConditionStats {
+  count: number
+  lastSession: SessionLog | null
+  /** Pain values in chronological order (nulls dropped). */
+  painSeries: number[]
+  effortSeries: number[]
 }
 
 export interface ConditionProgressView {
@@ -109,6 +175,16 @@ export interface ProgramApi {
   resetCondition: (conditionId: string) => void
   /** Conditions the user has interacted with (has saved progress). */
   startedConditionIds: string[]
+
+  /** Dated session journal (local-only). */
+  sessions: SessionLog[]
+  logSession: (log: Omit<SessionLog, 'id'>) => void
+  getSessions: (conditionId?: string) => SessionLog[]
+  getConditionStats: (conditionId: string) => ConditionStats
+  /** Consecutive-day streak across all conditions. */
+  currentStreakDays: number
+  /** Total sessions logged across all conditions. */
+  totalSessions: number
 
   programs: SavedProgram[]
   activeProgramId: string | null
@@ -201,6 +277,32 @@ export function ProgramProvider({ children }: { children: ReactNode }) {
         (a, b) =>
           (store.progress[b]?.updatedAt ?? 0) - (store.progress[a]?.updatedAt ?? 0),
       ),
+
+      sessions: store.sessions,
+      logSession: (log) =>
+        update((d) => {
+          d.sessions.push({ ...log, id: newId('sess') })
+        }),
+      getSessions: (conditionId) =>
+        (conditionId
+          ? store.sessions.filter((s) => s.conditionId === conditionId)
+          : store.sessions
+        )
+          .slice()
+          .sort((a, b) => b.completedAt - a.completedAt),
+      getConditionStats: (conditionId) => {
+        const list = store.sessions
+          .filter((s) => s.conditionId === conditionId)
+          .sort((a, b) => a.completedAt - b.completedAt)
+        return {
+          count: list.length,
+          lastSession: list.length ? list[list.length - 1] : null,
+          painSeries: list.map((s) => s.pain).filter((x): x is number => x != null),
+          effortSeries: list.map((s) => s.effort).filter((x): x is number => x != null),
+        }
+      },
+      currentStreakDays: computeStreak(store.sessions),
+      totalSessions: store.sessions.length,
 
       programs: Object.values(store.programs).sort(
         (a, b) => b.updatedAt - a.updatedAt,

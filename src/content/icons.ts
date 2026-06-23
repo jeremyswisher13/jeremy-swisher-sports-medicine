@@ -40,6 +40,9 @@ import {
   Syringe,
   Target,
   UserRound,
+  Volume2,
+  VolumeX,
+  Flame,
   Waves,
   X,
 } from 'lucide-react'
@@ -106,6 +109,9 @@ export const icons: Record<string, IconComponent> = {
   user: UserRound,
   heart: HeartPulse,
   close: X,
+  volume: Volume2,
+  volumeOff: VolumeX,
+  flame: Flame,
 }
 
 export function getIcon(key: string | undefined): IconComponent {

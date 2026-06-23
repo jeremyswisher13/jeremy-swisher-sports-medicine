@@ -8,6 +8,7 @@ import {
 } from '../content'
 import { CarePathway } from '../components/pathway/CarePathway'
 import { HomeExerciseProgram } from '../components/exercise/HomeExerciseProgram'
+import { ProgressPanel } from '../components/exercise/ProgressPanel'
 import { SafetyBox, RedFlagBanner } from '../components/common/RedFlags'
 import { EvidenceBadge, ReviewStatus } from '../components/common/badges'
 import { CitationList } from '../components/common/Citations'
@@ -112,6 +113,7 @@ export function ConditionRoute() {
 
         <CarePathway condition={condition} />
         <HomeExerciseProgram condition={condition} />
+        <ProgressPanel condition={condition} />
 
         {condition.procedures.length > 0 && (
           <section className="panel procedure-relevance">

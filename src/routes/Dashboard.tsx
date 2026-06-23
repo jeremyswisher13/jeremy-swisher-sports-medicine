@@ -45,10 +45,20 @@ export function DashboardRoute() {
           <strong>{procedures.length}</strong>
           <span>Procedures</span>
         </div>
-        <div className="stat-tile">
-          <strong>{program.programs.length}</strong>
-          <span>Saved programs</span>
-        </div>
+        {program.totalSessions > 0 ? (
+          <div className="stat-tile">
+            <strong className="stat-streak">
+              <Icon name="flame" size={20} />
+              {program.currentStreakDays}
+            </strong>
+            <span>Day streak</span>
+          </div>
+        ) : (
+          <div className="stat-tile">
+            <strong>{program.programs.length}</strong>
+            <span>Saved programs</span>
+          </div>
+        )}
       </div>
 
       {started.length > 0 && (
