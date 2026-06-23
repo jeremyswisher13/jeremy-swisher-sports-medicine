@@ -22,14 +22,14 @@ const citations: Citation[] = [
   },
   {
     id: 'golfers-difilippo-2022-overview',
-    label: 'Di Filippo overview of systematic reviews (2022)',
+    label: 'Di Filippo overview of systematic reviews — lateral elbow pain (2022)',
     authorsOrOrg: 'Di Filippo L, et al.',
     source: 'PubMed (overview of systematic reviews)',
     year: 2022,
     type: 'systematic-review',
     url: 'https://pubmed.ncbi.nlm.nih.gov/35742152/',
     takeaway:
-      'Overview of systematic reviews on epicondylitis management; conservative loading-based care mirrors broader tendinopathy principles, while direct high-quality evidence for the medial side is sparse.',
+      'Overview of systematic reviews on LATERAL elbow pain (tennis elbow), used here as analogous evidence: loading-based conservative care mirrors broader tendinopathy principles, while direct high-quality evidence for the medial (golfer’s) side is sparse.',
     verified: true,
     lastChecked: '2026-06-21',
   },

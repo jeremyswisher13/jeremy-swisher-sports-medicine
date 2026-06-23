@@ -375,7 +375,7 @@ const moduleData: ConditionModule = {
       ],
       whatsUncertain: [
         'Evidence for injections is mixed; corticosteroid may help short-term at best and may worsen recurrence.',
-        'PRP evidence is mixed, though some meta-analyses favor longer-term improvement.',
+        'PRP evidence is mixed and not settled; benefit over placebo or other injections is uncertain.',
         'ESWT has only selected/mixed support; hyaluronic acid is not indicated for tennis elbow.',
         'The best specific loading recipe and the role of procedures after failed rehab are not fully settled.',
       ],
@@ -396,7 +396,7 @@ const moduleData: ConditionModule = {
         procedureId: 'prp',
         relevance: 'selected-cases',
         evidenceNote:
-          'Selected cases; evidence mixed though some meta-analyses favor longer-term improvement.',
+          'Selected cases; evidence mixed and benefit uncertain.',
         citationIds: ['tennis-xu-2024-meta'],
       },
       {

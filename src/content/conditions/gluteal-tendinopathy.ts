@@ -399,7 +399,7 @@ const moduleData: ConditionModule = {
         'Education plus targeted hip-abductor exercise (strong-to-moderate support)',
         'Reducing tendon compression (how you sit, stand, and sleep)',
         'Corticosteroid injection for short-term relief in selected cases (moderate)',
-        'Extracorporeal shockwave therapy (ESWT) in selected persistent cases (moderate)',
+        'Extracorporeal shockwave therapy (ESWT) in selected persistent cases (limited)',
       ],
       whatsUncertain: [
         'The best single exercise recipe and dosing for gluteal tendinopathy is not firmly settled.',

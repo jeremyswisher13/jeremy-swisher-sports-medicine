@@ -119,6 +119,10 @@ const moduleData: ConditionModule = {
         urgency: 'urgent',
       },
       {
+        text: 'A hot, red, very swollen, painful finger — especially with fever, a finger held bent that hurts severely when someone tries to straighten it, or swelling spreading up the finger or into the palm — go to emergency care (possible flexor tendon-sheath infection).',
+        urgency: 'emergency',
+      },
+      {
         text: 'Severe swelling or redness of the finger.',
         urgency: 'urgent',
       },

@@ -452,7 +452,7 @@ const moduleData: ConditionModule = {
         procedureId: 'hyaluronic-acid',
         relevance: 'selected-cases',
         evidenceNote:
-          'Mixed/selected for hip OA — evidence is mixed and it is considered case by case (unlike knee OA, where guidelines generally do not recommend it).',
+          'Not routinely recommended — major OA guidelines (e.g., NICE, OARSI) advise against routine hyaluronic acid injection; any use is limited to selected, individualized cases.',
         citationIds: ['hip-oa-nice-ng226-2022'],
       },
       {

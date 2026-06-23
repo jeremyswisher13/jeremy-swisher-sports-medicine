@@ -117,6 +117,10 @@ const moduleData: ConditionModule = {
         urgency: 'emergency',
       },
       {
+        text: 'A hot, red, swollen knee with fever or feeling unwell — this can signal a joint infection (septic arthritis) and needs emergency evaluation right away.',
+        urgency: 'emergency',
+      },
+      {
         text: 'Inability to bear weight on the leg.',
         urgency: 'urgent',
       },

@@ -123,7 +123,7 @@ const moduleData: ConditionModule = {
     selfCare: {
       dos: [
         'Keep moving — relative rest, not complete rest. Reduce aggravating load rather than stopping everything.',
-        'Use the pain-monitoring rule: discomfort up to about 3–4/10 during exercise is acceptable if it settles by the next morning.',
+        'Use the pain-monitoring rule: discomfort up to about 5/10 during exercise is acceptable if it settles by the next morning.',
         'Do your loading exercises consistently — this is the treatment, not an add-on.',
         'Warm up before activity; the tendon tolerates load better once warm.',
       ],

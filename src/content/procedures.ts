@@ -179,7 +179,7 @@ export const procedures: Procedure[] = [
         {
           item: 'Nonselective NSAIDs',
           recommendation: 'Often paused around PRP if the treating clinician advises it.',
-          basis: 'evidence-supported',
+          basis: 'theoretical-biologic-rationale',
           patientText:
             'Many PRP protocols avoid ibuprofen, naproxen, and similar NSAIDs around the injection because they may reduce platelet activity.',
           clinicianNote:
